@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState, useEffect, useRef } from 'react';
-import styles from './Home.module.scss';
-import docker from '../../assets/docketeerlogo.png';
-import { Link } from 'react-scroll';
+import React from "react";
+import { useState, useEffect, useRef } from "react";
+import styles from "./Home.module.scss";
+import docker from "../../assets/docketeerlogo.png";
+import { Link } from "react-scroll";
 
 const Home = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,7 +45,7 @@ const Home = (): JSX.Element => {
     >
       <div className={styles.left}>
         <div className={styles.description}>
-          <h1 className={styles.mainTitle}>Introducing Docketeer XIX</h1>
+          <h1 className={styles.mainTitle}>Introducing Docketeer XX</h1>
           <p>
             Docketeer is a user-friendly container management application with
             intuitive interfaces and visualization tools for Docker containers

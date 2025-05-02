@@ -7,8 +7,37 @@ import Aiden from '../../assets/XIX/Aiden.jpg';
 import Dylan from '../../assets/XIX/Dylan.png';
 import Joseph from '../../assets/XIX/Joseph.jpg';
 import Ellis from '../../assets/XIX/Ellis.jpg';
+import Arthur from '../../assets/XX/Arthur.jpg';
+import Rachel from '../../assets/XX/Rachel.png';
+import ChrisS from '../../assets/XX/ChrisS.jpg';
+import Nika from '../../assets/XX/Nika.jpg';
+
 
 const currDocketeerTeam = [
+  {
+    img: Arthur,
+    name: 'Arthur Jin',
+    linkedin: 'https://www.linkedin.com/in/arthur-jin/',
+    github: 'https://github.com/ArthurJZL',
+  },
+  {
+    img: ChrisS,
+    name: 'Christopher Schiro',
+    linkedin: 'https://www.linkedin.com/in/chris-schiro/',
+    github: 'https://github.com/cschiro',
+  },
+  {
+    img: Nika,
+    name: 'Nika Mamaladze',
+    linkedin: 'https://www.linkedin.com/in/nika-mamaladze-b06b53326/',
+    github: 'https://github.com/nikamamaladze92',
+  },
+  {
+    img: Rachel,
+    name: 'Rachel Baek',
+    linkedin: 'https://www.linkedin.com/in/rachel-baek/',
+    github: 'https://github.com/rsbaek',
+  },
   {
     img: Chris,
     name: 'Chris Rodriguez',

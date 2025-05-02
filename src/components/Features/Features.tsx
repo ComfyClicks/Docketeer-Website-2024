@@ -7,8 +7,6 @@ import images from '../../assets/features/images.svg';
 import kubernetes from '../../assets/features/kubernetes.svg';
 import logs from '../../assets/features/logs.svg';
 import metrics from '../../assets/features/metrics.svg';
-import cookie from '../../assets/features/cookie.svg';
-import security from '../../assets/features/security.svg';
 import prune from '../../assets/features/prune.svg';
 import configurations from '../../assets/features/configurations.svg';
 import snapshot from '../../assets/features/snapshot.svg';

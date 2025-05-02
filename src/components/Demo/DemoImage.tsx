@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Demo.module.scss';
-import containers from '../../assets/demos/containerTab-new.gif';
-import images1 from '../../assets/demos/imageTab1-new.gif';
+import containers from '../../assets/demos/ContainersFilters_v20.gif';
+import images from '../../assets/demos/Images_v20.gif';
 import images2 from '../../assets/demos/imageTab2-new.gif';
 import images3 from '../../assets/demos/imageTab3-new.gif';
-import metrics from '../../assets/demos/metricTab-new.gif';
-import k8 from '../../assets/demos/k8Tab-new.gif';
-import others from '../../assets/demos/hamburgerTab-new.gif';
-import configuration from '../../assets/demos/configuration.gif';
+import metrics from '../../assets/demos/ContainersMetrics_v20.gif';
+import k8 from '../../assets/demos/KubernetesClusterHealthMetrics_v20.gif';
+import others from '../../assets/demos/Navigation_v20.gif';
+import configuration from '../../assets/demos/Configurations_v20.png';
 
 interface DemoGifProps {
   currentGif: number;
@@ -16,7 +16,7 @@ interface DemoGifProps {
 const DemoImage: React.FC<DemoGifProps> = ({ currentGif }): JSX.Element => {
   const gifs = [
     containers,
-    images1,
+    images,
     images2,
     images3,
     metrics,
