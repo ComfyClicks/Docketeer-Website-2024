@@ -6,9 +6,9 @@ import styles from './Team.module.scss';
 import currDocketeerTeam from './currDocketeerTeam';
 
 import { useInView } from 'react-intersection-observer';
-import { useSprings, config } from 'react-spring';
+import { useSprings, config } from '@react-spring/web';
 
-const Team = (): JSX.Element => {
+const Team = (): React.JSX.Element => {
   const [refXVII, inViewXVII] = useInView({ threshold: 0.2 });
 
   const animationsTwo = useSprings(

@@ -4,7 +4,7 @@ import DemoImage from './DemoImage';
 import Mobile from './DemoMobile/Mobile';
 import styles from './Demo.module.scss';
 
-const Demo = (): JSX.Element => {
+const Demo = (): React.JSX.Element => {
   const [currentGif, setCurrentGif] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isIntersecting, setIsIntersecting] = useState(false);

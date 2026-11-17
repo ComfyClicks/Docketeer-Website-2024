@@ -5,15 +5,18 @@ import docker2 from '../../assets/docketeerlogo2.png';
 
 const sections = [['home', 'Home'], ['features', 'Features'], ['demo', 'Demo'], ['getstarted', 'Get Started'], ['team', 'Team']];
 
-const Navbar = (): JSX.Element => {
+const Navbar = (): React.JSX.Element => {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   const links = useRef<HTMLUListElement>(null);
+  const focusedControl = useRef<HTMLElement | null>(null);
   useEffect(() => {
     const mobile = window.matchMedia('(max-width: 1000px)');
     const reset = () => {
-      if (mobile.matches && links.current?.contains(document.activeElement)) trigger.current?.focus();
-      if (!mobile.matches && document.activeElement === trigger.current) links.current?.querySelector('a')?.focus();
+      // A CSS breakpoint can hide the focused control before this event runs.
+      const active = document.activeElement === document.body ? focusedControl.current : document.activeElement;
+      if (mobile.matches && active && links.current?.contains(active)) trigger.current?.focus();
+      if (!mobile.matches && active === trigger.current) links.current?.querySelector('a')?.focus();
       setOpen(false);
     };
     mobile.addEventListener('change', reset);
@@ -22,6 +25,7 @@ const Navbar = (): JSX.Element => {
 
   return (
     <nav className={styles.navbar} aria-label="Primary"
+      onFocus={(event) => { focusedControl.current = event.target as HTMLElement; }}
       onKeyDown={(event) => {
         if (event.key === 'Escape' && open) {
           setOpen(false);
@@ -29,7 +33,10 @@ const Navbar = (): JSX.Element => {
         }
       }}
       onBlur={(event) => {
-        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false);
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) {
+          focusedControl.current = null;
+          setOpen(false);
+        }
       }}>
       <div className={styles.navbarContainer}>
         <div className={styles.left}>

@@ -1,0 +1,38 @@
+[
+  {
+    width: 320,
+    height: 800,
+    passed: true,
+    errors: [],
+    deepLinkY: 3022,
+    navBounds: { width: 320, scrollWidth: 320 },
+    documentWidth: 388
+  },
+  {
+    width: 390,
+    height: 844,
+    passed: true,
+    errors: [],
+    deepLinkY: 3153,
+    navBounds: { width: 390, scrollWidth: 390 },
+    documentWidth: 396
+  },
+  {
+    width: 844,
+    height: 390,
+    passed: true,
+    errors: [],
+    deepLinkY: 2327,
+    navBounds: { width: 844, scrollWidth: 844 },
+    documentWidth: 844
+  },
+  {
+    width: 1440,
+    height: 900,
+    passed: true,
+    errors: [],
+    deepLinkY: 3526,
+    navBounds: { width: 1440, scrollWidth: 1440 },
+    documentWidth: 1440
+  }
+]

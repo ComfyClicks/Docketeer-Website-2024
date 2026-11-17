@@ -1,0 +1,107 @@
+
+> docketeer-xii-website@0.0.0 build
+> tsc && vite build
+
+node_modules/@types/node/async_hooks.d.ts(616,32): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/child_process.d.ts(255,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/child_process.d.ts(255,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/dgram.d.ts(646,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/dgram.d.ts(646,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/diagnostics_channel.d.ts(351,38): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/diagnostics_channel.d.ts(790,43): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/events.d.ts(542,91): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/ffi.d.ts(35,75): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/ffi.d.ts(183,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/ffi.d.ts(183,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs.d.ts(270,9): error TS2416: Property '[Symbol.asyncIterator]' in type 'Dir' is not assignable to the same property in base type 'AsyncIterable<Dirent<string>>'.
+  Type '() => AsyncIterator<Dirent<string>, undefined, any>' is not assignable to type '() => AsyncIterator<Dirent<string>, any, undefined>'.
+    Property 'next' is missing in type 'AsyncIterator<Dirent<string>, undefined, any>' but required in type 'AsyncIterator<Dirent<string>, any, undefined>'.
+node_modules/@types/node/fs.d.ts(319,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs.d.ts(319,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs.d.ts(325,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs.d.ts(325,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs.d.ts(647,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs.d.ts(647,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs.d.ts(2266,41): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/fs.d.ts(2278,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs.d.ts(2278,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs/promises.d.ts(645,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs/promises.d.ts(645,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/fs/promises.d.ts(1154,41): error TS2304: Cannot find name 'AsyncDisposable'.
+node_modules/@types/node/fs/promises.d.ts(1166,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/fs/promises.d.ts(1166,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/globals.d.ts(136,69): error TS2304: Cannot find name 'IteratorObject'.
+node_modules/@types/node/globals.d.ts(141,74): error TS2552: Cannot find name 'AsyncIteratorObject'. Did you mean 'AsyncIterator'?
+node_modules/@types/node/inspector.d.ts(44,66): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/net.d.ts(546,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/net.d.ts(546,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/net.d.ts(758,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/net.d.ts(758,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/perf_hooks.d.ts(438,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/perf_hooks.d.ts(438,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/quic.d.ts(854,35): error TS2304: Cannot find name 'AsyncDisposable'.
+node_modules/@types/node/quic.d.ts(963,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/quic.d.ts(963,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/quic.d.ts(1209,34): error TS2304: Cannot find name 'AsyncDisposable'.
+node_modules/@types/node/quic.d.ts(1540,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/quic.d.ts(1540,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/readline.d.ts(28,46): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/readline.d.ts(189,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/readline.d.ts(189,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/sqlite.d.ts(253,35): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/sqlite.d.ts(667,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/sqlite.d.ts(667,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/sqlite.d.ts(701,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/sqlite.d.ts(701,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/stream.d.ts(654,13): error TS2416: Property '[Symbol.asyncIterator]' in type 'Readable' is not assignable to the same property in base type 'ReadableStream'.
+  Type '() => AsyncIterator<any, undefined, any>' is not assignable to type '() => AsyncIterableIterator<string | Buffer>'.
+    Property 'next' is missing in type 'AsyncIterator<any, undefined, any>' but required in type 'AsyncIterableIterator<string | Buffer>'.
+node_modules/@types/node/stream.d.ts(691,13): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/stream.d.ts(691,21): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/stream.d.ts(1046,13): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/stream.d.ts(1046,21): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/stream.d.ts(1115,15): error TS2420: Class 'Duplex' incorrectly implements interface 'ReadWriteStream'.
+  Types of property '[Symbol.asyncIterator]' are incompatible.
+    Type '() => AsyncIterator<any, undefined, any>' is not assignable to type '() => AsyncIterableIterator<string | Buffer>'.
+node_modules/@types/node/stream.d.ts(1594,17): error TS5084: Tuple members must all have names or all not have names.
+node_modules/@types/node/stream/iter.d.ts(144,30): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/stream/iter.d.ts(144,42): error TS2304: Cannot find name 'AsyncDisposable'.
+node_modules/@types/node/stream/iter.d.ts(157,34): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/stream/iter.d.ts(167,33): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/stream/iter.d.ts(172,29): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/stream/iter.d.ts(177,33): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/stream/iter.d.ts(182,37): error TS2304: Cannot find name 'AsyncDisposable'.
+node_modules/@types/node/stream/promises.d.ts(202,13): error TS5084: Tuple members must all have names or all not have names.
+node_modules/@types/node/stream/web.d.ts(187,78): error TS2304: Cannot find name 'BuiltinIteratorReturn'.
+node_modules/@types/node/test.d.ts(2505,13): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/test.d.ts(2505,21): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/timers.d.ts(24,53): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/timers.d.ts(54,17): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/timers.d.ts(54,25): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/timers.d.ts(76,51): error TS2304: Cannot find name 'Disposable'.
+node_modules/@types/node/timers.d.ts(134,17): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/timers.d.ts(134,25): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/ts5.6/index.d.ts(29,21): error TS2726: Cannot find lib definition for 'esnext.disposable'.
+node_modules/@types/node/url.d.ts(549,69): error TS2304: Cannot find name 'BuiltinIteratorReturn'.
+node_modules/@types/node/v8.d.ts(412,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/v8.d.ts(412,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/v8.d.ts(427,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/v8.d.ts(427,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/v8.d.ts(443,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/v8.d.ts(443,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/v8.d.ts(459,9): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/v8.d.ts(459,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/v8.d.ts(817,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/v8.d.ts(817,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/web-globals/streams.d.ts(42,9): error TS2502: 'CompressionStream' is referenced directly or indirectly in its own type annotation.
+node_modules/@types/node/web-globals/streams.d.ts(53,9): error TS2502: 'DecompressionStream' is referenced directly or indirectly in its own type annotation.
+node_modules/@types/node/worker_threads.d.ts(337,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/worker_threads.d.ts(337,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/zlib.d.ts(490,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/zlib.d.ts(490,17): error TS2339: Property 'asyncDispose' does not exist on type 'SymbolConstructor'.
+node_modules/@types/node/zlib.d.ts(494,9): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+node_modules/@types/node/zlib.d.ts(494,17): error TS2339: Property 'dispose' does not exist on type 'SymbolConstructor'.
+node_modules/typescript/lib/lib.dom.d.ts(14342,11): error TS2430: Interface 'TextEncoder' incorrectly extends interface 'import("node:util").TextEncoder'.
+  The types returned by 'encodeInto(...)' are incompatible between these types.
+    Type 'TextEncoderEncodeIntoResult' is not assignable to type 'import("node:util").TextEncoderEncodeIntoResult'.
+      Property 'read' is optional in type 'TextEncoderEncodeIntoResult' but required in type 'TextEncoderEncodeIntoResult'.

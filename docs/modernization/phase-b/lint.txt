@@ -1,0 +1,4 @@
+
+> docketeer-xii-website@0.0.0 lint
+> oxlint src --max-warnings 0
+

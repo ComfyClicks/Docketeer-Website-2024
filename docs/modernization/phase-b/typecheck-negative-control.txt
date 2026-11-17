@@ -1,0 +1,1 @@
+../../../../../../../var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-tooling-ix_49f8w/bad.tsx(1,14): error TS2322: Type 'string' is not assignable to type 'number'.

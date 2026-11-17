@@ -8,7 +8,7 @@ import Team from './Team/Team';
 // import Footer from './Footer/Footer';
 
 
-const Page = (): JSX.Element => {
+const Page = (): React.JSX.Element => {
   return (
     <div className="pageContainer">
       <Navbar />

@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-17T19:24:21.879Z",
+  "passed": true,
+  "checks": [
+    "open mobile to desktop moves focus to Home",
+    "desktop to mobile closes and returns focus to Menu",
+    "focus leaving navigation closes disclosure"
+  ],
+  "screenshots": "captured after TypeScript 7 and global stylesheet migration"
+}

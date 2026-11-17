@@ -1,7 +1,7 @@
 import React from 'react';
 import githubLogo from '../../assets/github-mark/github-mark-white.png';
 import styles from './Team.module.scss';
-import { animated } from 'react-spring';
+import { animated } from '@react-spring/web';
 
 export interface xviiProps {
   img: string;
@@ -11,7 +11,7 @@ export interface xviiProps {
   animation: unknown;
 }
 
-const TeamCard = ({ img, name, linkedin, github, animation }): JSX.Element => {
+const TeamCard = ({ img, name, linkedin, github, animation }): React.JSX.Element => {
   return (
     <animated.div className={styles.osp4box} style={animation}>
       <img className={styles.osp4Pic} src={img} />

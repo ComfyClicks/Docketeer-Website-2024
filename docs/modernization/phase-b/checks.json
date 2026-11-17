@@ -1,0 +1,86 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "seconds": 9.668
+  },
+  {
+    "name": "lint",
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exitCode": 0,
+    "seconds": 0.508
+  },
+  {
+    "name": "typecheck",
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "seconds": 6.13
+  },
+  {
+    "name": "tests",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--runInBand"
+    ],
+    "exitCode": 0,
+    "seconds": 3.672
+  },
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "exitCode": 1,
+    "seconds": 2.227
+  },
+  {
+    "name": "audit-production",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.932
+  },
+  {
+    "name": "dependency-tree",
+    "command": [
+      "npm",
+      "ls",
+      "--all",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 1.017
+  },
+  {
+    "name": "outdated",
+    "command": [
+      "npm",
+      "outdated",
+      "--include=dev",
+      "--json"
+    ],
+    "exitCode": 1,
+    "seconds": 1.394
+  }
+]

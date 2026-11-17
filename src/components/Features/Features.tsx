@@ -12,9 +12,9 @@ import configurations from '../../assets/features/configurations.svg';
 import snapshot from '../../assets/features/snapshot.svg';
 
 import { useInView } from 'react-intersection-observer';
-import { useSprings, config } from 'react-spring';
+import { useSprings, config } from '@react-spring/web';
 
-const Features = (): JSX.Element => {
+const Features = (): React.JSX.Element => {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   const animations = useSprings(

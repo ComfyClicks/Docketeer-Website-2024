@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, fireEvent, screen, within } from '@testing-library/react';
+import { render, fireEvent, screen, within, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import 'intersection-observer';
+import '../__mocks__/observerMock';
 import App from '../src/App';
 import Navbar from '../src/components/Navbar/Navbar';
 import Mobile from '../src/components/Demo/DemoMobile/Mobile';
@@ -68,4 +68,25 @@ test('desktop controls select the rendered demo and expose selected state', () =
     expect(screen.getByRole('img', { name: `${name} demo` })).toBeInTheDocument();
     expect(screen.getAllByRole('button', { pressed: true })).toHaveLength(1);
   }
+});
+
+
+test('breakpoint changes restore focus after CSS hides the active control', () => {
+  let onChange;
+  const media = { matches: true, addEventListener: jest.fn((event, callback) => { onChange = callback; }), removeEventListener: jest.fn() };
+  window.matchMedia = jest.fn(() => media);
+  render(<Navbar />);
+  const menu = screen.getByRole('button', { name: 'Menu' });
+  menu.focus();
+  fireEvent.click(menu);
+  menu.blur(); // Chrome may drop focus before delivering the media-query change.
+  media.matches = false;
+  act(() => onChange());
+  const home = screen.getByRole('link', { name: 'Home' });
+  expect(home).toHaveFocus();
+  home.blur();
+  media.matches = true;
+  act(() => onChange());
+  expect(menu).toHaveFocus();
+  expect(menu).toHaveAttribute('aria-expanded', 'false');
 });

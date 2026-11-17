@@ -12,7 +12,7 @@ import configuration from '../../../assets/demos/configuration.gif';
 
 import styles from '../Demo.module.scss';
 
-const Mobile = (): JSX.Element => {
+const Mobile = (): React.JSX.Element => {
   const gifs = [
     { name: 'Containers', url: containers },
     { name: 'Images', url: images1 },

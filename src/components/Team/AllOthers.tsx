@@ -8,7 +8,7 @@ export interface othersProps {
   github: string;
 }
 
-const AllOthers = ({ name, linkedin, github }): JSX.Element => {
+const AllOthers = ({ name, linkedin, github }): React.JSX.Element => {
   return (
     <div>
       <p className={styles.person}>

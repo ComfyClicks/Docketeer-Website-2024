@@ -1,0 +1,53 @@
+
+> docketeer-xii-website@0.0.0 build
+> tsc && vite build
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/favicon-16x16-IOwpHcaE.png                            0.69 kB
+dist/index.html                                                   0.88 kB │ gzip:   0.44 kB
+dist/assets/favicon-32x32-DCNlQ8v6.png                            1.63 kB
+dist/assets/04-symbol_light-blue-docker-logo-E1qi30Xa.png         4.49 kB
+dist/assets/github-mark-white-BsLkggKK.png                        4.83 kB
+dist/assets/apple-touch-icon-Cl6J45kZ.png                        12.65 kB
+dist/assets/ChrisS-DgM80DkV.jpg                                  50.25 kB
+dist/assets/Arthur-DNI2J9ks.jpg                                  51.01 kB
+dist/assets/Andy-D3AKYgql.jpg                                    58.41 kB
+dist/assets/docketeerlogo2--bT0VvCR.png                         104.51 kB
+dist/assets/Chris-DSiwWaBO.jpg                                  120.53 kB
+dist/assets/docketeerlogo-Dp77UFb5.png                          130.49 kB
+dist/assets/Quan-DpHjkX_n.jpg                                   199.06 kB
+dist/assets/Dylan-DaBBfjSy.png                                  218.29 kB
+dist/assets/Nika-C59rFwhq.jpg                                   290.23 kB
+dist/assets/Rachel-DK_-2iga.png                                 304.38 kB
+dist/assets/Aiden-Crz8YsPZ.jpg                                  322.64 kB
+dist/assets/Configurations_v20-zaKtSwlW.png                     514.09 kB
+dist/assets/Ellis-DrdExSvh.jpg                                  662.23 kB
+dist/assets/Joseph-BXEGGVBJ.jpg                                 856.13 kB
+dist/assets/Alex-CzVNFBl2.jpg                                   965.45 kB
+dist/assets/Nick-TD1qH4ox.jpg                                 1,540.03 kB
+dist/assets/ContainersFilters_v20-BslkjhrN.gif                2,164.11 kB
+dist/assets/Navigation_v20-BUxN3cDf.gif                       2,432.82 kB
+dist/assets/ContainersMetrics_v20-BIoSyGB4.gif                3,170.44 kB
+dist/assets/Images_v20-Dsch2f2H.gif                           4,153.17 kB
+dist/assets/KubernetesClusterHealthMetrics_v20-7Gnx80GA.gif   4,960.15 kB
+dist/assets/metricTab-new-Di2Gr8KO.gif                        5,435.73 kB
+dist/assets/configuration-DE0TRlgR.gif                        6,135.81 kB
+dist/assets/k8Tab-new-DX01NB2e.gif                            7,350.29 kB
+dist/assets/imageTab3-new-Z0cu_DOX.gif                        7,776.86 kB
+dist/assets/hamburgerTab-new-BmHaz_kC.gif                     8,200.25 kB
+dist/assets/imageTab1-new-D8DKsScR.gif                        9,996.34 kB
+dist/assets/containerTab-new-BXuCus4e.gif                    10,597.93 kB
+dist/assets/imageTab2-new-BXVB378X.gif                       15,156.48 kB
+dist/assets/index-Dy75egic.css                                    9.61 kB │ gzip:   2.27 kB
+dist/assets/index-CASW6_Y6.js                                   659.75 kB │ gzip: 184.79 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.47s

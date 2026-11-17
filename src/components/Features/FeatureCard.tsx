@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Features.module.scss';
-import { animated } from 'react-spring';
+import { animated } from '@react-spring/web';
 
 export interface FeatureCardProps {
   header: string;
@@ -9,7 +9,7 @@ export interface FeatureCardProps {
   animation: unknown;
 }
 
-const FeatureCard = ({ animation, header, img, info }): JSX.Element => {
+const FeatureCard = ({ animation, header, img, info }): React.JSX.Element => {
   return (
     <animated.div
       className={styles.featureCard}

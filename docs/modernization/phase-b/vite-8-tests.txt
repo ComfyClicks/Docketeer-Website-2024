@@ -1,0 +1,39 @@
+
+> docketeer-xii-website@0.0.0 test
+> jest --verbose --runInBand
+
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+  console.error
+    Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+      13 |
+      14 | test('current content and native section destinations render', () => {
+    > 15 |   render(<App />);
+         |         ^
+      16 |   expect(screen.getByRole('heading', { name: 'Introducing Docketeer XX' })).toBeInTheDocument();
+      17 |   expect(screen.getByRole('heading', { name: 'Meet The Docketeer Team!' })).toBeInTheDocument();
+      18 |   expect(screen.getAllByTestId('feature-card')).toHaveLength(9);
+
+      at printWarning (node_modules/react-dom/cjs/react-dom-test-utils.development.js:71:30)
+      at error (node_modules/react-dom/cjs/react-dom-test-utils.development.js:45:7)
+      at actWithWarning (node_modules/react-dom/cjs/react-dom-test-utils.development.js:1736:7)
+      at node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:161:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:247:10)
+      at Object.<anonymous> (__tests__/tests.js:15:9)
+
+PASS __tests__/tests.js
+  ✓ current content and native section destinations render (1200 ms)
+  ✓ menu exposes expanded state, closes with Escape and restores focus (44 ms)
+  ✓ choosing a section closes the menu (27 ms)
+  ✓ mobile demo reaches every entry and wraps in both directions (204 ms)
+  ✓ desktop controls select the rendered demo and expose selected state (251 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        5.131 s, estimated 7 s
+Ran all test suites.

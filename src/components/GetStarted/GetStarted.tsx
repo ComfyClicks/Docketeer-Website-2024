@@ -3,7 +3,7 @@ import styles from './GetStarted.module.scss';
 import githubLogo from '../../assets/github-mark/github-mark-white.png';
 import dockerhubLogo from '../../assets/dockerhub-mark/04-symbol_light-blue-docker-logo.png';
 
-const GetStarted = (): JSX.Element => {
+const GetStarted = (): React.JSX.Element => {
   return (
     <div className={styles.getStartedDisplay}>
       <h1>Get Started</h1>

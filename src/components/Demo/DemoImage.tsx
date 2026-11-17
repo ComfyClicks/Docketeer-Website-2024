@@ -13,7 +13,7 @@ interface DemoGifProps {
   currentGif: number;
 }
 
-const DemoImage: React.FC<DemoGifProps> = ({ currentGif }): JSX.Element => {
+const DemoImage: React.FC<DemoGifProps> = ({ currentGif }): React.JSX.Element => {
   const gifs = [
     containers,
     images,

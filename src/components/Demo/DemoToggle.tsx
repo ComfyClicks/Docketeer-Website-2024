@@ -9,7 +9,7 @@ interface DemoToggleProps {
 const DemoToggle: React.FC<DemoToggleProps> = ({
   setCurrentGif,
   currentGif,
-}): JSX.Element => {
+}): React.JSX.Element => {
   const descriptions = [
     'Start, stop, or remove your containers at the click of a button.',
     'View, run, or remove images with ease.',
