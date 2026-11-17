@@ -1,0 +1,226 @@
+[
+  {
+    "file": "screenshots/before/demo-desktop-1440x900.png",
+    "pixelDimensions": [
+      1440,
+      900
+    ],
+    "requestedViewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "demo",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:21.472751+00:00"
+  },
+  {
+    "file": "screenshots/before/demo-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "demo",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:25.412076+00:00"
+  },
+  {
+    "file": "screenshots/before/features-desktop-1440x900.png",
+    "pixelDimensions": [
+      1440,
+      900
+    ],
+    "requestedViewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "features",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:20.238660+00:00"
+  },
+  {
+    "file": "screenshots/before/features-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "features",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:24.205693+00:00"
+  },
+  {
+    "file": "screenshots/before/getstarted-desktop-1440x900.png",
+    "pixelDimensions": [
+      1440,
+      900
+    ],
+    "requestedViewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "getstarted",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:22.685628+00:00"
+  },
+  {
+    "file": "screenshots/before/getstarted-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "getstarted",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:26.617538+00:00"
+  },
+  {
+    "file": "screenshots/before/home-desktop-1440x900.png",
+    "pixelDimensions": [
+      1440,
+      900
+    ],
+    "requestedViewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:17.535134+00:00"
+  },
+  {
+    "file": "screenshots/before/home-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:21.473599+00:00"
+  },
+  {
+    "file": "screenshots/before/landscape-844x390.png",
+    "pixelDimensions": [
+      844,
+      390
+    ],
+    "requestedViewport": [
+      844,
+      390
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:18:17.091661+00:00"
+  },
+  {
+    "file": "screenshots/before/navigation-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:22.954954+00:00"
+  },
+  {
+    "file": "screenshots/before/reflow320-desktop.png",
+    "pixelDimensions": [
+      320,
+      800
+    ],
+    "requestedViewport": [
+      320,
+      800
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:27.853143+00:00"
+  },
+  {
+    "file": "screenshots/before/reflow320-mobile.png",
+    "pixelDimensions": [
+      320,
+      800
+    ],
+    "requestedViewport": [
+      320,
+      800
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "home/navigation",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:39.798457+00:00"
+  },
+  {
+    "file": "screenshots/before/team-desktop-1440x900.png",
+    "pixelDimensions": [
+      1440,
+      900
+    ],
+    "requestedViewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "team",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:13:23.977338+00:00"
+  },
+  {
+    "file": "screenshots/before/team-mobile-390x844.png",
+    "pixelDimensions": [
+      390,
+      844
+    ],
+    "requestedViewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "url": "https://docketeer.io/",
+    "section": "team",
+    "captureMethod": "scrollIntoViewIfNeeded for sections; screenshot viewport only; mobile context for *mobile* files",
+    "capturedAtUtc": "2026-11-17T18:16:27.820843+00:00"
+  }
+]

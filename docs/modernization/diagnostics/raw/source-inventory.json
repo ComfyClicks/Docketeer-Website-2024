@@ -1,0 +1,754 @@
+{
+  "capturedAt": "2026-11-17T18:15:44.149918+00:00",
+  "commit": "22d612c66d2ad3d7107b7ed1dff5cb52a4e1865a",
+  "sourceLines": [
+    {
+      "file": "src/components/Team/others.js",
+      "lines": 379
+    },
+    {
+      "file": "src/components/Team/Team.module.scss",
+      "lines": 149
+    },
+    {
+      "file": "src/components/Demo/Demo.module.scss",
+      "lines": 148
+    },
+    {
+      "file": "src/components/Navbar/Navbar.tsx",
+      "lines": 133
+    },
+    {
+      "file": "src/components/Features/Features.module.scss",
+      "lines": 130
+    },
+    {
+      "file": "src/components/Navbar/Navbar.module.scss",
+      "lines": 126
+    },
+    {
+      "file": "src/stars.js",
+      "lines": 121
+    },
+    {
+      "file": "src/components/Features/Features.tsx",
+      "lines": 107
+    },
+    {
+      "file": "src/components/Home/Home.module.scss",
+      "lines": 99
+    },
+    {
+      "file": "src/components/Team/currDocketeerTeam.js",
+      "lines": 97
+    },
+    {
+      "file": "src/components/Demo/DemoMobile/Mobile.tsx",
+      "lines": 80
+    },
+    {
+      "file": "src/components/Home/Home.tsx",
+      "lines": 76
+    },
+    {
+      "file": "src/components/Demo/Demo.tsx",
+      "lines": 71
+    },
+    {
+      "file": "src/components/Demo/DemoToggle.tsx",
+      "lines": 54
+    },
+    {
+      "file": "src/components/Team/Team.tsx",
+      "lines": 53
+    },
+    {
+      "file": "src/components/GetStarted/GetStarted.module.scss",
+      "lines": 52
+    },
+    {
+      "file": "src/global.module.scss",
+      "lines": 43
+    },
+    {
+      "file": "src/components/GetStarted/GetStarted.tsx",
+      "lines": 41
+    },
+    {
+      "file": "src/components/Team/AllOthers.tsx",
+      "lines": 39
+    },
+    {
+      "file": "src/components/Team/TeamCard.tsx",
+      "lines": 38
+    },
+    {
+      "file": "src/components/Page.tsx",
+      "lines": 36
+    },
+    {
+      "file": "src/components/Demo/DemoImage.tsx",
+      "lines": 35
+    },
+    {
+      "file": "src/components/Features/FeatureCard.tsx",
+      "lines": 26
+    },
+    {
+      "file": "src/App.tsx",
+      "lines": 12
+    },
+    {
+      "file": "src/index.tsx",
+      "lines": 11
+    },
+    {
+      "file": "src/vite-env.d.ts",
+      "lines": 1
+    }
+  ],
+  "assetBytes": 148909251,
+  "assets": [
+    {
+      "file": "src/assets/LinkedIn-Logos/LI-In-Bug.png",
+      "bytes": 8375,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/LinkedIn-Logos/LI-Logo.png",
+      "bytes": 25367,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XIX/Aiden.jpg",
+      "bytes": 322647,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XIX/Chris.jpg",
+      "bytes": 120539,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XIX/Dylan.png",
+      "bytes": 218298,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XIX/Ellis.jpg",
+      "bytes": 662230,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XIX/Joseph.jpg",
+      "bytes": 856133,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XVI/Alicia.jpg",
+      "bytes": 246897,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVI/Gaby.jpg",
+      "bytes": 325814,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVI/Peter.jpg",
+      "bytes": 769115,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVI/Wei.jpeg",
+      "bytes": 155209,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVII/Chelsea.jpg",
+      "bytes": 1776310,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVII/Gio.jpg",
+      "bytes": 2016273,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVII/Jade.jpg",
+      "bytes": 2262693,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVII/Jessica.jpg",
+      "bytes": 2159027,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVII/Robin.jpg",
+      "bytes": 2256540,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/XVIII/Alex.jpg",
+      "bytes": 965451,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XVIII/Andy.jpg",
+      "bytes": 58419,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XVIII/Nick.jpg",
+      "bytes": 1540036,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XVIII/Quan.jpg",
+      "bytes": 199060,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XX/Arthur.jpg",
+      "bytes": 51014,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XX/ChrisS.jpg",
+      "bytes": 50250,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XX/Nika.jpg",
+      "bytes": 290232,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/XX/Rachel.png",
+      "bytes": 304381,
+      "filenameReferences": [
+        "src/components/Team/currDocketeerTeam.js"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/Configurations_v20.png",
+      "bytes": 514097,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/ContainersFilters_v20.gif",
+      "bytes": 2164112,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/ContainersMetrics_v20.gif",
+      "bytes": 3170449,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/DockerSettings_v20.png",
+      "bytes": 196525,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/Images_v20.gif",
+      "bytes": 4153175,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/KubernetesClusterHealthMetrics_v20.gif",
+      "bytes": 4960150,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/Navigation_v20.gif",
+      "bytes": 2432827,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/Network_v20.png",
+      "bytes": 730578,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/ProcessLogs_v20.gif",
+      "bytes": 2194153,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/SnapshotMetrics_v20.gif",
+      "bytes": 1189412,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/configuration.gif",
+      "bytes": 6135810,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/containerTab-new.gif",
+      "bytes": 10597935,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/hamburgerTab-new.gif",
+      "bytes": 8200251,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/imageTab1-new.gif",
+      "bytes": 9996341,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/imageTab2-new.gif",
+      "bytes": 15156483,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx",
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/imageTab3-new.gif",
+      "bytes": 7776866,
+      "filenameReferences": [
+        "src/components/Demo/DemoImage.tsx",
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/k8Tab-new.gif",
+      "bytes": 7350293,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/metricTab-new.gif",
+      "bytes": 5435739,
+      "filenameReferences": [
+        "src/components/Demo/DemoMobile/Mobile.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/demos/oldDemos/containermetrics-demo.gif",
+      "bytes": 9363751,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/containers-demo.gif",
+      "bytes": 6230341,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/images-demo.png",
+      "bytes": 1975388,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/k8smetrics-demo.gif",
+      "bytes": 2109621,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/logs-demo.gif",
+      "bytes": 8852193,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/networks-demo.gif",
+      "bytes": 4763361,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/snapshots-demo.gif",
+      "bytes": 3196653,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/demos/oldDemos/volumes-demo.gif",
+      "bytes": 202686,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/dockerhub-mark/04-symbol_light-blue-docker-logo.png",
+      "bytes": 4494,
+      "filenameReferences": [
+        "src/components/GetStarted/GetStarted.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/dockerhub-mark/05-symbol_off-black-docker-logo.png",
+      "bytes": 4487,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/dockerlogo.png",
+      "bytes": 3630,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/dockerphoto.png",
+      "bytes": 232187,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/docketeer.png",
+      "bytes": 425887,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/docketeerlogo.png",
+      "bytes": 130492,
+      "filenameReferences": [
+        "src/components/Home/Home.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/docketeerlogo2.png",
+      "bytes": 104516,
+      "filenameReferences": [
+        "src/components/Navbar/Navbar.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/configurations.svg",
+      "bytes": 1944,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/containers.svg",
+      "bytes": 588,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/cookie.svg",
+      "bytes": 2527,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/features/docker.svg",
+      "bytes": 465,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/features/images.svg",
+      "bytes": 989,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/kubernetes.svg",
+      "bytes": 3630,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/logs.svg",
+      "bytes": 729,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/metrics.svg",
+      "bytes": 685,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/network.svg",
+      "bytes": 2094,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/prune.svg",
+      "bytes": 919,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/features/security.svg",
+      "bytes": 1411,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/features/snapshot.svg",
+      "bytes": 1005,
+      "filenameReferences": [
+        "src/components/Features/Features.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/finaldocketerlogo.png",
+      "bytes": 103652,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/github-mark/github-mark-white.png",
+      "bytes": 4837,
+      "filenameReferences": [
+        "src/components/GetStarted/GetStarted.tsx",
+        "src/components/Navbar/Navbar.tsx",
+        "src/components/Team/AllOthers.tsx",
+        "src/components/Team/TeamCard.tsx"
+      ],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/github-mark/github-mark-white.svg",
+      "bytes": 959,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/github-mark/github-mark.png",
+      "bytes": 6393,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/github-mark/github-mark.svg",
+      "bytes": 962,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/github.png",
+      "bytes": 10428,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/icons/android-chrome-192x192.png",
+      "bytes": 14285,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/icons/android-chrome-512x512.png",
+      "bytes": 27851,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/icons/apple-touch-icon.png",
+      "bytes": 12651,
+      "filenameReferences": [],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/icons/favicon-16x16.png",
+      "bytes": 697,
+      "filenameReferences": [],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/icons/favicon-32x32.png",
+      "bytes": 1634,
+      "filenameReferences": [],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/icons/favicon.ico",
+      "bytes": 15406,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/icons/site.webmanifest",
+      "bytes": 360,
+      "filenameReferences": [],
+      "candidateUnused": false
+    },
+    {
+      "file": "src/assets/kuberneteslogo.png",
+      "bytes": 166592,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/linkedin.svg",
+      "bytes": 711,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/react.svg",
+      "bytes": 4126,
+      "filenameReferences": [],
+      "candidateUnused": true
+    },
+    {
+      "file": "src/assets/tsconfig.gif",
+      "bytes": 925528,
+      "filenameReferences": [],
+      "candidateUnused": true
+    }
+  ],
+  "trackedViteCacheBytes": 6310119,
+  "directDependencies": 14,
+  "directDevDependencies": 17,
+  "lockVersion": 2,
+  "lockPackages": 1428,
+  "deprecatedInLock": [
+    {
+      "path": "node_modules/resolve-url",
+      "version": "0.2.1",
+      "message": "https://github.com/lydell/resolve-url#deprecated"
+    },
+    {
+      "path": "node_modules/source-map-resolve",
+      "version": "0.5.3",
+      "message": "See https://github.com/lydell/source-map-resolve#deprecated"
+    },
+    {
+      "path": "node_modules/source-map-url",
+      "version": "0.4.1",
+      "message": "See https://github.com/lydell/source-map-url#deprecated"
+    },
+    {
+      "path": "node_modules/uglify-es",
+      "version": "3.3.9",
+      "message": "support for ECMAScript is superseded by `uglify-js` as of v3.13.0"
+    },
+    {
+      "path": "node_modules/urix",
+      "version": "0.1.0",
+      "message": "Please see https://github.com/lydell/urix#deprecated"
+    }
+  ],
+  "secretPatternScan": {
+    "scope": "tracked source/config/docs at base commit; excludes lockfile and generated .vite; no history/entropy scan",
+    "matches": []
+  },
+  "manifestHashes": {
+    "package.json": "0ed816c49ee75094697abd831124c8343db8a0c8dbf1fa85c5bf0cf11f6f11bc",
+    "package-lock.json": "bcff0b9dede20046e26334220f4e96a1c6ba74ce0e69d7ed4d5052fa8771d8ff"
+  }
+}

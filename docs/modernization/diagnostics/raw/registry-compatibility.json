@@ -1,0 +1,163 @@
+{
+  "intersection-observer": {
+    "version": "0.12.2",
+    "deprecated": "The Intersection Observer polyfill is no longer needed and can safely be removed. Intersection Observer has been Baseline since 2019.",
+    "engines": null,
+    "peerDependencies": null,
+    "repository": {
+      "url": "git+https://github.com/GoogleChromeLabs/intersection-observer.git",
+      "type": "git"
+    }
+  },
+  "eslint": {
+    "version": "10.15.0",
+    "deprecated": null,
+    "engines": {
+      "node": "^20.19.0 || ^22.13.0 || >=24"
+    },
+    "peerDependencies": {
+      "jiti": "*"
+    },
+    "repository": {
+      "url": "git+https://github.com/eslint/eslint.git",
+      "type": "git"
+    }
+  },
+  "vite": {
+    "version": "8.3.8",
+    "deprecated": null,
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "tsx": "^4.8.1",
+      "jiti": ">=1.21.0",
+      "less": "^4.0.0",
+      "sass": "^1.70.0",
+      "yaml": "^2.4.2",
+      "stylus": ">=0.54.8",
+      "terser": "^5.16.0",
+      "esbuild": "^0.27.0 || ^0.28.0",
+      "sugarss": "^5.0.0",
+      "@types/node": "^20.19.0 || >=22.12.0",
+      "sass-embedded": "^1.70.0",
+      "@vitejs/devtools": "^0.7.1 || ^0.8.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/vitejs/vite.git",
+      "type": "git",
+      "directory": "packages/vite"
+    }
+  },
+  "@vitejs/plugin-react": {
+    "version": "6.3.0",
+    "deprecated": null,
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "vite": "^8.0.0",
+      "oxc-transform-react": ">=0.152.0 <0.157.0",
+      "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0 || ^0.3.0",
+      "babel-plugin-react-compiler": "^1.0.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+      "type": "git",
+      "directory": "packages/plugin-react"
+    }
+  },
+  "react-spring": {
+    "version": "10.0.4",
+    "deprecated": null,
+    "engines": null,
+    "peerDependencies": {
+      "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+      "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/pmndrs/react-spring.git",
+      "type": "git"
+    }
+  },
+  "@react-three/fiber": {
+    "version": "9.8.2",
+    "deprecated": null,
+    "engines": null,
+    "peerDependencies": {
+      "expo": ">=43.0",
+      "react": ">=19 <19.4",
+      "three": ">=0.156",
+      "expo-gl": ">=11.0",
+      "react-dom": ">=19 <19.4",
+      "expo-asset": ">=8.4",
+      "react-native": ">=0.78",
+      "expo-file-system": ">=11.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/pmndrs/react-three-fiber.git",
+      "type": "git"
+    }
+  },
+  "ts-jest": {
+    "version": "29.4.15",
+    "deprecated": null,
+    "engines": {
+      "node": "^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0"
+    },
+    "peerDependencies": {
+      "jest": "^29.0.0 || ^30.0.0",
+      "jest-util": "^29.0.0 || ^30.0.0",
+      "babel-jest": "^29.0.0 || ^30.0.0",
+      "typescript": ">=4.3 <7",
+      "@babel/core": ">=7.0.0-beta.0 <9",
+      "@jest/types": "^29.0.0 || ^30.0.0",
+      "@jest/transform": "^29.0.0 || ^30.0.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/kulshekhar/ts-jest.git",
+      "type": "git"
+    }
+  },
+  "typescript": {
+    "version": "7.0.2",
+    "deprecated": null,
+    "engines": {
+      "node": ">=16.20.0"
+    },
+    "peerDependencies": null,
+    "repository": {
+      "url": "git+https://github.com/microsoft/TypeScript.git",
+      "type": "git"
+    }
+  },
+  "react": {
+    "version": "19.3.1",
+    "deprecated": null,
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "peerDependencies": null,
+    "repository": {
+      "url": "git+https://github.com/react/react.git",
+      "type": "git",
+      "directory": "packages/react"
+    }
+  },
+  "@typescript-eslint/parser": {
+    "version": "8.73.0",
+    "deprecated": null,
+    "engines": {
+      "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    },
+    "peerDependencies": {
+      "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+      "typescript": ">=4.8.4 <6.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+      "type": "git",
+      "directory": "packages/parser"
+    }
+  }
+}

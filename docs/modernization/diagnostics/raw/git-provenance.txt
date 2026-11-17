@@ -1,0 +1,23 @@
+Captured 2026-11-17T18:13:34.848788+00:00
+origin	https://github.com/ComfyClicks/Docketeer-Website-2024.git (fetch)
+origin	https://github.com/ComfyClicks/Docketeer-Website-2024.git (push)
+22d612c66d2ad3d7107b7ed1dff5cb52a4e1865a 2025-05-01T22:24:40-04:00 Update CNAME
+a886c4716e21f93a22e819b7be1fb2c276f4e848 2025-05-01T22:19:56-04:00 Merge pull request #3 from nikamamaladze92/master
+7421af52defa4d096b646c70c4ee960a414967ca 2025-04-30T15:15:38-04:00 Remove redirect to fix loop issue
+a7ccb7a2a4d696cfb662876e28168b407338901a 2025-04-30T13:54:45-04:00 Fix invalid redirect config
+68b372d5415cb07bfe685aaf95149f6910365dda 2025-04-30T12:46:12-04:00 Merge pull request #1 from ArthurJZL/v20update
+04952cdc585716a4b59d779499fb245aa94c88ce 2025-04-29T20:19:32-04:00 updated
+d9ed78c33293c394cceb1ac5a48b3dc619ed2f37 2025-04-23T03:19:59-04:00 version, gifs and team profile updated
+f5c3f24bd3b8fc4ea3c57ee93b22406b41837aba 2025-04-16T21:53:27-04:00 Add redirect to fix domain loop
+5dba4e1eb774edae928faff5ebf13c933e4797c8 2025-04-16T21:38:26-04:00 Add redirect to fix domain loop
+385cdc448b9cdcac8f97030f11332de414f326c8 2025-04-16T15:40:10-04:00 Update CNAME
+bbf7750927acbb088b878dc6dd15c30c811ab6c1 2025-04-16T15:21:44-04:00 Update CNAME
+dceeeeeab9bbc463e519ceebcb60b08931e94c11 2025-04-16T15:21:16-04:00 Update CNAME
+64d2cdb05449940126366c23a0af5b5fdbbca9ef 2025-04-16T15:18:06-04:00 Create CNAME
+2f2d60e461ef8d2f7c61a5a7e5dde34960553c8d 2024-05-14T10:45:22-07:00 Merge pull request #1 from ComfyClicks/team19
+00924eb70662d7eabebb1a19b22e71934f08daf7 2024-05-14T10:26:32-07:00 Added Docketeer 19 team info, including team images, updated features and demo GIFS
+ae1f812483f34ef6456d571ddf1400952ce79553 2024-03-27T14:55:17-05:00 Create README.md for main repo
+e6a81c2a2fbaac701403bb0a066f1916a46dc5ae 2024-03-27T11:01:06-05:00 Edited Medium link
+db518c468f06698fe2feeb115998a52acc8e4e10 2024-03-26T21:55:13-04:00 final edit to website
+dbcc9f675815b05ef583585303cdaaaa374213b2 2024-03-26T21:37:19-04:00 updated Docketeer website
+31404a5199de1fa44edce39fe91351a3d518849e 2024-03-26T19:39:03-04:00 added What's New component

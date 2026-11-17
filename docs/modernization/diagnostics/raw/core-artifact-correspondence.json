@@ -1,0 +1,23 @@
+[
+  {
+    "builtFile": "dist/index.html",
+    "capturedFile": "production.html",
+    "equal": true,
+    "sha256": "249facc93f1bb83cc6ae82f6787178b931cf6bc7356be88b195358f949bcc611",
+    "bytes": 3973
+  },
+  {
+    "builtFile": "dist/assets/index-435f0cbe.js",
+    "capturedFile": "production-index-435f0cbe.js",
+    "equal": true,
+    "sha256": "a635a79b7c1ef41b7b26f307428f8d1d4d77f48d7bdf54936a9e5ed58b3bfbed",
+    "bytes": 671306
+  },
+  {
+    "builtFile": "dist/assets/index-59b59a66.css",
+    "capturedFile": "production-index-59b59a66.css",
+    "equal": true,
+    "sha256": "59b59a6686699d8e0a8485733bb27767c1b1e93b6367daf0484c819e550eba07",
+    "bytes": 10778
+  }
+]

@@ -1,0 +1,45 @@
+{"profile":"desktop","browser":"157.0.8103.79","console":[],"exceptions":[],"failed":[{"url":"https://docketeer.io/assets/Images_v20-872975c0.gif","failure":{"errorText":"net::ERR_ABORTED"}},{"url":"https://docketeer.io/assets/imageTab2-new-304b53c5.gif","failure":{"errorText":"net::ERR_ABORTED"}},{"url":"https://docketeer.io/assets/imageTab3-new-ed8ddb2f.gif","failure":{"errorText":"net::ERR_ABORTED"}},{"url":"https://docketeer.io/assets/KubernetesClusterHealthMetrics_v20-872f6232.gif","failure":{"errorText":"net::ERR_ABORTED"}}],"httpErrors":[],"axe":[{"id":"color-contrast","impact":"serious","nodes":1},{"id":"heading-order","impact":"moderate","nodes":1},{"id":"image-alt","impact":"critical","nodes":104},{"id":"link-name","impact":"serious","nodes":177},{"id":"list","impact":"serious","nodes":1},{"id":"listitem","impact":"serious","nodes":2},{"id":"region","impact":"moderate","nodes":46}],"reflow320":{"width":320,"scrollWidth":414}}
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('nav ul > div').first()[22m
+[2m    - locator resolved to <div>…</div>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    56 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not visible[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/docs/modernization/scripts/capture-browser.mjs:31:46 {
+  log: [
+    "  - waiting for locator('nav ul > div').first()",
+    '    - locator resolved to <div>…</div>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    56 × waiting for element to be visible, enabled and stable',
+    '       - element is not visible',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v26.12.1

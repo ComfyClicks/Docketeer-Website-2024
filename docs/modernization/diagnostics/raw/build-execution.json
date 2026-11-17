@@ -1,0 +1,84 @@
+[
+  {
+    "name": "install",
+    "command": [
+      "npm",
+      "ci",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 23.883,
+    "completedAt": "2026-11-17T18:16:40.536245+00:00"
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 11.087,
+    "completedAt": "2026-11-17T18:16:51.624696+00:00"
+  },
+  {
+    "name": "lint",
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 2.152,
+    "completedAt": "2026-11-17T18:16:53.777434+00:00"
+  },
+  {
+    "name": "typecheck",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 4.944,
+    "completedAt": "2026-11-17T18:16:58.721707+00:00"
+  },
+  {
+    "name": "tests",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--runInBand"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 6.432,
+    "completedAt": "2026-11-17T18:17:05.154720+00:00"
+  },
+  {
+    "name": "outdated",
+    "command": [
+      "npm",
+      "outdated",
+      "--include=dev",
+      "--json"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 2.252,
+    "completedAt": "2026-11-17T18:17:07.407259+00:00"
+  },
+  {
+    "name": "audit-omit-dev",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--ignore-scripts",
+      "--json"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 2.877,
+    "completedAt": "2026-11-17T18:17:10.285620+00:00"
+  }
+]

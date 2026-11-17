@@ -1,0 +1,39 @@
+[
+  {
+    "url": "https://api.github.com/repos/ComfyClicks/Docketeer-Website-2024/deployments/2464225013/statuses/6562038813",
+    "id": 6562038813,
+    "node_id": "DES_kwDOLl0GAc8AAAABhyDEHQ",
+    "state": "success",
+    "creator": {
+      "login": "vercel[bot]",
+      "id": 35613825,
+      "node_id": "MDM6Qm90MzU2MTM4MjU=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/8329?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vercel%5Bbot%5D",
+      "html_url": "https://github.com/apps/vercel",
+      "followers_url": "https://api.github.com/users/vercel%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/vercel%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vercel%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vercel%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vercel%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/vercel%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/vercel%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/vercel%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vercel%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "description": "Deployment has completed",
+    "environment": "Production",
+    "target_url": "https://docketeer-website-2024-hhxqlwlra-docketeer-website.vercel.app",
+    "created_at": "2025-05-02T02:30:19Z",
+    "updated_at": "2025-05-02T02:30:19Z",
+    "deployment_url": "https://api.github.com/repos/ComfyClicks/Docketeer-Website-2024/deployments/2464225013",
+    "repository_url": "https://api.github.com/repos/ComfyClicks/Docketeer-Website-2024",
+    "environment_url": "https://docketeer-website-2024-hhxqlwlra-docketeer-website.vercel.app",
+    "log_url": "https://docketeer-website-2024-hhxqlwlra-docketeer-website.vercel.app",
+    "performed_via_github_app": null
+  }
+]
