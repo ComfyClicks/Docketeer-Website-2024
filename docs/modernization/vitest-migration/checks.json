@@ -1,0 +1,87 @@
+[
+  {
+    "name": "clean-install",
+    "command": [
+      "npm",
+      "ci",
+      "--strict-peer-deps",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "exitCode": 0,
+    "seconds": 5.109
+  },
+  {
+    "name": "test-types",
+    "command": [
+      "npm",
+      "run",
+      "typecheck:tests"
+    ],
+    "exitCode": 1,
+    "seconds": 8.141
+  },
+  {
+    "name": "lint",
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exitCode": 0,
+    "seconds": 1.43
+  },
+  {
+    "name": "tests",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--reporter=verbose"
+    ],
+    "exitCode": 0,
+    "seconds": 8.346
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "seconds": 8.783
+  },
+  {
+    "name": "peer-tree",
+    "command": [
+      "npm",
+      "ls",
+      "--all",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.652
+  },
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "exitCode": 1,
+    "seconds": 1.159
+  },
+  {
+    "name": "audit-production",
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.701
+  }
+]

@@ -15,9 +15,9 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-Run `npm run lint`, `npm run typecheck`, `npm test -- --runInBand`, and `npm run build` before review. Preview the production build with `npm run preview -- --host 127.0.0.1`. Keep development and preview servers on loopback. See the [Phase B report](docs/modernization/phase-b/README.md) for the updated dependency audit. Do not run `npm audit fix` as part of setup.
+Run `npm run lint`, `npm run typecheck`, `npm run typecheck:tests`, `npm test`, and `npm run build` before review. Preview the production build with `npm run preview -- --host 127.0.0.1`. Keep development and preview servers on loopback. See the [test-tooling report](docs/modernization/vitest-migration/README.md) for the current dependency audit. Do not run `npm audit fix` as part of setup.
 
-TypeScript **7.0.2** performs compiler checks; Vite builds the browser application. Jest uses Babel for test transpilation, and Oxlint checks TypeScript syntax and React Hooks without depending on the legacy TypeScript compiler API. `npm run build` always runs the compiler first.
+TypeScript **7.0.2** performs compiler checks; Vite builds the browser application. Vitest **5.1.0** uses the Vite pipeline for tests without a Babel transform or jest-dom adapter. Oxlint checks TypeScript syntax and React Hooks without depending on the legacy TypeScript compiler API. `npm run build` always runs the application compiler first; `npm run typecheck:tests` checks the test code and configuration separately. Use `npm run test:watch` for interactive testing.
 
 Baseline evidence is preserved in [docs/modernization/00-baseline.md](docs/modernization/00-baseline.md). Phase A results are recorded separately in [docs/modernization/phase-a/README.md](docs/modernization/phase-a/README.md). Local changes do not update production until an authorized deployment.
 

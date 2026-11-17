@@ -1,0 +1,22 @@
+
+> docketeer-xii-website@0.0.0 test
+> vitest run --reporter=verbose
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./vite.config" without a file extension (vitest.config.ts:2:24). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.1.0 /private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh
+
+ ✓ __tests__/tests.test.tsx > current content and native section destinations render 453ms
+ ✓ __tests__/tests.test.tsx > menu exposes expanded state, closes with Escape and restores focus 21ms
+ ✓ __tests__/tests.test.tsx > choosing a section closes the menu 17ms
+ ✓ __tests__/tests.test.tsx > mobile demo reaches every entry and wraps in both directions 29ms
+ ✓ __tests__/tests.test.tsx > desktop controls select the rendered demo and expose selected state 40ms
+ ✓ __tests__/tests.test.tsx > breakpoint changes restore focus after CSS hides the active control 13ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  14:27:44
+   Duration  4.84s (transform 70%, environment 13%, tests 12%, import 4%)
+

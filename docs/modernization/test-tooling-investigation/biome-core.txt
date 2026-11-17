@@ -1,0 +1,211 @@
+/private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh/biome.json:6:13 deserialize  DEPRECATED  ━━━━━━━━━━
+
+  i The use of the recommended field has been deprecated, and will removed in the next major version of Biome. Use preset instead.
+  
+     4 │     "enabled": false
+     5 │   },
+   > 6 │   "linter": {
+       │             ^
+   > 7 │     "enabled": true,
+        ...
+  > 18 │     }
+  > 19 │   }
+       │   ^
+    20 │ }
+    21 │ 
+  
+  i Migrate the configuration with the proper command
+  
+  $ biome migrate
+  
+
+src/assets/features/images.svg:4:3 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an element name but instead found '!'.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+  > 4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+      │ 	 ^
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  
+  i Expected an element name here.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+  > 4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+      │ 	 ^
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  
+
+src/assets/features/images.svg:5:2 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an attribute but instead found '<'.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+  > 5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+      │ 	^
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+  
+  i Expected an attribute here.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+  > 5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+      │ 	^
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+  
+
+src/assets/features/images.svg:5:3 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an element name but instead found '!'.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+  > 5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+      │ 	 ^
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+  
+  i Expected an element name here.
+  
+    3 │ <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd" [
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+  > 5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+      │ 	 ^
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+  
+
+src/assets/features/images.svg:6:2 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an attribute but instead found '<'.
+  
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+  > 6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+      │ 	^
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+    8 │ ]>
+  
+  i Expected an attribute here.
+  
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+  > 6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+      │ 	^
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+    8 │ ]>
+  
+
+src/assets/features/images.svg:6:3 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an element name but instead found '!'.
+  
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+  > 6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+      │ 	 ^
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+    8 │ ]>
+  
+  i Expected an element name here.
+  
+    4 │ 	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+  > 6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+      │ 	 ^
+    7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+    8 │ ]>
+  
+
+src/assets/features/images.svg:7:2 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an attribute but instead found '<'.
+  
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  > 7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+      │ 	^
+    8 │ ]>
+    9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  
+  i Expected an attribute here.
+  
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  > 7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+      │ 	^
+    8 │ ]>
+    9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  
+
+src/assets/features/images.svg:7:3 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an element name but instead found '!'.
+  
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  > 7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+      │ 	 ^
+    8 │ ]>
+    9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  
+  i Expected an element name here.
+  
+    5 │ 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+    6 │ 	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+  > 7 │ 	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+      │ 	 ^
+    8 │ ]>
+    9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  
+
+src/assets/features/images.svg:10:1 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected an attribute but instead found '<'.
+  
+     8 │ ]>
+     9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  > 10 │ <svg fill="rgb(154, 180, 251)" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+       │ ^
+    11 │ 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+    12 │ 	  width="72px" height="75px" viewBox="0 0 42 42" xml:space="preserve">
+  
+  i Expected an attribute here.
+  
+     8 │ ]>
+     9 │ <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  > 10 │ <svg fill="rgb(154, 180, 251)" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+       │ ^
+    11 │ 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+    12 │ 	  width="72px" height="75px" viewBox="0 0 42 42" xml:space="preserve">
+  
+
+src/assets/features/images.svg:15:7 parse ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Expected a closing tag but instead found the end of the file.
+  
+    13 │ <path fillRule="evenodd" d="M22.5,1.5h-14c-2.55,0-3,0.561-3,3v32c0,2.49,0.55,3,3,3h24c2.5,0,3-0.47,3-3v-22h-13V1.5z M35.5,11.5
+    14 │ 	l-10-10v10H35.5z"/>
+  > 15 │ </svg>
+       │       
+  
+  i Expected a closing tag here.
+  
+    13 │ <path fillRule="evenodd" d="M22.5,1.5h-14c-2.55,0-3,0.561-3,3v32c0,2.49,0.55,3,3,3h24c2.5,0,3-0.47,3-3v-22h-13V1.5z M35.5,11.5
+    14 │ 	l-10-10v10H35.5z"/>
+  > 15 │ </svg>
+       │       
+  
+
+Checked 43 files in 9ms. No fixes applied.
+Found 9 errors.
+lint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

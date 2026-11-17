@@ -1,0 +1,19 @@
+
+> docketeer-xii-website@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.1.0 /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization
+
+ ✓ __tests__/website.test.tsx > current content and native section destinations render 364ms
+ ✓ __tests__/website.test.tsx > menu exposes expanded state, closes with Escape and restores focus 28ms
+ ✓ __tests__/website.test.tsx > choosing a section closes the menu 15ms
+ ✓ __tests__/website.test.tsx > mobile demo reaches every entry and wraps in both directions 47ms
+ ✓ __tests__/website.test.tsx > desktop controls select the rendered demo and expose selected state 44ms
+ ✓ __tests__/website.test.tsx > breakpoint changes restore focus after CSS hides the active control 13ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  15:30:49
+   Duration  5.70s (transform 70%, environment 16%, tests 9%, setup 3%, import 1%)
+

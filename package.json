@@ -7,10 +7,12 @@
     "dev": "vite --port 3001",
     "start": "vite --port 3000",
     "build": "tsc --noEmit && vite build",
-    "lint": "oxlint src --max-warnings 0",
+    "lint": "oxlint src __tests__ --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest --verbose",
-    "typecheck": "tsc --noEmit"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "test:watch": "vitest",
+    "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json"
   },
   "dependencies": {
     "@react-spring/web": "^10.1.2",
@@ -20,37 +22,19 @@
     "three": "^0.187.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.29.14",
-    "@babel/preset-react": "^7.29.7",
-    "@jest/globals": "^30.5.2",
-    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^24",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/three": "^0.187.0",
     "@vitejs/plugin-react": "^6.3.0",
-    "babel-jest": "^30.5.2",
-    "jest": "^30.5.2",
-    "jest-environment-jsdom": "^30.5.2",
     "sass": "^1.108.2",
     "typescript": "~7.0.2",
     "vite": "^8.3.8",
     "@testing-library/dom": "^10",
-    "@babel/preset-typescript": "^7.29.7",
-    "@babel/core": "^7.29.13",
-    "oxlint": "~1.94.0"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "verbose": true,
-    "transform": {
-      "^.+\\.[jt]sx?$": "babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    "oxlint": "~1.94.0",
+    "vitest": "^5.1.0",
+    "jsdom": "^31.0.1"
   },
   "packageManager": "npm@11.20.0",
   "engines": {

@@ -1,0 +1,9 @@
+
+> docketeer-xii-website@0.0.0 typecheck:tests
+> tsc --noEmit -p tsconfig.tests.json
+
+__tests__/setup.ts(20,7): error TS2420: Class 'VisibleIntersectionObserver' incorrectly implements interface 'IntersectionObserver'.
+  Property 'scrollMargin' is missing in type 'VisibleIntersectionObserver' but required in type 'IntersectionObserver'.
+__tests__/setup.ts(37,9): error TS2345: Argument of type 'this' is not assignable to parameter of type 'IntersectionObserver'.
+  Property 'scrollMargin' is missing in type 'VisibleIntersectionObserver' but required in type 'IntersectionObserver'.
+__tests__/website.test.tsx(76,3): error TS2322: Type 'false' is not assignable to type 'true'.

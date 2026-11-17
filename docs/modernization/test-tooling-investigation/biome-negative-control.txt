@@ -1,0 +1,114 @@
+/private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh/biome.json:6:13 deserialize  DEPRECATED  ━━━━━━━━━━
+
+  i The use of the recommended field has been deprecated, and will removed in the next major version of Biome. Use preset instead.
+  
+     4 │     "enabled": false
+     5 │   },
+   > 6 │   "linter": {
+       │             ^
+   > 7 │     "enabled": true,
+        ...
+  > 18 │     }
+  > 19 │   }
+       │   ^
+    20 │ }
+    21 │ 
+  
+  i Migrate the configuration with the proper command
+  
+  $ biome migrate
+  
+
+__tests__/lint-probe.tsx:6:16 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected any. Specify a different type.
+  
+    4 │  useEffect(() => { console.log(value); }, []);
+    5 │  const unused = 1;
+  > 6 │  const unsafe: any = value;
+      │                ^^^
+    7 │  return unsafe;
+    8 │ }
+  
+  i any disables many type checking rules. Its use should be avoided.
+  
+  i Replace any with a specific type. If the type is not known, use unknown and narrow it before using the value.
+  
+
+__tests__/lint-probe.tsx:3:15 lint/correctness/useHookAtTopLevel ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This hook is being called conditionally, but all hooks must be called in the exact same order in every component render.
+  
+    1 │ import { useState, useEffect } from 'react';
+    2 │ export function Bad({enabled, value}: {enabled: boolean; value: number}) {
+  > 3 │  if (enabled) useState(0);
+      │               ^^^^^^^^
+    4 │  useEffect(() => { console.log(value); }, []);
+    5 │  const unused = 1;
+  
+  i For React to preserve state between calls, hooks needs to be called unconditionally and always in the same order.
+  
+  i See https://react.dev/reference/rules/rules-of-hooks
+  
+
+__tests__/lint-probe.tsx:4:2 lint/correctness/useExhaustiveDependencies  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  × This hook does not specify its dependency on value.
+  
+    2 │ export function Bad({enabled, value}: {enabled: boolean; value: number}) {
+    3 │  if (enabled) useState(0);
+  > 4 │  useEffect(() => { console.log(value); }, []);
+      │  ^^^^^^^^^
+    5 │  const unused = 1;
+    6 │  const unsafe: any = value;
+  
+  i This dependency is being used here, but is not specified in the hook dependency list.
+  
+    2 │ export function Bad({enabled, value}: {enabled: boolean; value: number}) {
+    3 │  if (enabled) useState(0);
+  > 4 │  useEffect(() => { console.log(value); }, []);
+      │                                ^^^^^
+    5 │  const unused = 1;
+    6 │  const unsafe: any = value;
+  
+  i React relies on hook dependencies to determine when to re-compute Effects.
+    Failing to specify dependencies can result in Effects not updating correctly when state changes.
+    These "stale closures" are a common source of surprising bugs.
+  
+  i Either include it or remove the dependency array.
+  
+  i Unsafe fix: Add the missing dependency value to the list.
+  
+    4 │ ·useEffect(()·=>·{·console.log(value);·},·[value]);
+      │                                            +++++   
+
+__tests__/lint-probe.tsx:5:8 lint/correctness/noUnusedVariables  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This variable unused is unused.
+  
+    3 │  if (enabled) useState(0);
+    4 │  useEffect(() => { console.log(value); }, []);
+  > 5 │  const unused = 1;
+      │        ^^^^^^
+    6 │  const unsafe: any = value;
+    7 │  return unsafe;
+  
+  i Unused variables are often the result of typos, incomplete refactors, or other sources of bugs.
+  
+  i Unsafe fix: If this is intentional, prepend unused with an underscore.
+  
+    3 3 │    if (enabled) useState(0);
+    4 4 │    useEffect(() => { console.log(value); }, []);
+    5   │ - ·const·unused·=·1;
+      5 │ + ·const·_unused·=·1;
+    6 6 │    const unsafe: any = value;
+    7 7 │    return unsafe;
+  
+
+Checked 1 file in 5ms. No fixes applied.
+Found 4 errors.
+lint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

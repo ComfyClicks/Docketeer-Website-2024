@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-17",
+  "baseCommit": "f3975205159c2662fbac57f4eacb6c223569d298",
+  "runtime": {
+    "node": "24.22.1",
+    "npm": "11.20.0"
+  },
+  "directProduction": 5,
+  "directDevelopment": 13,
+  "lockLocations": 197,
+  "vitest": "5.1.0",
+  "babelHelpers": [
+    "node_modules/@babel/code-frame",
+    "node_modules/@babel/helper-validator-identifier",
+    "node_modules/@babel/runtime"
+  ]
+}

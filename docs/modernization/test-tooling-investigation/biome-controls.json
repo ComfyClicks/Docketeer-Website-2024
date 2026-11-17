@@ -1,0 +1,30 @@
+[
+  {
+    "name": "biome-core",
+    "command": [
+      "/private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh/node_modules/.bin/biome",
+      "lint",
+      "--max-diagnostics=200",
+      "--only=correctness/useExhaustiveDependencies",
+      "--only=correctness/useHookAtTopLevel",
+      "--only=correctness/noUnusedVariables",
+      "--only=suspicious/noExplicitAny",
+      "src"
+    ],
+    "exitCode": 1
+  },
+  {
+    "name": "biome-negative-control",
+    "command": [
+      "/private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh/node_modules/.bin/biome",
+      "lint",
+      "--max-diagnostics=200",
+      "--only=correctness/useExhaustiveDependencies",
+      "--only=correctness/useHookAtTopLevel",
+      "--only=correctness/noUnusedVariables",
+      "--only=suspicious/noExplicitAny",
+      "/private/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh/__tests__/lint-probe.tsx"
+    ],
+    "exitCode": 1
+  }
+]

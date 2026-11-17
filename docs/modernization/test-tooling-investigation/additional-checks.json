@@ -1,0 +1,36 @@
+[
+  {
+    "name": "biome-source",
+    "command": [
+      "npm",
+      "run",
+      "lint",
+      "--",
+      "--max-diagnostics=200"
+    ],
+    "exitCode": 1
+  },
+  {
+    "name": "biome-core-final",
+    "command": [
+      "node_modules/.bin/biome",
+      "lint",
+      "src",
+      "--only=correctness/useExhaustiveDependencies",
+      "--only=correctness/useHookAtTopLevel",
+      "--only=correctness/noUnusedVariables",
+      "--only=suspicious/noExplicitAny"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "test-typecheck-final",
+    "command": [
+      "node_modules/.bin/tsc",
+      "--noEmit",
+      "-p",
+      "tsconfig.tests.json"
+    ],
+    "exitCode": 0
+  }
+]

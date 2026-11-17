@@ -1,0 +1,16 @@
+{
+  "base": "f3975205159c2662fbac57f4eacb6c223569d298",
+  "prototype": "/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-vitest-investigation-j8qwqgoh",
+  "date": "2026-11-17",
+  "removedDirectDependencies": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@jest/globals",
+    "babel-jest",
+    "jest",
+    "jest-environment-jsdom",
+    "@babel/preset-typescript",
+    "@babel/core",
+    "oxlint"
+  ]
+}

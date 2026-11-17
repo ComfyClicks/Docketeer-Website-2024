@@ -1,0 +1,35 @@
+[
+  {
+    "name": "clean-install",
+    "command": [
+      "npm",
+      "ci",
+      "--strict-peer-deps",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "exitCode": 0,
+    "seconds": 4.435
+  },
+  {
+    "name": "tests-reproduced",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--reporter=verbose"
+    ],
+    "exitCode": 0,
+    "seconds": 7.599
+  },
+  {
+    "name": "test-types-reproduced",
+    "command": [
+      "npm",
+      "run",
+      "typecheck:tests"
+    ],
+    "exitCode": 0,
+    "seconds": 7.585
+  }
+]

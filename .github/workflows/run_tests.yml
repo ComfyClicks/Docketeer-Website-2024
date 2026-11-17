@@ -24,5 +24,7 @@ jobs:
         run: npm run lint
       - name: Typecheck and production build
         run: npm run build
+      - name: Typecheck tests
+        run: npm run typecheck:tests
       - name: Run tests
-        run: npm test -- --runInBand
+        run: npm test
