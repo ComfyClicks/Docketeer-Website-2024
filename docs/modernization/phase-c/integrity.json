@@ -1,0 +1,11 @@
+{
+  "currDocketeerTeam": {
+    "count": 13,
+    "namesAndUrlsMatch": true
+  },
+  "others": {
+    "count": 75,
+    "namesAndUrlsMatch": true
+  },
+  "baselineSha256EntriesVerified": 91
+}

@@ -1,52 +1,7 @@
-.getStartedDisplay {
-  height: 50vh;
-  padding: 12vh 2vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.githubLink {
-  text-decoration: none;
-  color: white;
-}
-
-.githubLink:visited {
-  color: white;
-}
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-}
-.githubButton {
-  background: transparent;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.782);
-  color: white;
-  width: 125px;
-  height: 20px;
-  padding: 10px;
-  border-radius: 20px;
-  line-height: 20px;
-  margin: 0px 2% 0px 2%;
-}
-
-.logo {
-  width: 14px;
-  height: 14px;
-}
-
-.githubButton:hover {
-  cursor: pointer;
-  background: rgba(154, 180, 251);
-  transition: 0.3s;
-}
-.githubButton:not(:hover) {
-  transition: 0.3s;
-}
-
-@media screen and (max-width: 520px) {
-  .getStartedDisplay {
-    padding: 6vh 2vh;
-  }
-}
+.getStartedDisplay { padding: 5rem 1rem; display: flex; flex-direction: column; align-items: center; }
+.getStartedDisplay p { max-inline-size: 45rem; }
+.buttonContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.githubButton { box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.782); border-radius: 20px; }
+.githubLink { display: block; padding: 0.75rem 1.5rem; text-decoration: none; color: white; }
+.githubButton:hover { background: #25365e; }
+.logo { inline-size: 14px; block-size: 14px; }

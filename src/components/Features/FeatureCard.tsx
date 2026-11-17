@@ -1,26 +1,10 @@
-import React from 'react';
+import type { FeatureRecord } from './featureData';
 import styles from './Features.module.scss';
-import { animated } from '@react-spring/web';
 
-export interface FeatureCardProps {
-  header: string;
-  img: string;
-  info: string;
-  animation: unknown;
+export default function FeatureCard({ header, img, info }: FeatureRecord) {
+  return <li className={styles.featureCard} data-testid="feature-card">
+    <h3>{header}</h3>
+    <img className={styles.img} src={img} alt="" width="72" height="75" />
+    <p>{info}</p>
+  </li>;
 }
-
-const FeatureCard = ({ animation, header, img, info }): React.JSX.Element => {
-  return (
-    <animated.div
-      className={styles.featureCard}
-      style={animation}
-      data-testid={'feature-card'}
-    >
-      <h3>{header}</h3>
-      <img className={styles.img} src={img} alt="img" />
-      <p>{info}</p>
-    </animated.div>
-  );
-};
-
-export default FeatureCard;

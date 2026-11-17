@@ -1,24 +1,19 @@
+import type { Contributor } from './types';
 import React from 'react';
 import githubLogo from '../../assets/github-mark/github-mark-white.png';
 import styles from './Team.module.scss';
 
-export interface othersProps {
-  name: string;
-  linkedin: string;
-  github: string;
-}
-
-const AllOthers = ({ name, linkedin, github }): React.JSX.Element => {
+const AllOthers = ({ name, linkedin, github }: Contributor): React.JSX.Element => {
   return (
-    <div>
+    <li>
       <p className={styles.person}>
         {name}
         <span className={styles.links}>
-          <a href={github}>
-            <img className={styles.github} src={githubLogo} />
+          <a href={github} aria-label={`${name} on GitHub`}>
+            <img className={styles.github} src={githubLogo} alt="" />
           </a>{' '}
-          <a href={linkedin}>
-            <svg
+          <a href={linkedin} aria-label={`${name} on LinkedIn`}>
+            <svg aria-hidden="true"
               className={styles.linkedin}
               xmlns='http://www.w3.org/2000/svg'
               width='14'
@@ -32,7 +27,7 @@ const AllOthers = ({ name, linkedin, github }): React.JSX.Element => {
           </a>
         </span>
       </p>
-    </div>
+    </li>
   );
 };
 

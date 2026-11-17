@@ -1,3 +1,4 @@
+import type { FeaturedContributor } from './types';
 import Alex from '../../assets/XVIII/Alex.jpg';
 import Andy from '../../assets/XVIII/Andy.jpg';
 import Nick from '../../assets/XVIII/Nick.jpg';
@@ -13,7 +14,7 @@ import ChrisS from '../../assets/XX/ChrisS.jpg';
 import Nika from '../../assets/XX/Nika.jpg';
 
 
-const currDocketeerTeam = [
+const currDocketeerTeam: readonly FeaturedContributor[] = [
   {
     img: Arthur,
     name: 'Arthur Jin',

@@ -1,4 +1,5 @@
-const people = [
+import type { Contributor } from './types';
+const people: readonly Contributor[] = [
   {
     name: 'Chelsea Lau',
     linkedin: 'https://www.linkedin.com/in/chelsea-wklau',

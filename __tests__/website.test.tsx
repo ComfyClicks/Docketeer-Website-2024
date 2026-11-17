@@ -3,7 +3,6 @@ import { createMediaQuery } from './setup';
 import { render, fireEvent, screen, within, act } from '@testing-library/react';
 import App from '../src/App';
 import Navbar from '../src/components/Navbar/Navbar';
-import Mobile from '../src/components/Demo/DemoMobile/Mobile';
 import Demo from '../src/components/Demo/Demo';
 
 test('current content and native section destinations render', () => {
@@ -42,7 +41,8 @@ test('choosing a section closes the menu', () => {
 
 const names = ['Containers', 'Images', 'Data Visualization', 'Time-Series', 'Metrics', 'Cluster Metrics', 'Configuration', 'Others'];
 test('mobile demo reaches every entry and wraps in both directions', () => {
-  render(<Mobile />);
+  vi.stubGlobal('innerWidth', 320);
+  render(<Demo />);
   for (const name of names) {
     expect(document.body.contains(screen.getByRole('img', { name: `${name} demo` }))).toBe(true);
     fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
@@ -82,4 +82,35 @@ test('breakpoint changes restore focus after CSS hides the active control', () =
   act(() => media.dispatchEvent(new Event('change')));
   expect(document.activeElement).toBe(menu);
   expect(menu.getAttribute('aria-expanded')).toBe('false');
+});
+
+test('page exposes landmarks, one primary heading, and named images and links', () => {
+  render(<App />);
+  expect(screen.getAllByRole('main')).toHaveLength(1);
+  expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
+  const skip = screen.getByRole('link', { name: 'Skip to content' });
+  const destination = document.querySelector(skip.getAttribute('href')!);
+  expect(destination?.getAttribute('tabindex')).toBe('-1');
+  for (const image of document.querySelectorAll('img')) {
+    expect(image.hasAttribute('alt'), image.src).toBe(true);
+  }
+  for (const link of screen.getAllByRole('link')) {
+    const name = link.getAttribute('aria-label') || link.textContent?.trim() ||
+      [...link.querySelectorAll('img')].map(image => image.alt).join('').trim();
+    expect(Boolean(name), link.getAttribute('href') || 'unnamed link').toBe(true);
+  }
+});
+
+
+test('selected demo survives crossing the mobile breakpoint', () => {
+  vi.stubGlobal('innerWidth', 1024);
+  render(<Demo />);
+  fireEvent.click(screen.getByRole('button', { name: 'Images' }));
+  vi.stubGlobal('innerWidth', 390);
+  fireEvent(window, new Event('resize'));
+  expect(document.body.contains(screen.getByRole('img', { name: 'Images demo' }))).toBe(true);
+  fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
+  vi.stubGlobal('innerWidth', 1024);
+  fireEvent(window, new Event('resize'));
+  expect(screen.getByRole('button', { name: 'Data Visualization' }).getAttribute('aria-pressed')).toBe('true');
 });

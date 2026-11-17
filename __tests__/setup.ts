@@ -15,37 +15,8 @@ export function createMediaQuery(query: string, matches: boolean = true) {
   } satisfies MediaQueryList;
 }
 
-// JSDOM has no layout. This double makes content visible deterministically;
-// real-browser checks remain responsible for intersection and rendering behavior.
-class VisibleIntersectionObserver implements IntersectionObserver {
-  readonly root = null;
-  readonly rootMargin = '0px';
-  readonly scrollMargin = '0px';
-  readonly thresholds = [0];
-
-  constructor(private callback: IntersectionObserverCallback) {}
-
-  observe(target: Element) {
-    const bounds = target.getBoundingClientRect();
-    this.callback([{
-      target,
-      isIntersecting: true,
-      intersectionRatio: 1,
-      boundingClientRect: bounds,
-      intersectionRect: bounds,
-      rootBounds: null,
-      time: performance.now(),
-    }], this);
-  }
-
-  unobserve() {}
-  disconnect() {}
-  takeRecords(): IntersectionObserverEntry[] { return []; }
-}
-
 beforeEach(() => {
   vi.stubGlobal('matchMedia', vi.fn(createMediaQuery));
-  vi.stubGlobal('IntersectionObserver', VisibleIntersectionObserver);
 });
 
 afterEach(() => {

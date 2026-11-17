@@ -40,7 +40,7 @@ const Navbar = (): React.JSX.Element => {
       }}>
       <div className={styles.navbarContainer}>
         <div className={styles.left}>
-          <h1 className={styles.name}>Docketeer</h1>
+          <p className={styles.name}>Docketeer</p>
           <img width="45" height="45" src={docker2} alt="" />
         </div>
         <button ref={trigger} type="button" className={styles.menuButton}

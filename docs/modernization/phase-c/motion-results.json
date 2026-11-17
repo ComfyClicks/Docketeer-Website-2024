@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-17T21:14:55.829Z",
+  "url": "http://127.0.0.1:4173/",
+  "browser": "157.0.8103.79",
+  "motion": {
+    "passed": true,
+    "initialFrames": 0,
+    "playingFrames": 15,
+    "stoppedFrames": 16,
+    "errors": []
+  },
+  "webglUnavailable": {
+    "passed": true,
+    "background": "rgb(0, 0, 5)",
+    "errors": []
+  },
+  "limitations": [
+    "Animated GIF media is unchanged and may continue moving with reduced motion.",
+    "Frame instrumentation measures requestAnimationFrame callbacks, not GPU activity.",
+    "No physical device, screen reader, or real browser zoom tested."
+  ]
+}

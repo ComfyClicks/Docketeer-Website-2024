@@ -5,13 +5,14 @@ import Features from './Features/Features';
 import Demo from './Demo/Demo';
 import GetStarted from './GetStarted/GetStarted';
 import Team from './Team/Team';
-// import Footer from './Footer/Footer';
 
 
 const Page = (): React.JSX.Element => {
   return (
     <div className="pageContainer">
-      <Navbar />
+      <a className="skipLink" href="#main-content">Skip to content</a>
+      <header><Navbar /></header>
+      <main>
       <div id="home" tabIndex={-1} className="pageSection">
         <Home />
       </div>
@@ -29,6 +30,7 @@ const Page = (): React.JSX.Element => {
       <div id="team" tabIndex={-1} className="pageSection">
         <Team />
       </div>
+      </main>
     </div>
   );
 };

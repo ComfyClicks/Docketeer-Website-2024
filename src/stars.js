@@ -7,6 +7,9 @@ let camera,
 
 //assign three.js objects to each variable
 function init() {
+  const output = document.createElement('canvas');
+  const webgl = output.getContext('webgl2');
+  if (!webgl) return false;
   //camera
   camera = new THREE.PerspectiveCamera(
     45,
@@ -22,6 +25,8 @@ function init() {
   // Create a canvas element and get its 2D context
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
+
+  if (!context) return false;
 
   // Set the canvas size to match the renderer size
   canvas.width = window.innerWidth;
@@ -45,7 +50,8 @@ function init() {
   scene.background = texture;
 
   //renderer
-  renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer({ canvas: output, context: webgl });
+  renderer.domElement.setAttribute('aria-hidden', 'true');
   //set the size of the renderer
   renderer.setSize(window.innerWidth, window.innerHeight);
   //add the renderer to the html document body
@@ -64,8 +70,10 @@ function init() {
     gradient.addColorStop(1, '#000005');
     context.fillStyle = gradient;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    // texture.needsUpdate = true;
+    texture.needsUpdate = true;
+    renderer.render(scene, camera);
   });
+  return true;
 }
 
 function addSphere() {
@@ -107,15 +115,48 @@ function animateStars() {
   }
 }
 
-function render() {
-  //get the frame
-  requestAnimationFrame(render);
+// Motion is opt-in. Reduced-motion preference always stops it, including
+// preference changes while the page is open; the static scene remains visible.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const motionButton = document.getElementById('background-motion');
+let frame;
+let playing = false;
 
-  //render the scene
-  renderer.render(scene, camera);
-  animateStars();
+function stop() {
+  cancelAnimationFrame(frame);
+  frame = undefined;
 }
 
-init();
-addSphere();
-render();
+function render() {
+  renderer.render(scene, camera);
+  animateStars();
+  frame = requestAnimationFrame(render);
+}
+
+function updateMotion() {
+  stop();
+  if (motionPreference.matches) playing = false;
+  motionButton.disabled = motionPreference.matches;
+  motionButton.textContent = motionPreference.matches
+    ? 'Background animation off (reduced motion)'
+    : playing ? 'Pause background animation' : 'Play background animation';
+  if (playing && !document.hidden) render();
+}
+
+try {
+  if (init()) {
+    addSphere();
+    renderer.render(scene, camera);
+    motionButton.addEventListener('click', () => { playing = !playing; updateMotion(); });
+    motionPreference.addEventListener('change', updateMotion);
+    document.addEventListener('visibilitychange', updateMotion);
+    updateMotion();
+  } else {
+    motionButton.hidden = true;
+  }
+} catch {
+  // The decorative scene is optional; CSS provides a readable dark background.
+  motionButton.hidden = true;
+  renderer?.domElement.remove();
+  renderer?.dispose();
+}

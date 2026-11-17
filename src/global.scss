@@ -6,8 +6,9 @@ body {
   padding: 0;
   color: white;
   text-align: center;
-  font-family: 'Open Sans';
-  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  background: #000005;
+  line-height: 1.5;
   width: 100%;
 }
 
@@ -21,7 +22,7 @@ canvas {
 h1,
 h2,
 h3 {
-  font-family: 'Prompt';
+  font-family: 'Prompt', sans-serif;
   padding: 0 3vh;
 }
 
@@ -32,3 +33,19 @@ h3 {
 .pageSection { scroll-margin-top: 90px; }
 a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.skipLink {
+  position: fixed;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  transform: translateY(-200%);
+  z-index: 20;
+  padding: 0.75rem;
+  background: white;
+  color: #000005;
+}
+.skipLink:focus { transform: none; }
+#main-content { scroll-margin-top: 110px; }
+footer { padding: 2rem 1rem; }
+#background-motion { font: inherit; color: inherit; background: #000005; border: 1px solid currentColor; border-radius: 0.3rem; padding: 0.75rem; }
+#background-motion:disabled { opacity: 0.8; }

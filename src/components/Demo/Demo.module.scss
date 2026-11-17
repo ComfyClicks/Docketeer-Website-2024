@@ -1,152 +1,24 @@
-.demoDisplayLoaded {
-  height: 70vh;
-  padding-top: 30vh;
-  max-width: 84em;
-  margin: 25px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  transform: scale(0);
-  animation: zoom-in 1s forwards;
-}
-
-.demoDisplay {
-  opacity: 0;
-  width: 20%;
-  padding-top: 10rem;
-  transition: opacity 0.5s ease-out;
-}
-
-.demoContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.descriptions {
-  width: 85%;
-}
-
-.mainContainer {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.toggleContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.action {
-  font-size: 18px;
-}
-
-.toggle {
-  cursor: pointer;
-  width: 160px;
-  height: 40px;
-  margin: 0 7px 20px 7px;
-  background: transparent;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
+.demoDisplayLoaded { max-inline-size: 84rem; margin: 3rem auto; padding: 3rem 1rem; }
+.demoContainer { display: flex; align-items: center; gap: 1.5rem; }
+.mainContainer, .gifContainer { flex: 1; min-inline-size: 0; }
+.toggleContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+.toggle, .gifMobileButtons {
+  font: inherit;
   color: white;
-  font-size: 15px;
-  display: block;
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 5px;
-  line-height: 40px;
+  cursor: pointer;
+  min-block-size: 44px;
+  padding: .5rem .75rem;
+  box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
 }
-
-.toggle:hover {
-  background: rgba(154, 180, 251);
-  transition: 0.3s;
-}
-.toggle:not(:hover) {
-  transition: 0.3s;
-}
-
-.gifContainer {
-  width: 50%;
-}
-
-.gifs {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-@media screen and (min-width: 1275px) {
-  .gifContainer {
-    width: 640px;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .demoDisplayLoaded {
-    max-width: 84em;
-    margin: 25px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 13em;
-    transform: scale(0);
-    animation: zoom-in 2s forwards;
-    height: auto;
-  }
-  .gifContainer {
-    width: 640px;
-    height: auto;
-  }
-}
-
-@keyframes zoom-in {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-// Mobile
-.gifMobile {
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-.gifMobileButtonsBox {
-  display: flex;
-  flex-direction: row;
-  // align-items: center;
-  justify-content: center;
-}
-.gifMobileButtons {
-  border-radius: 5px;
-  align-content: center;
-  padding: 6px 16px;
-  margin: 8px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-.gifMobileButtons:active {
-  background: rgba(154, 180, 251);
-  transition: 0.1s;
-}
-
-.mobileDesc {
-  font-size: 0.75em;
-}
-
-.toggle, .gifMobileButtons { font: inherit; color: white; background: transparent; border: 0; cursor: pointer; }
-.gifMobileButtons { min-width: 44px; min-height: 44px; }
-.toggle[aria-pressed='true'] { border: 1px solid #9ab4fb; }
+.toggle { flex: 0 1 10rem; }
+.toggle[aria-pressed='true'] { border-color: #9ab4fb; }
+.toggle:hover, .gifMobileButtons:hover { background: #27354f; }
+.gifs, .gifMobile { display: block; max-inline-size: 100%; block-size: auto; border-radius: 10px; box-shadow: 1px 1px 10px rgba(154, 180, 251, .44); }
+.gifs { inline-size: 100%; }
+.gifMobile { inline-size: 350px; margin: 0 auto 1rem; }
+.gifMobileButtonsBox { display: flex; justify-content: center; gap: 1rem; margin-block: .75rem; }
+.gifMobileButtons { min-inline-size: 44px; }
+.descriptions, .mobileDesc { font-size: 1rem; line-height: 1.5; }

@@ -6,7 +6,7 @@ import dockerhubLogo from '../../assets/dockerhub-mark/04-symbol_light-blue-dock
 const GetStarted = (): React.JSX.Element => {
   return (
     <div className={styles.getStartedDisplay}>
-      <h1>Get Started</h1>
+      <h2>Get Started</h2>
       <p>
         Getting started with Docketeer is easy!
         <br />
@@ -21,16 +21,16 @@ const GetStarted = (): React.JSX.Element => {
           <a
             className={styles.githubLink}
             href='https://github.com/open-source-labs/Docketeer-Extension'
-            target='blank'>
-            GitHub <img className={styles.logo} src={githubLogo}></img>
+            target='_blank' rel='noopener noreferrer'>
+            GitHub <img className={styles.logo} src={githubLogo} alt=""></img>
           </a>
         </div>
         <div className={styles.githubButton}>
           <a
             className={styles.githubLink}
             href='https://hub.docker.com/extensions/docketeerxiv/docketeer-extension'
-            target='blank'>
-            Dockerhub <img className={styles.logo} src={dockerhubLogo}></img>
+            target='_blank' rel='noopener noreferrer'>
+            Dockerhub <img className={styles.logo} src={dockerhubLogo} alt=""></img>
           </a>
         </div>
       </div>
