@@ -1,8 +1,8 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import styles from "./Home.module.scss";
-import docker from "../../assets/docketeerlogo.png";
-import { Link } from "react-scroll";
+import React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import styles from './Home.module.scss';
+import docker from '../../assets/docketeerlogo.png';
+
 
 const Home = (): JSX.Element => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,21 +53,14 @@ const Home = (): JSX.Element => {
           </p>
           <br />
           <div className={styles.explore}>
-            <Link
-              to="features"
-              smooth={true}
-              hashSpy={true}
-              spy={true}
-              duration={600}
-            >
+            <a href="#features">
               Start Exploring
-            </Link>
-            <br />
+            </a>
           </div>
         </div>
       </div>
       <div className={styles.right}>
-        <img width="350px" height="auto" src={docker} alt="docketeer_img" />
+        <img width='350px' height='auto' src={docker} alt='docketeer_img' />
       </div>
     </div>
   );

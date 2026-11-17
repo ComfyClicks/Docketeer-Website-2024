@@ -1,72 +1,71 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { test, expect, describe, jest, beforeEach } from '@jest/globals';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'intersection-observer';
 import App from '../src/App';
-import Features from '../src/components/Features/Features';
-import DemoToggle from '../src/components/Demo/DemoToggle';
+import Navbar from '../src/components/Navbar/Navbar';
+import Mobile from '../src/components/Demo/DemoMobile/Mobile';
+import Demo from '../src/components/Demo/Demo';
 
-describe('Website', () => {
-  test('Test that headings and navigation buttons are rendered', async () => {
-    const { getAllByText } = render(
-      <MemoryRouter initialEntries={['/']}>
-        <Routes>
-          <Route path="/" element={<App />} />
-        </Routes>
-      </MemoryRouter>
-    );
-    expect(getAllByText('Home').length).toBe(1);
-    expect(getAllByText('Features').length).toBe(2);
-    expect(getAllByText('Demo').length).toBe(1);
-    expect(getAllByText('Get Started').length).toBe(2);
-    expect(getAllByText('Team').length).toBe(1);
-    expect(getAllByText('Start Exploring').length).toBe(1);
-    expect(getAllByText('See Docketeer in Action').length).toBe(1);
-    expect(getAllByText('Read about us on Medium!').length).toBe(1);
-    expect(getAllByText('The Team Behind Docketeer XII').length).toBe(1);
-    expect(getAllByText('Meet All Our Engineers').length).toBe(1);
-  });
+beforeEach(() => {
+  window.matchMedia = jest.fn(() => ({ matches: true, addEventListener: jest.fn(), removeEventListener: jest.fn() }));
+});
 
-  describe('Features', () => {
-    test('renders all feature cards', () => {
-      const { getAllByTestId } = render(<Features />);
-      const featureCards = getAllByTestId('feature-card');
-      expect(featureCards.length).toBe(8);
-    });
-  });
+test('current content and native section destinations render', () => {
+  render(<App />);
+  expect(screen.getByRole('heading', { name: 'Introducing Docketeer XX' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Meet The Docketeer Team!' })).toBeInTheDocument();
+  expect(screen.getAllByTestId('feature-card')).toHaveLength(9);
+  const nav = screen.getByRole('navigation');
+  for (const [label, id] of [['Home', 'home'], ['Features', 'features'], ['Demo', 'demo'], ['Get Started', 'getstarted'], ['Team', 'team']]) {
+    expect(within(nav).getByRole('link', { name: label })).toHaveAttribute('href', `#${id}`);
+    expect(document.getElementById(id)).toBeInTheDocument();
+  }
+  expect(screen.getByRole('link', { name: 'Start Exploring' })).toHaveAttribute('href', '#features');
+});
 
-  describe('Demo', () => {
-    const setCurrentGif = jest.fn();
+test('menu exposes expanded state, closes with Escape and restores focus', () => {
+  render(<Navbar />);
+  const button = screen.getByRole('button', { name: 'Menu' });
+  expect(button).toHaveAttribute('aria-expanded', 'false');
+  fireEvent.click(button);
+  expect(button).toHaveAttribute('aria-expanded', 'true');
+  const home = screen.getByRole('link', { name: 'Home' });
+  home.focus();
+  fireEvent.keyDown(home, { key: 'Escape' });
+  expect(button).toHaveAttribute('aria-expanded', 'false');
+  expect(button).toHaveFocus();
+});
 
-    beforeEach(() => {
-      render(<DemoToggle setCurrentGif={setCurrentGif} currentGif={0} />);
-    });
+test('choosing a section closes the menu', () => {
+  render(<Navbar />);
+  const button = screen.getByRole('button', { name: 'Menu' });
+  fireEvent.click(button);
+  fireEvent.click(screen.getByRole('link', { name: 'Demo' }));
+  expect(button).toHaveAttribute('aria-expanded', 'false');
+});
 
-    test('containers button shows containers demo', () => {
-      fireEvent.click(screen.getByText('Containers'));
-      expect(setCurrentGif).toHaveBeenCalledWith(0);
-    });
+const names = ['Containers', 'Images', 'Data Visualization', 'Time-Series', 'Metrics', 'Cluster Metrics', 'Configuration', 'Others'];
+test('mobile demo reaches every entry and wraps in both directions', () => {
+  render(<Mobile />);
+  for (const name of names) {
+    expect(screen.getByRole('img', { name: `${name} demo` })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
+  }
+  expect(screen.getByRole('img', { name: 'Containers demo' })).toBeInTheDocument();
+  for (const name of [...names].reverse()) {
+    fireEvent.click(screen.getByRole('button', { name: 'Previous demo' }));
+    expect(screen.getByRole('img', { name: `${name} demo` })).toBeInTheDocument();
+  }
+});
 
-    test('images button shows containers demo', () => {
-      fireEvent.click(screen.getByText('Images'));
-      expect(setCurrentGif).toHaveBeenCalledWith(1);
-    });
-
-    test('container metrics button shows containers demo', () => {
-      fireEvent.click(screen.getByText('Container Metrics'));
-      expect(setCurrentGif).toHaveBeenCalledWith(2);
-    });
-
-    test('cluster metrics button shows containers demo', () => {
-      fireEvent.click(screen.getByText('Cluster Metrics'));
-      expect(setCurrentGif).toHaveBeenCalledWith(3);
-    });
-
-    test('process logs shows containers process logs', () => {
-      fireEvent.click(screen.getByText('Process Logs'));
-      expect(setCurrentGif).toHaveBeenCalledWith(4);
-    });
-  });
+test('desktop controls select the rendered demo and expose selected state', () => {
+  render(<Demo />);
+  for (const name of [...names.slice(0, 6), 'Configurations', 'Others']) {
+    const button = screen.getByRole('button', { name });
+    fireEvent.click(button);
+    expect(button).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('img', { name: `${name} demo` })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { pressed: true })).toHaveLength(1);
+  }
 });

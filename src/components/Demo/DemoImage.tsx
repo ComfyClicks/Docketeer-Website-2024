@@ -27,7 +27,7 @@ const DemoImage: React.FC<DemoGifProps> = ({ currentGif }): JSX.Element => {
 
   return (
     <div className={styles.gifContainer}>
-      <img className={styles.gifs} src={gifs[currentGif]}></img>
+      <img alt={`${['Containers', 'Images', 'Data Visualization', 'Time-Series', 'Metrics', 'Cluster Metrics', 'Configurations', 'Others'][currentGif]} demo`} className={styles.gifs} src={gifs[currentGif]}></img>
     </div>
   );
 };

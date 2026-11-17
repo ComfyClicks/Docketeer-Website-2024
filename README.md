@@ -3,6 +3,22 @@ This is a GitHub Repo to maintain and update Docketeer main website throughout t
 
 In the past, the 'tradition' is to fork the previous team repo and re-deploy your team forked repo onto Vercel and it takes too much times.
 
+## Local development and Phase A checks
+
+Use Node **24.22.1** (`.nvmrc`) and npm **11.20.0** (`packageManager`). With nvm installed:
+
+```sh
+nvm install
+nvm use
+npm install --global npm@11.20.0
+npm ci
+npm run dev -- --host 127.0.0.1
+```
+
+Run `npm run lint`, `npm run typecheck`, `npm test -- --runInBand`, and `npm run build` before review. Preview the production build with `npm run preview -- --host 127.0.0.1`. The legacy Vite/dependency security findings remain pending Phase B; keep these servers on loopback. Do not run `npm audit fix` as part of setup.
+
+Baseline evidence is preserved in [docs/modernization/00-baseline.md](docs/modernization/00-baseline.md). Phase A results are recorded separately in [docs/modernization/phase-a/README.md](docs/modernization/phase-a/README.md). Local changes do not update production until an authorized deployment.
+
 ## Deployment Notes for Future Teams
 Before you start, double check to see if `the domain is expiring`.
 

@@ -36,41 +36,27 @@ const Mobile = (): JSX.Element => {
   ];
 
   const [currGif, setGif] = useState(0);
-  const handleClick = (direction: string) => {
-    if (direction === 'right') {
-      if (currGif === 5) {
-        return setGif(0);
-      } else {
-        const change = currGif + 1;
-        return setGif(change);
-      }
-    } else {
-      if (currGif === 0) {
-        return setGif(5);
-      } else {
-        const change = currGif - 1;
-        return setGif(change);
-      }
-    }
+  const handleClick = (direction: number) => {
+    setGif((current) => (current + direction + gifs.length) % gifs.length);
   };
 
   return (
     <div>
-      <img className={styles.gifMobile} src={gifs[currGif].url}></img>
-      <div>{gifs[currGif].name}</div>
+      <img alt={`${gifs[currGif].name} demo`} className={styles.gifMobile} src={gifs[currGif].url}></img>
+      <div aria-live="polite">{gifs[currGif].name}</div>
       <div className={styles.gifMobileButtonsBox}>
-        <div
+        <button type="button"
           className={styles.gifMobileButtons}
-          onClick={() => handleClick('')}
+          aria-label="Previous demo" onClick={() => handleClick(-1)}
         >
           &larr;
-        </div>
-        <div
+        </button>
+        <button type="button"
           className={styles.gifMobileButtons}
-          onClick={() => handleClick('right')}
+          aria-label="Next demo" onClick={() => handleClick(1)}
         >
           &rarr;
-        </div>
+        </button>
       </div>
       <p className={styles.mobileDesc}>{descriptions[currGif]}</p>
     </div>

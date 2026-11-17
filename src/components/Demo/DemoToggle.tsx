@@ -41,9 +41,9 @@ const DemoToggle: React.FC<DemoToggleProps> = ({
       <p className={styles.action}>Click to see a demo of each feature!</p>
       <div className={styles.toggleContainer}>
         {buttons.map((button, index) => (
-          <div className={styles.toggle} onClick={() => handleClick(index)}>
+          <button key={button} type="button" className={styles.toggle} aria-pressed={currentGif === index} onClick={() => handleClick(index)}>
             {button}
-          </div>
+          </button>
         ))}
       </div>
       <p className={styles.descriptions}>{descriptions[currentGif]}</p>

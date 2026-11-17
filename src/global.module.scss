@@ -41,3 +41,6 @@ h3 {
 .demoDescriptions{
   width: 85%;
 }
+.pageSection { scroll-margin-top: 90px; }
+a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

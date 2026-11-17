@@ -146,3 +146,7 @@
 .mobileDesc {
   font-size: 0.75em;
 }
+
+.toggle, .gifMobileButtons { font: inherit; color: white; background: transparent; border: 0; cursor: pointer; }
+.gifMobileButtons { min-width: 44px; min-height: 44px; }
+.toggle[aria-pressed='true'] { border: 1px solid #9ab4fb; }
