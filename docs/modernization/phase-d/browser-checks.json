@@ -1,0 +1,26 @@
+[
+  {
+    "script": "browser-check",
+    "exitCode": 0
+  },
+  {
+    "script": "resize-check",
+    "exitCode": 0
+  },
+  {
+    "script": "motion-check",
+    "exitCode": 0
+  },
+  {
+    "script": "media-check",
+    "exitCode": 0
+  },
+  {
+    "script": "accessibility-check",
+    "exitCode": 0
+  },
+  {
+    "script": "lazy-images-check",
+    "exitCode": 0
+  }
+]

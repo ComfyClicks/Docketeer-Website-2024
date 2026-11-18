@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import docker from '../../assets/docketeerlogo.png';
+import docker from '../../assets/optimized/hero-350.webp';
+import dockerLarge from '../../assets/optimized/hero-517.webp';
 
 
 const Home = (): React.JSX.Element => {
@@ -23,7 +24,7 @@ const Home = (): React.JSX.Element => {
         </div>
       </div>
       <div className={styles.right}>
-        <img src={docker} alt='' width={350} />
+        <img src={docker} srcSet={`${docker} 350w, ${dockerLarge} 517w`} sizes="(max-width: 400px) calc(100vw - 48px), 350px" alt="" width={517} height={469} />
       </div>
     </div>
   );

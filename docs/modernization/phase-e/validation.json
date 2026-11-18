@@ -1,0 +1,36 @@
+{
+  "validatedAt": "2026-11-17T23:44:00.249139+00:00",
+  "baseCommit": "47326ca61dd588b3735dedb115488c5d66ce6099",
+  "uncommitted": true,
+  "hostedWorkflowRun": false,
+  "checks": {
+    "cleanInstall": true,
+    "lockUnchangedByCleanInstall": true,
+    "build": true,
+    "lint": true,
+    "types": true,
+    "vitestTestsPassed": 10,
+    "policyTestsPassed": 9,
+    "browserTestsPassed": 8,
+    "lighthouseRunsCompleted": 6,
+    "actionlintVersion": "1.7.12",
+    "actionlintPassed": true,
+    "originalBaselineChecksumsVerified": 91
+  },
+  "sha256": {
+    ".github/workflows/run_tests.yml": "a93d7d263adf3be5322d2187155be2e267898589fdb1d4f6f62e8eae7e5bccc9",
+    "e2e/fixtures.ts": "58e7d5ee83980ce55dd3c545e998613daf21c90acc8b481305a92dd1e3430add",
+    "e2e/motion.spec.ts": "2d3573d7335bed28fb75aa62cceb7a6c7a7f5463da14607daccc10d21ef66c99",
+    "e2e/website.spec.ts": "271d696920bf754149cf595624713b981a1ad71e3a77ca04502b85babefb0426",
+    "package-lock.json": "06b8dfcd19009cb8c840af1c50c7801d0f44643afb53400a9768444703c3989c",
+    "package.json": "5c1e89e23a794f0e306587619ab82672b50f965da5ad36feb7da7d7d7e9c4d9f",
+    "playwright.config.ts": "04024b26fe7fd13015e41b0a16937c29f672dda879a3fc12e42167b2fe0a1bd4",
+    "scripts/ci/audit.mjs": "a3d3c3cc17720b121185f325991cdc97e66c0d12fdcf093e4c703eb640f77d77",
+    "scripts/ci/audit.test.mjs": "d83f250947b53326d35e84105e622dba85b1cb1cee5413a6bbe7dd6fb5492d73",
+    "scripts/ci/performance-policy.mjs": "b13a3493e59ba7d700ac700ac92dbe3ad631b33ea93173a106cbad9262418d20",
+    "scripts/ci/performance-policy.test.mjs": "c0d6e28f5a6cd179b97b719df894f866d79df6d51f91ec55c26b03164aa323cb",
+    "scripts/ci/performance.mjs": "c059e008b7c0166f321407a6b27c1e8974a7e75dddb67581d6bf873654ef77c0",
+    "src/components/Demo/DemoMedia.tsx": "31ab3de0d8c822646cfadb4c457b4469b24b4c9c4215b76a72f4fab990b3e153",
+    "tsconfig.tests.json": "71413be8710d420f4f126ca36412414b2fa8e855de0e7bbc3a1e55ba52738196"
+  }
+}

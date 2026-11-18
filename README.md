@@ -21,6 +21,20 @@ TypeScript **7.0.2** performs compiler checks; Vite builds the browser applicati
 
 Baseline evidence is preserved in [docs/modernization/00-baseline.md](docs/modernization/00-baseline.md). Phase A results are recorded separately in [docs/modernization/phase-a/README.md](docs/modernization/phase-a/README.md). Local changes do not update production until an authorized deployment.
 
+## Conservative CI and browser checks
+
+`npm run check` runs lint, the production build, test type checking and Vitest. See [the CI runbook](docs/modernization/phase-e/README.md) for the complete workflow, security exception and validation record.
+
+Browser tools are development dependencies only. Install Chromium once with `npx --no-install playwright install chromium`, then run:
+
+```sh
+npm run build
+npm run test:browser
+npm run test:performance
+```
+
+Automatic GitHub checks run only for relevant pull requests targeting `master`. Browser/accessibility and performance suites require manual dispatch. There are no scheduled runs, push-trigger duplicates, browser matrices or dependency bots. Successful reports stay in job logs/summary; failed manual checks retain diagnostics for three days. Local diagnostics go to ignored directories rather than replacing historical baseline evidence.
+
 ## Deployment Notes for Future Teams
 Before you start, double check to see if `the domain is expiring`.
 

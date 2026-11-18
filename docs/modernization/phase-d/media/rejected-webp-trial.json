@@ -1,0 +1,11 @@
+{
+  "source": "src/assets/demos/configuration.gif",
+  "sourceBytes": 6135810,
+  "generatedBytes": 34221756,
+  "command": "gif2webp -quiet -m 0 -q 0 configuration.gif -o configuration-animated.webp",
+  "frames": 1363,
+  "frameDurationMs": 20,
+  "durationMs": 27260,
+  "loopCount": 0,
+  "decision": "Rejected: substantially larger than unchanged GIF; use opt-in original GIF"
+}

@@ -1,30 +1,73 @@
-name: Run Tests
+name: Website checks
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: [master]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - '__tests__/**'
+      - 'e2e/**'
+      - 'scripts/ci/**'
+      - '.github/workflows/run_tests.yml'
+      - '.nvmrc'
+      - '.npmrc'
+      - 'package*.json'
+      - '*config.*'
+      - 'global.d.ts'
+      - 'index.html'
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: Additional checks (all selections include quick checks)
+        type: choice
+        default: quick
+        options: [quick, browser, performance]
+
+permissions:
+  contents: read
+
+# One job at a time for this website; a new run supersedes the old run.
+concurrency:
+  group: docketeer-website-checks
+  cancel-in-progress: true
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: .nvmrc
+          package-manager-cache: false
       - name: Pin npm
         run: npm install --global npm@11.20.0
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Typecheck and production build
-        run: npm run build
-      - name: Typecheck tests
-        run: npm run typecheck:tests
-      - name: Run tests
-        run: npm test
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Lint, build, typecheck tests and run Vitest
+        run: npm run check
+      - name: Apply dependency audit policy
+        run: npm run audit:ci
+      - name: Install Chromium for explicitly requested browser work
+        if: github.event_name == 'workflow_dispatch' && inputs.suite != 'quick'
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Browser and accessibility checks
+        if: github.event_name == 'workflow_dispatch' && inputs.suite == 'browser'
+        run: npm run test:browser
+      - name: Performance report and resource safeguards
+        if: github.event_name == 'workflow_dispatch' && inputs.suite == 'performance'
+        run: npm run test:performance
+      - name: Retain failure diagnostics briefly
+        if: failure() && github.event_name == 'workflow_dispatch' && inputs.suite != 'quick'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: website-failure-${{ github.run_id }}
+          path: |
+            test-results/
+            reports/performance/
+          retention-days: 3
+          if-no-files-found: ignore

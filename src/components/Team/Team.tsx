@@ -14,6 +14,7 @@ const Team = (): React.JSX.Element => {
           <TeamCard
             key={`${person.name}-${person.github}`}
             img={person.img}
+            imgSrcSet={person.imgSrcSet}
             name={person.name}
             linkedin={person.linkedin}
             github={person.github}

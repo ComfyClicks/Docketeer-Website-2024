@@ -9,6 +9,8 @@
     "__tests__/**/*.ts",
     "__tests__/**/*.tsx",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "e2e/**/*.ts",
+    "playwright.config.ts"
   ]
 }

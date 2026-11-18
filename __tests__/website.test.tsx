@@ -5,6 +5,27 @@ import App from '../src/App';
 import Navbar from '../src/components/Navbar/Navbar';
 import Demo from '../src/components/Demo/Demo';
 
+test('legacy demos load on request, stop at their poster, and reset on selection', () => {
+  render(<Demo />);
+  fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
+  const figure = screen.getByRole('figure', { name: 'Data Visualization demo' });
+  const poster = figure.querySelector('img')?.getAttribute('src');
+  expect(poster).toBeTruthy();
+  const play = screen.getByRole('button', { name: 'Play Data Visualization demonstration' });
+  play.focus();
+  fireEvent.click(play);
+  expect(figure.querySelector('img')?.getAttribute('src')).not.toBe(poster);
+  const stop = screen.getByRole('button', { name: 'Stop Data Visualization demonstration' });
+  expect(document.activeElement).toBe(stop);
+  fireEvent.click(stop);
+  expect(figure.querySelector('img')?.getAttribute('src')).toBe(poster);
+  fireEvent.click(screen.getByRole('button', { name: 'Play Data Visualization demonstration' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Images' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
+  expect(screen.getByRole('figure', { name: 'Data Visualization demo' }).querySelector('img')?.getAttribute('src')).toBe(poster);
+  expect(screen.queryByRole('button', { name: 'Stop Data Visualization demonstration' })).toBeNull();
+});
+
 test('current content and native section destinations render', () => {
   render(<App />);
   expect(document.body.contains(screen.getByRole('heading', { name: 'Introducing Docketeer XX' }))).toBe(true);
@@ -44,13 +65,13 @@ test('mobile demo reaches every entry and wraps in both directions', () => {
   vi.stubGlobal('innerWidth', 320);
   render(<Demo />);
   for (const name of names) {
-    expect(document.body.contains(screen.getByRole('img', { name: `${name} demo` }))).toBe(true);
+    expect(document.body.contains(screen.getByRole('figure', { name: `${name} demo` }))).toBe(true);
     fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
   }
-  expect(document.body.contains(screen.getByRole('img', { name: 'Containers demo' }))).toBe(true);
+  expect(document.body.contains(screen.getByRole('figure', { name: 'Containers demo' }))).toBe(true);
   for (const name of [...names].reverse()) {
     fireEvent.click(screen.getByRole('button', { name: 'Previous demo' }));
-    expect(document.body.contains(screen.getByRole('img', { name: `${name} demo` }))).toBe(true);
+    expect(document.body.contains(screen.getByRole('figure', { name: `${name} demo` }))).toBe(true);
   }
 });
 
@@ -60,7 +81,7 @@ test('desktop controls select the rendered demo and expose selected state', () =
     const button = screen.getByRole('button', { name });
     fireEvent.click(button);
     expect(button.getAttribute('aria-pressed')).toBe('true');
-    expect(document.body.contains(screen.getByRole('img', { name: `${name} demo` }))).toBe(true);
+    expect(document.body.contains(screen.getByRole('figure', { name: `${name} demo` }))).toBe(true);
     expect(screen.getAllByRole('button', { pressed: true })).toHaveLength(1);
   }
 });
@@ -108,9 +129,24 @@ test('selected demo survives crossing the mobile breakpoint', () => {
   fireEvent.click(screen.getByRole('button', { name: 'Images' }));
   vi.stubGlobal('innerWidth', 390);
   fireEvent(window, new Event('resize'));
-  expect(document.body.contains(screen.getByRole('img', { name: 'Images demo' }))).toBe(true);
+  expect(document.body.contains(screen.getByRole('figure', { name: 'Images demo' }))).toBe(true);
   fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
   vi.stubGlobal('innerWidth', 1024);
   fireEvent(window, new Event('resize'));
   expect(screen.getByRole('button', { name: 'Data Visualization' }).getAttribute('aria-pressed')).toBe('true');
+});
+
+test('demo playback is user-controlled and media does not preload video', () => {
+  render(<Demo />);
+  const figure = screen.getByRole('figure', { name: 'Containers demo' });
+  const video = figure.querySelector('video');
+  expect(video).not.toBeNull();
+  expect(video?.controls).toBe(true);
+  expect(video?.autoplay).toBe(false);
+  expect(video?.preload).toBe('none');
+  expect(video?.getAttribute('poster')).toBeTruthy();
+  expect(Number(video?.getAttribute('width'))).toBeGreaterThan(0);
+  expect(Number(video?.getAttribute('height'))).toBeGreaterThan(0);
+  fireEvent.click(screen.getByRole('button', { name: 'Configurations' }));
+  expect(screen.getByRole('figure', { name: 'Configurations demo' }).querySelector('video')).toBeNull();
 });

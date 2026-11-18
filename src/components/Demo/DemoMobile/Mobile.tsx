@@ -1,4 +1,5 @@
 import { demos } from '../demoData';
+import DemoMedia from '../DemoMedia';
 import styles from '../Demo.module.scss';
 
 interface MobileProps { current: number; onChange: (index: number) => void; }
@@ -11,7 +12,7 @@ export default function Mobile({ current, onChange }: MobileProps) {
     onChange(next);
   };
   return <div>
-    <img alt={`${title} demo`} className={styles.gifMobile} src={demo.mobileMedia} />
+    <DemoMedia key={demo.mobileMedia.src} title={title} className={styles.gifMobile} media={demo.mobileMedia} />
     <div aria-live="polite">{title}</div>
     <div className={styles.gifMobileButtonsBox}>
       <button type="button" className={styles.gifMobileButtons} aria-label="Previous demo" onClick={() => move(-1)}>&larr;</button>

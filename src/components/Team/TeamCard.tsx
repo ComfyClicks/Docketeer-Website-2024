@@ -4,10 +4,10 @@ import githubLogo from '../../assets/github-mark/github-mark-white.png';
 import styles from './Team.module.scss';
 
 
-const TeamCard = ({ img, name, linkedin, github }: FeaturedContributor): React.JSX.Element => {
+const TeamCard = ({ img, imgSrcSet, name, linkedin, github }: FeaturedContributor): React.JSX.Element => {
   return (
     <li className={styles.osp4box}>
-      <img className={styles.osp4Pic} src={img} alt="" width="200" height="200" />
+      <img className={styles.osp4Pic} src={img} srcSet={imgSrcSet} sizes="200px" alt="" width="200" height="200" loading="lazy" decoding="async" />
       <p>{name}</p>
       <a href={github} aria-label={`${name} on GitHub`} target="_blank" rel="noopener noreferrer">
         <img className={styles.github} src={githubLogo} alt="" />

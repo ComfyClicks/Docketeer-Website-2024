@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-17T23:40:33.734Z",
+  "node": "v24.22.1",
+  "browser": "159.0.8154.6",
+  "method": "Local Vite production preview. Three cold Lighthouse navigations per device, serial; default simulated throttling. Independent per-metric medians. Scores/timing are advisory until a CI-runner baseline exists. Separate unthrottled network capture: fresh context, cache disabled, DPR 1, networkidle + 2.5 seconds, no scrolling. Bytes are decoded resource bodies, not transfer or executed bytes.",
+  "javascriptBudgetBytes": 350000,
+  "network": {
+    "mobile": {
+      "decodedJavascriptBytes": 283929,
+      "initialAnimationRequests": 0,
+      "errors": []
+    },
+    "desktop": {
+      "decodedJavascriptBytes": 283929,
+      "initialAnimationRequests": 0,
+      "errors": []
+    }
+  },
+  "failures": [],
+  "exitCode": 0,
+  "comparisonLimit": "Local validation of the portable manual CI harness, not a GitHub-hosted CI baseline. Chromium 159.0.8154.6 / Lighthouse 13.6.0 differ from Phase D Chrome157 / Lighthouse13.4.1. Do not attribute differences to website improvement or replace original baseline.",
+  "rawReports": "reports/performance/2026-11-17T23-40-33.733Z-mZSvMQ",
+  "lighthouse": {
+    "mobile": {
+      "version": "13.6.0",
+      "runCount": 3,
+      "medianScores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "medianMetrics": {
+        "first-contentful-paint": 754.8527999999999,
+        "largest-contentful-paint": 1880.8094999999998,
+        "cumulative-layout-shift": 0.0008597091502312617,
+        "total-blocking-time": 48.5,
+        "speed-index": 800.0396230621247
+      }
+    },
+    "desktop": {
+      "version": "13.6.0",
+      "runCount": 3,
+      "medianScores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "medianMetrics": {
+        "first-contentful-paint": 208.66950000000003,
+        "largest-contentful-paint": 511.9059,
+        "cumulative-layout-shift": 0.0003802190544153062,
+        "total-blocking-time": 0,
+        "speed-index": 228.55558385229034
+      }
+    }
+  },
+  "policyValidation": "After the six-run validation, Script collection was widened to include cross-origin resources; existing accepted input URLs are all first-party, so their measurements are unchanged. Five Node policy tests pass, including rejecting unobservable cross-origin script sizes."
+}

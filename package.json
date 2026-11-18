@@ -7,27 +7,33 @@
     "dev": "vite --port 3001",
     "start": "vite --port 3000",
     "build": "tsc --noEmit && vite build",
-    "lint": "oxlint src __tests__ --max-warnings 0",
+    "lint": "oxlint src __tests__ e2e playwright.config.ts scripts/ci --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "test:watch": "vitest",
-    "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json"
+    "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json",
+    "test:browser": "playwright test",
+    "test:performance": "node scripts/ci/performance.mjs",
+    "check": "npm run lint && npm run build && npm run typecheck:tests && npm test && npm run test:ci-policy",
+    "audit:ci": "node scripts/ci/audit.mjs",
+    "test:ci-policy": "node --test scripts/ci/*.test.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "three": "^0.187.0"
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.1",
     "@testing-library/dom": "^10",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^24",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@types/three": "^0.187.0",
     "@vitejs/plugin-react": "^6.3.0",
     "jsdom": "^31.0.1",
+    "lighthouse": "13.6.0",
     "oxlint": "~1.94.0",
     "sass": "^1.108.2",
     "typescript": "~7.0.2",

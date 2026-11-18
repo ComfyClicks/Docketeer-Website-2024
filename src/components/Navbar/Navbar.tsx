@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import github from '../../assets/github-mark/github-mark-white.png';
 import styles from './Navbar.module.scss';
-import docker2 from '../../assets/docketeerlogo2.png';
+import docker2 from '../../assets/optimized/navbar-45.webp';
+import docker2Medium from '../../assets/optimized/navbar-90.webp';
+import docker2Large from '../../assets/optimized/navbar-135.webp';
 
 const sections = [['home', 'Home'], ['features', 'Features'], ['demo', 'Demo'], ['getstarted', 'Get Started'], ['team', 'Team']];
 
@@ -41,7 +43,7 @@ const Navbar = (): React.JSX.Element => {
       <div className={styles.navbarContainer}>
         <div className={styles.left}>
           <p className={styles.name}>Docketeer</p>
-          <img width="45" height="45" src={docker2} alt="" />
+          <img width="45" height="43" src={docker2} srcSet={`${docker2Medium} 2x, ${docker2Large} 3x`} alt="" />
         </div>
         <button ref={trigger} type="button" className={styles.menuButton}
           aria-expanded={open} aria-controls="primary-links" onClick={() => setOpen(!open)}>Menu</button>

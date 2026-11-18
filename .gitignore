@@ -7,7 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-package-lock.json
 node_modules
 dist
 dist-ssr
@@ -26,3 +25,8 @@ dist-ssr
 
 # Vitest reports and artifacts
 .vitest/
+
+# Reproducible CI diagnostics (historical audit evidence stays tracked)
+reports/
+test-results/
+playwright-report/

@@ -1,0 +1,108 @@
+
+> docketeer-xii-website@0.0.0 test:browser
+> playwright test e2e/negative-proof.spec.ts --project=desktop --reporter=list --output=/tmp/docketeer-ci-negative-proof
+
+[WebServer] (node:7059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:7066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [desktop] › e2e/negative-proof.spec.ts:3:1 › negative proof: console errors fail the shared runtime guard (692ms)
+(node:7090) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [desktop] › e2e/negative-proof.spec.ts:8:1 › negative proof: failed assets fail the shared runtime guard (640ms)
+
+
+  1) [desktop] › e2e/negative-proof.spec.ts:3:1 › negative proof: console errors fail the shared runtime guard 
+
+    Error: Application console, exception and network errors
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: CI_NEGATIVE_PROOF_CONSOLE",
+    + ]
+
+       at fixtures.ts:23
+
+      21 |     await use();
+      22 |     if (errors.length) await testInfo.attach('runtime-errors', { body: errors.join('\n'), contentType: 'text/plain' });
+    > 23 |     expect(errors, 'Application console, exception and network errors').toEqual([]);
+         |                                                                         ^
+      24 |   }, { auto: true }],
+      25 | });
+      26 |
+        at Object.base.extend.runtimeGuard.auto (/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/fixtures.ts:23:73)
+
+    attachment #1: runtime-errors (text/plain) ─────────────────────────────────────────────────────
+    Console: CI_NEGATIVE_PROOF_CONSOLE
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-cf811-il-the-shared-runtime-guard-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-cf811-il-the-shared-runtime-guard-desktop/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-cf811-il-the-shared-runtime-guard-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-cf811-il-the-shared-runtime-guard-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop] › e2e/negative-proof.spec.ts:8:1 › negative proof: failed assets fail the shared runtime guard 
+
+    Error: Application console, exception and network errors
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "HTTP 404: http://127.0.0.1:4173/ci-negative-proof.png",
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+       at fixtures.ts:23
+
+      21 |     await use();
+      22 |     if (errors.length) await testInfo.attach('runtime-errors', { body: errors.join('\n'), contentType: 'text/plain' });
+    > 23 |     expect(errors, 'Application console, exception and network errors').toEqual([]);
+         |                                                                         ^
+      24 |   }, { auto: true }],
+      25 | });
+      26 |
+        at Object.base.extend.runtimeGuard.auto (/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/fixtures.ts:23:73)
+
+    attachment #1: runtime-errors (text/plain) ─────────────────────────────────────────────────────
+    HTTP 404: http://127.0.0.1:4173/ci-negative-proof.png
+    Console: Failed to load resource: the server responded with a status of 404 (Not Found)
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-303cb-il-the-shared-runtime-guard-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-303cb-il-the-shared-runtime-guard-desktop/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-303cb-il-the-shared-runtime-guard-desktop/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../../../../../tmp/docketeer-ci-negative-proof/negative-proof-negative-pr-303cb-il-the-shared-runtime-guard-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › e2e/negative-proof.spec.ts:3:1 › negative proof: console errors fail the shared runtime guard 
+    [desktop] › e2e/negative-proof.spec.ts:8:1 › negative proof: failed assets fail the shared runtime guard 

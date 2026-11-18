@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-17T22:20:55.974Z",
+  "browser": "157.0.8103.79",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "deviceScaleFactor": 1,
+  "secondsPerSample": 5,
+  "records": [
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "paused",
+      "run": 1,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.0024839999999999862,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 5347884
+    },
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "paused",
+      "run": 2,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.0008299999999999974,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 5350964
+    },
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "paused",
+      "run": 3,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.0008320000000000549,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 5354044
+    },
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "playing",
+      "run": 1,
+      "seconds": 5,
+      "rafCallbacks": 301,
+      "taskDurationSeconds": 0.3982530000000001,
+      "scriptDurationSeconds": 0.276526,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 8522656
+    },
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "playing",
+      "run": 2,
+      "seconds": 5,
+      "rafCallbacks": 300,
+      "taskDurationSeconds": 0.33449399999999996,
+      "scriptDurationSeconds": 0.21955899999999995,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 9243720
+    },
+    {
+      "version": "before",
+      "url": "http://127.0.0.1:4174/",
+      "state": "playing",
+      "run": 3,
+      "seconds": 5,
+      "rafCallbacks": 300,
+      "taskDurationSeconds": 0.3469439999999999,
+      "scriptDurationSeconds": 0.22015400000000007,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 8171600
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "paused",
+      "run": 1,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.002787999999999985,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 1891612
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "paused",
+      "run": 2,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.0008770000000000167,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 1894692
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "paused",
+      "run": 3,
+      "seconds": 5,
+      "rafCallbacks": 0,
+      "taskDurationSeconds": 0.0004139999999999977,
+      "scriptDurationSeconds": 0,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 1897772
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "playing",
+      "run": 1,
+      "seconds": 5,
+      "rafCallbacks": 301,
+      "taskDurationSeconds": 0.21869800000000003,
+      "scriptDurationSeconds": 0.04965000000000001,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 3287644
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "playing",
+      "run": 2,
+      "seconds": 5,
+      "rafCallbacks": 300,
+      "taskDurationSeconds": 0.19811999999999996,
+      "scriptDurationSeconds": 0.04213600000000001,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 3156392
+    },
+    {
+      "version": "after",
+      "url": "http://127.0.0.1:4173/",
+      "state": "playing",
+      "run": 3,
+      "seconds": 5,
+      "rafCallbacks": 300,
+      "taskDurationSeconds": 0.19880599999999993,
+      "scriptDurationSeconds": 0.040771999999999975,
+      "layoutDurationSeconds": 0,
+      "recalcStyleDurationSeconds": 0,
+      "jsHeapUsedSize": 3171676
+    }
+  ],
+  "summary": {
+    "before": {
+      "paused": {
+        "rafCallbacks": 0,
+        "taskDurationSeconds": 0.0008320000000000549,
+        "scriptDurationSeconds": 0,
+        "layoutDurationSeconds": 0,
+        "recalcStyleDurationSeconds": 0,
+        "jsHeapUsedSize": 5350964
+      },
+      "playing": {
+        "rafCallbacks": 300,
+        "taskDurationSeconds": 0.3469439999999999,
+        "scriptDurationSeconds": 0.22015400000000007,
+        "layoutDurationSeconds": 0,
+        "recalcStyleDurationSeconds": 0,
+        "jsHeapUsedSize": 8522656
+      }
+    },
+    "after": {
+      "paused": {
+        "rafCallbacks": 0,
+        "taskDurationSeconds": 0.0008770000000000167,
+        "scriptDurationSeconds": 0,
+        "layoutDurationSeconds": 0,
+        "recalcStyleDurationSeconds": 0,
+        "jsHeapUsedSize": 1894692
+      },
+      "playing": {
+        "rafCallbacks": 300,
+        "taskDurationSeconds": 0.19880599999999993,
+        "scriptDurationSeconds": 0.04213600000000001,
+        "layoutDurationSeconds": 0,
+        "recalcStyleDurationSeconds": 0,
+        "jsHeapUsedSize": 3171676
+      }
+    }
+  },
+  "limitations": [
+    "CDP TaskDuration/ScriptDuration are cumulative renderer main-thread time deltas, not OS process CPU%, GPU time, energy use, or battery lifetime.",
+    "Whole page is observed; before GIFs and differing assets mean this does not isolate the star renderer perfectly.",
+    "No throttling; three bounded five-second samples per state, not a sustained thermal/device benchmark.",
+    "RAF callbacks include all page callbacks; viewport remains at hero even when background control is toggled programmatically."
+  ]
+}

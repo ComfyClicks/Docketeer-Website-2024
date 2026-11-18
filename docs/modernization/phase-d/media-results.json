@@ -1,0 +1,290 @@
+{
+  "date": "2026-11-17T22:13:02.055Z",
+  "browser": "157.0.8103.79",
+  "results": [
+    {
+      "width": 390,
+      "name": "Containers",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/containerTab-new-B-F-AkHT.webp",
+        "width": 1456,
+        "height": 888,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/containerTab-new-BXuCus4e.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Images",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/imageTab1-new-DSHEO70D.webp",
+        "width": 1838,
+        "height": 902,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/imageTab1-new-D8DKsScR.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Data Visualization",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/imageTab2-new-CV9UzMCW.webp",
+        "width": 1838,
+        "height": 902,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/imageTab2-new-BXVB378X.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Time-Series",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/imageTab3-new-D0x-4Vu5.webp",
+        "width": 1424,
+        "height": 954,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/imageTab3-new-Z0cu_DOX.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Metrics",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/metricTab-new-DY_8AoI1.webp",
+        "width": 1456,
+        "height": 888,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/metricTab-new-Di2Gr8KO.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Cluster Metrics",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/k8Tab-new-Fh2eFjRu.webp",
+        "width": 1456,
+        "height": 888,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/k8Tab-new-DX01NB2e.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Configuration",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/configuration-DTB2hszY.webp",
+        "width": 1544,
+        "height": 690,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/configuration-DE0TRlgR.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "Others",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/hamburgerTab-new-C8CF1SP3.webp",
+        "width": 1424,
+        "height": 954,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/hamburgerTab-new-BmHaz_kC.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Containers",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/ContainersFilters_v20-AXij15iu.mp4",
+        "poster": "http://127.0.0.1:4173/assets/ContainersFilters_v20-ChQ63YnL.webp",
+        "controls": true,
+        "preload": "none",
+        "paused": true,
+        "autoplay": false,
+        "width": 800,
+        "height": 504,
+        "playing": {
+          "paused": false,
+          "error": null,
+          "duration": 13.9,
+          "width": 800,
+          "height": 504,
+          "currentTime": 0.2635
+        },
+        "pausedAfter": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Images",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/Images_v20-BtRyDBcP.mp4",
+        "poster": "http://127.0.0.1:4173/assets/Images_v20-HG58Od8C.webp",
+        "controls": true,
+        "preload": "none",
+        "paused": true,
+        "autoplay": false,
+        "width": 800,
+        "height": 504,
+        "playing": {
+          "paused": false,
+          "error": null,
+          "duration": 18.87,
+          "width": 800,
+          "height": 504,
+          "currentTime": 0.2667
+        },
+        "pausedAfter": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Data Visualization",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/imageTab2-new-CV9UzMCW.webp",
+        "width": 1838,
+        "height": 902,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/imageTab2-new-BXVB378X.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Time-Series",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/imageTab3-new-D0x-4Vu5.webp",
+        "width": 1424,
+        "height": 954,
+        "kind": "opt-in-original-gif",
+        "animated": "/assets/imageTab3-new-Z0cu_DOX.gif",
+        "keyboardPlayStop": true,
+        "posterRestored": true,
+        "selectionReset": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Metrics",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/ContainersMetrics_v20-Cwu74r00.mp4",
+        "poster": "http://127.0.0.1:4173/assets/ContainersMetrics_v20-Dy27nB6M.webp",
+        "controls": true,
+        "preload": "none",
+        "paused": true,
+        "autoplay": false,
+        "width": 800,
+        "height": 504,
+        "playing": {
+          "paused": false,
+          "error": null,
+          "duration": 8.2,
+          "width": 800,
+          "height": 504,
+          "currentTime": 0.2626
+        },
+        "pausedAfter": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Cluster Metrics",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/KubernetesClusterHealthMetrics_v20-C9MxOuN-.mp4",
+        "poster": "http://127.0.0.1:4173/assets/KubernetesClusterHealthMetrics_v20-CqenpeU_.webp",
+        "controls": true,
+        "preload": "none",
+        "paused": true,
+        "autoplay": false,
+        "width": 800,
+        "height": 504,
+        "playing": {
+          "paused": false,
+          "error": null,
+          "duration": 8.85,
+          "width": 800,
+          "height": 504,
+          "currentTime": 0.2661
+        },
+        "pausedAfter": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Configurations",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/Configurations_v20-Cz5R1ily.webp",
+        "width": 4084,
+        "height": 2558,
+        "kind": "static-image"
+      }
+    },
+    {
+      "width": 1440,
+      "name": "Others",
+      "passed": true,
+      "media": {
+        "src": "http://127.0.0.1:4173/assets/Navigation_v20-C-DwsfwH.mp4",
+        "poster": "http://127.0.0.1:4173/assets/Navigation_v20-BVHr6Zui.webp",
+        "controls": true,
+        "preload": "none",
+        "paused": true,
+        "autoplay": false,
+        "width": 800,
+        "height": 504,
+        "playing": {
+          "paused": false,
+          "error": null,
+          "duration": 12.8,
+          "width": 800,
+          "height": 504,
+          "currentTime": 0.2629
+        },
+        "pausedAfter": true
+      }
+    }
+  ],
+  "limitations": [
+    "Playback/pause invoked through browser media APIs; native controls presence is checked but assistive technology and physical-device controls are not manually verified."
+  ]
+}

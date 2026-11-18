@@ -1,0 +1,117 @@
+[
+  {
+    "video": "src/assets/demos/optimized/ContainersFilters_v20.mp4",
+    "decodedSamples": [
+      {
+        "sampleSeconds": 0.0,
+        "actualDurationSeconds": 13.9,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 6.95,
+        "actualDurationSeconds": 13.9,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 13.89,
+        "actualDurationSeconds": 13.9,
+        "width": 800,
+        "height": 504
+      }
+    ]
+  },
+  {
+    "video": "src/assets/demos/optimized/Images_v20.mp4",
+    "decodedSamples": [
+      {
+        "sampleSeconds": 0.0,
+        "actualDurationSeconds": 18.87,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 9.43,
+        "actualDurationSeconds": 18.87,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 18.86,
+        "actualDurationSeconds": 18.87,
+        "width": 800,
+        "height": 504
+      }
+    ]
+  },
+  {
+    "video": "src/assets/demos/optimized/ContainersMetrics_v20.mp4",
+    "decodedSamples": [
+      {
+        "sampleSeconds": 0.0,
+        "actualDurationSeconds": 8.2,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 4.09,
+        "actualDurationSeconds": 8.2,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 8.19,
+        "actualDurationSeconds": 8.2,
+        "width": 800,
+        "height": 504
+      }
+    ]
+  },
+  {
+    "video": "src/assets/demos/optimized/KubernetesClusterHealthMetrics_v20.mp4",
+    "decodedSamples": [
+      {
+        "sampleSeconds": 0.0,
+        "actualDurationSeconds": 8.85,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 4.42,
+        "actualDurationSeconds": 8.85,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 8.84,
+        "actualDurationSeconds": 8.85,
+        "width": 800,
+        "height": 504
+      }
+    ]
+  },
+  {
+    "video": "src/assets/demos/optimized/Navigation_v20.mp4",
+    "decodedSamples": [
+      {
+        "sampleSeconds": 0.0,
+        "actualDurationSeconds": 12.8,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 6.4,
+        "actualDurationSeconds": 12.8,
+        "width": 800,
+        "height": 504
+      },
+      {
+        "sampleSeconds": 12.79,
+        "actualDurationSeconds": 12.8,
+        "width": 800,
+        "height": 504
+      }
+    ]
+  }
+]

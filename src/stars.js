@@ -1,162 +1,104 @@
-import * as THREE from 'three';
-//Declare three.js variables
-let camera,
-  scene,
-  renderer,
-  stars = [];
+// A decorative perspective star field. Canvas keeps the space identity without
+// downloading a 3D engine or allocating hundreds of sphere geometries.
+const button = document.getElementById('background-motion');
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
 
-//assign three.js objects to each variable
-function init() {
-  const output = document.createElement('canvas');
-  const webgl = output.getContext('webgl2');
-  if (!webgl) return false;
-  //camera
-  camera = new THREE.PerspectiveCamera(
-    45,
-    window.innerWidth / window.innerHeight,
-    1,
-    1000
-  );
-  camera.position.z = 1;
+if (!context || !button) {
+  if (button) button.hidden = true;
+} else {
+  canvas.setAttribute('aria-hidden', 'true');
+  canvas.style.pointerEvents = 'none';
+  document.body.appendChild(canvas);
+  const events = new AbortController();
+  const options = { signal: events.signal };
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const stars = Array.from({ length: 240 }, () => ({
+    x: Math.random() * 2 - 1,
+    y: Math.random() * 2 - 1,
+    depth: Math.random() * 0.9 + 0.1,
+  }));
+  let width;
+  let height;
+  let background;
+  let frame;
+  let previousTime;
+  let playing = false;
 
-  //scene
-  scene = new THREE.Scene();
+  function draw() {
+    context.fillStyle = background;
+    context.fillRect(0, 0, width, height);
+    context.fillStyle = 'white';
+    for (const star of stars) {
+      const x = width / 2 + star.x * width / (2 * star.depth);
+      const y = height / 2 + star.y * height / (2 * star.depth);
+      if (x < 0 || y < 0 || x > width || y > height) continue;
+      context.beginPath();
+      context.arc(x, y, Math.min(1.6, 0.45 / star.depth), 0, Math.PI * 2);
+      context.fill();
+    }
+  }
 
-  // Create a canvas element and get its 2D context
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    // Bound the backing-store cost on high-density mobile displays.
+    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * scale);
+    canvas.height = Math.round(height * scale);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(scale, 0, 0, scale, 0, 0);
+    background = context.createLinearGradient(0, 0, 0, height);
+    background.addColorStop(0, '#000000');
+    background.addColorStop(1, '#000005');
+    draw();
+  }
 
-  if (!context) return false;
+  function stop() {
+    cancelAnimationFrame(frame);
+    frame = undefined;
+    previousTime = undefined;
+  }
 
-  // Set the canvas size to match the renderer size
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function animate(time) {
+    // Time-based movement behaves consistently on 60Hz and 120Hz displays.
+    const elapsed = previousTime === undefined ? 0 : Math.min((time - previousTime) / 1000, 0.05);
+    previousTime = time;
+    for (const star of stars) {
+      star.depth -= elapsed * 0.08;
+      if (star.depth <= 0.1) {
+        star.depth = 1;
+        star.x = Math.random() * 2 - 1;
+        star.y = Math.random() * 2 - 1;
+      }
+    }
+    draw();
+    frame = requestAnimationFrame(animate);
+  }
 
-  // Create a gradient from blue to black
-  let gradient = context.createLinearGradient(0, 0, 0, window.innerHeight);
+  function updateMotion() {
+    stop();
+    if (preference.matches) playing = false;
+    button.disabled = preference.matches;
+    button.textContent = preference.matches
+      ? 'Background animation off (reduced motion)'
+      : playing ? 'Pause background animation' : 'Play background animation';
+    if (playing && !document.hidden) frame = requestAnimationFrame(animate);
+  }
 
-  gradient.addColorStop(0, '#000000');
-  gradient.addColorStop(1, '#000005');
+  button.addEventListener('click', () => { playing = !playing; updateMotion(); }, options);
+  preference.addEventListener('change', updateMotion, options);
+  document.addEventListener('visibilitychange', updateMotion, options);
+  window.addEventListener('resize', resize, options);
+  window.addEventListener('pagehide', stop, options);
+  window.addEventListener('pageshow', updateMotion, options);
+  resize();
+  updateMotion();
 
-
-  // Fill the canvas with the gradient
-  context.fillStyle = gradient;
-  context.fillRect(0, 0, window.innerWidth, window.innerHeight);
-
-  // Create a texture from the canvas
-  const texture = new THREE.CanvasTexture(canvas);
-
-  // Use the texture as the scene background
-  scene.background = texture;
-
-  //renderer
-  renderer = new THREE.WebGLRenderer({ canvas: output, context: webgl });
-  renderer.domElement.setAttribute('aria-hidden', 'true');
-  //set the size of the renderer
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  //add the renderer to the html document body
-  document.body.appendChild(renderer.domElement);
-  //adjust for screen size
-  window.addEventListener('resize', function () {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    // Resize the canvas and gradient when the window is resized
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, '#000000');
-    gradient.addColorStop(1, '#000005');
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    texture.needsUpdate = true;
-    renderer.render(scene, camera);
+  if (import.meta.hot) import.meta.hot.dispose(() => {
+    stop();
+    events.abort();
+    canvas.remove();
   });
-  return true;
-}
-
-function addSphere() {
-  // The loop will move from z position of -1000 to z position 1000, adding a random particle at each position.
-  for (let z = -20000; z < 20000; z += 60) {
-    // Make a sphere (exactly the same as before).
-    let geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    let material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    let sphere = new THREE.Mesh(geometry, material);
-
-    // This time we give the sphere random x and y positions between -500 and 500
-    sphere.position.x = Math.random() * 1000 - 500;
-    sphere.position.y = Math.random() * 1000 - 500;
-
-    // Then set the z position to where it is in the loop (distance of camera)
-    sphere.position.z = z;
-
-    // scale it up a bit
-    sphere.scale.x = sphere.scale.y = 1;
-
-    //add the sphere to the scene
-    scene.add(sphere);
-
-    //finally push it to the stars array
-    stars.push(sphere);
-  }
-}
-
-function animateStars() {
-  // loop through each star
-  for (let i = 0; i < stars.length; i++) {
-    let star = stars[i];
-
-    // and move it forward dependent on the mouseY position.
-    star.position.z += i / 150;
-
-    // if the particle is too close move it to the back
-    if (star.position.z > 1000) star.position.z -= 2000;
-  }
-}
-
-// Motion is opt-in. Reduced-motion preference always stops it, including
-// preference changes while the page is open; the static scene remains visible.
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const motionButton = document.getElementById('background-motion');
-let frame;
-let playing = false;
-
-function stop() {
-  cancelAnimationFrame(frame);
-  frame = undefined;
-}
-
-function render() {
-  renderer.render(scene, camera);
-  animateStars();
-  frame = requestAnimationFrame(render);
-}
-
-function updateMotion() {
-  stop();
-  if (motionPreference.matches) playing = false;
-  motionButton.disabled = motionPreference.matches;
-  motionButton.textContent = motionPreference.matches
-    ? 'Background animation off (reduced motion)'
-    : playing ? 'Pause background animation' : 'Play background animation';
-  if (playing && !document.hidden) render();
-}
-
-try {
-  if (init()) {
-    addSphere();
-    renderer.render(scene, camera);
-    motionButton.addEventListener('click', () => { playing = !playing; updateMotion(); });
-    motionPreference.addEventListener('change', updateMotion);
-    document.addEventListener('visibilitychange', updateMotion);
-    updateMotion();
-  } else {
-    motionButton.hidden = true;
-  }
-} catch {
-  // The decorative scene is optional; CSS provides a readable dark background.
-  motionButton.hidden = true;
-  renderer?.domElement.remove();
-  renderer?.dispose();
 }

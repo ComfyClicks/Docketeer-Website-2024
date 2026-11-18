@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './GetStarted.module.scss';
 import githubLogo from '../../assets/github-mark/github-mark-white.png';
-import dockerhubLogo from '../../assets/dockerhub-mark/04-symbol_light-blue-docker-logo.png';
+import dockerhubLogo from '../../assets/optimized/dockerhub-14.webp';
+import dockerhubLogoMedium from '../../assets/optimized/dockerhub-28.webp';
+import dockerhubLogoLarge from '../../assets/optimized/dockerhub-42.webp';
 
 const GetStarted = (): React.JSX.Element => {
   return (
@@ -30,7 +32,7 @@ const GetStarted = (): React.JSX.Element => {
             className={styles.githubLink}
             href='https://hub.docker.com/extensions/docketeerxiv/docketeer-extension'
             target='_blank' rel='noopener noreferrer'>
-            Dockerhub <img className={styles.logo} src={dockerhubLogo} alt=""></img>
+            Dockerhub <img className={styles.logo} src={dockerhubLogo} srcSet={`${dockerhubLogoMedium} 2x, ${dockerhubLogoLarge} 3x`} alt="" width="14" height="10"></img>
           </a>
         </div>
       </div>
