@@ -43,14 +43,13 @@ h1,
 h2,
 h3 {
   font-family: 'Prompt', sans-serif;
-  padding: 0 3vh;
+  padding: 0;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
+h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); }
 
-// footer {
-//   margin-bottom: 3rem;
-// }
-
-.pageSection { scroll-margin-top: 90px; }
+.pageSection { scroll-margin-top: var(--navigation-height, 90px); }
 a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
@@ -65,7 +64,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offs
   color: #000005;
 }
 .skipLink:focus { transform: none; }
-#main-content { scroll-margin-top: 110px; }
+#main-content { scroll-margin-top: calc(var(--navigation-height, 90px) + 1.25rem); }
 footer { padding: 2rem 1rem; }
 #background-motion { font: inherit; color: inherit; background: #000005; border: 1px solid currentColor; border-radius: 0.3rem; padding: 0.75rem; }
 #background-motion:disabled { opacity: 0.8; }

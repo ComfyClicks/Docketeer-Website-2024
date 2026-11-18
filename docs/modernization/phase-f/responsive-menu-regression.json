@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-18T01:08:24.214Z",
+  "method": "Installed Playwright Chromium, local production build. Text enlargement is CSS html font-size:200%, not actual browser zoom. Forced colors is browser emulation. No timings or field claims.",
+  "results": [
+    {
+      "width": 768,
+      "mode": "200% root-font text enlargement; not actual browser zoom",
+      "viewport": 768,
+      "document": 768,
+      "overflowing": [],
+      "menuBounds": {
+        "bottom": 481,
+        "viewportHeight": 450
+      },
+      "headingVisibility": {
+        "headingTop": 130.515625,
+        "navBottom": 91
+      }
+    }
+  ]
+}

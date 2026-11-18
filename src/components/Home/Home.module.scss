@@ -2,7 +2,7 @@
   min-block-size: 95dvh;
   box-sizing: border-box;
   max-inline-size: 76rem;
-  padding: 7rem 1.5rem 3rem;
+  padding: max(7rem, calc(var(--navigation-height, 90px) + 1.5rem)) 1.5rem 3rem;
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -11,6 +11,7 @@
 }
 .left { min-inline-size: 0; max-inline-size: 35rem; }
 .description { inline-size: 100%; }
+.description p { text-wrap: pretty; }
 .mainTitle { font-size: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem); padding: 0; }
 .right { min-inline-size: 0; max-inline-size: 25rem; }
 .right img {

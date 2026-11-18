@@ -15,6 +15,8 @@
   max-inline-size: 100%;
   padding-block-end: 1rem;
   box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
+  background: #0c1020;
+  border-radius: 8px;
 }
 .osp4Pic { object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
 .othersContainer {
@@ -22,7 +24,7 @@
   margin: 3rem auto 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
   gap: 1rem;
   list-style: none;
 }

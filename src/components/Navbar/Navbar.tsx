@@ -9,6 +9,19 @@ const sections = [['home', 'Home'], ['features', 'Features'], ['demo', 'Demo'], 
 
 const Navbar = (): React.JSX.Element => {
   const [open, setOpen] = useState(false);
+  const navigation = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!navigation.current || typeof ResizeObserver === 'undefined') return;
+    const element = navigation.current;
+    const update = () => document.documentElement.style.setProperty('--navigation-height', `${element.getBoundingClientRect().height}px`);
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    update();
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty('--navigation-height');
+    };
+  }, []);
   const trigger = useRef<HTMLButtonElement>(null);
   const links = useRef<HTMLUListElement>(null);
   const focusedControl = useRef<HTMLElement | null>(null);
@@ -26,7 +39,7 @@ const Navbar = (): React.JSX.Element => {
   }, []);
 
   return (
-    <nav className={styles.navbar} aria-label="Primary"
+    <nav ref={navigation} className={styles.navbar} aria-label="Primary"
       onFocus={(event) => { focusedControl.current = event.target as HTMLElement; }}
       onKeyDown={(event) => {
         if (event.key === 'Escape' && open) {

@@ -20,8 +20,11 @@
   box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
   border-radius: 5px;
   font-size: 1rem;
+  background: #0c1020;
+  border: 1px solid #28334e;
 }
 .featureCard h3 { font-size: 1.125rem; padding: 0; }
+.featureCard p { text-wrap: pretty; }
 .img { max-inline-size: 100%; object-fit: contain; }
 .article { color: #9ab4fb; min-block-size: 24px; padding: .5rem; }
 .article:hover { color: #ff9f00; }

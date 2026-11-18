@@ -1,0 +1,345 @@
+{
+  "browser": "159.0.8154.6",
+  "results": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "media": [
+        {
+          "width": 288,
+          "height": 175.640625
+        }
+      ],
+      "headings": [
+        {
+          "text": "Introducing Docketeer XX",
+          "fontSize": "28px"
+        },
+        {
+          "text": "Features",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Container Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Network Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Image Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Container Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Snapshots",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Cluster Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Detailed Process Logs",
+          "fontSize": "18px"
+        },
+        {
+          "text": "System Prune",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Prometheus Configurations",
+          "fontSize": "18px"
+        },
+        {
+          "text": "See Docketeer in Action",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Get Started",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Meet The Docketeer Team!",
+          "fontSize": "24px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "media": [
+        {
+          "width": 350,
+          "height": 213.453125
+        }
+      ],
+      "headings": [
+        {
+          "text": "Introducing Docketeer XX",
+          "fontSize": "28px"
+        },
+        {
+          "text": "Features",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Container Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Network Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Image Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Container Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Snapshots",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Cluster Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Detailed Process Logs",
+          "fontSize": "18px"
+        },
+        {
+          "text": "System Prune",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Prometheus Configurations",
+          "fontSize": "18px"
+        },
+        {
+          "text": "See Docketeer in Action",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Get Started",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Meet The Docketeer Team!",
+          "fontSize": "24px"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "media": [
+        {
+          "width": 356,
+          "height": 223.828125
+        }
+      ],
+      "headings": [
+        {
+          "text": "Introducing Docketeer XX",
+          "fontSize": "31.52px"
+        },
+        {
+          "text": "Features",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Container Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Network Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Image Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Container Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Snapshots",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Cluster Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Detailed Process Logs",
+          "fontSize": "18px"
+        },
+        {
+          "text": "System Prune",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Prometheus Configurations",
+          "fontSize": "18px"
+        },
+        {
+          "text": "See Docketeer in Action",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Get Started",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Meet The Docketeer Team!",
+          "fontSize": "24px"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "media": [
+        {
+          "width": 484,
+          "height": 304.3125
+        }
+      ],
+      "headings": [
+        {
+          "text": "Introducing Docketeer XX",
+          "fontSize": "35.36px"
+        },
+        {
+          "text": "Features",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Container Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Network Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Image Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Container Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Snapshots",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Cluster Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Detailed Process Logs",
+          "fontSize": "18px"
+        },
+        {
+          "text": "System Prune",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Prometheus Configurations",
+          "fontSize": "18px"
+        },
+        {
+          "text": "See Docketeer in Action",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Get Started",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Meet The Docketeer Team!",
+          "fontSize": "24px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "media": [
+        {
+          "width": 660,
+          "height": 414.96875
+        }
+      ],
+      "headings": [
+        {
+          "text": "Introducing Docketeer XX",
+          "fontSize": "40px"
+        },
+        {
+          "text": "Features",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Container Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Network Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Image Management",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Container Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Snapshots",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Cluster Metrics",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Detailed Process Logs",
+          "fontSize": "18px"
+        },
+        {
+          "text": "System Prune",
+          "fontSize": "18px"
+        },
+        {
+          "text": "Prometheus Configurations",
+          "fontSize": "18px"
+        },
+        {
+          "text": "See Docketeer in Action",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Get Started",
+          "fontSize": "24px"
+        },
+        {
+          "text": "Meet The Docketeer Team!",
+          "fontSize": "24px"
+        }
+      ]
+    }
+  ]
+}

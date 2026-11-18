@@ -3,8 +3,8 @@
   inset-block-start: 0;
   inline-size: 100%;
   z-index: 10;
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 5, 0.92);
+  background: #000005;
+  border-block-end: 1px solid #202a42;
 }
 .navbarContainer {
   display: flex;
@@ -17,6 +17,7 @@
 .left { display: flex; align-items: center; gap: 8px; }
 .name { font-family: Prompt, sans-serif; font-size: 1.75rem; font-weight: 700; margin: 0; padding: 0; }
 .links {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding: 0;
@@ -27,15 +28,16 @@
 }
 .menuButton { display: none; font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 5px; padding: 0.5rem; min-block-size: 44px; }
 @media (max-width: 1000px) {
-  .navbarContainer { padding-inline: 0.75rem; }
-  .name { font-size: 1.6rem; }
+  .navbarContainer { padding-inline: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+  .left { min-inline-size: 0; max-inline-size: 100%; }
+  .name { font-size: 1.6rem; overflow-wrap: anywhere; }
   .menuButton { display: block; }
   .links {
     display: none;
     position: absolute;
     inset-block-start: 100%;
     inset-inline: 0;
-    max-block-size: calc(100dvh - 90px);
+    max-block-size: calc(100dvh - var(--navigation-height, 90px));
     overflow-y: auto;
     background: #000005;
     padding: 0.5rem 0.75rem;

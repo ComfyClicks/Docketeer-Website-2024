@@ -21,6 +21,7 @@ const Team = (): React.JSX.Element => {
           />
         ))}
       </ul>
+      <h3>Additional contributors</h3>
       <ul role="list" className={styles.othersContainer}>
         {people.map((person) => (
           <AllOthers
