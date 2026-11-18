@@ -1,7 +1,9 @@
-"""Convert preserved source GIFs with installed macOS AVFoundation and ImageMagick.
+"""Regenerate demo videos and WebP posters from preserved sources on macOS.
 Run from repository root. Requires swiftc, magick and cwebp; installs nothing.
-H.264 retains original resolution (pads odd dimensions by one pixel), every
-decoded frame, and GIF frame delays. Posters use the actual first frame.
+Five GIFs become H.264; eight legacy GIFs remain unchanged. Video encoding retains
+every frame, pads odd dimensions, and uses centisecond delays with a one-centisecond
+minimum. Posters use the actual first frame; the static PNG becomes WebP.
+Rewrites optimized outputs and docs/modernization/phase-d/media/conversion.json.
 """
 import hashlib
 import json

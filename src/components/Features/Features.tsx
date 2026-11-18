@@ -12,7 +12,7 @@ const Features = (): React.JSX.Element => {
         <h2>Features</h2>
         <a
           className={styles.article}
-          // update href to current medium article
+          // Update this link when the new team's Medium article is published.
           href="https://medium.com/@ellissong/docketeer-xix-new-features-in-uncharted-seas-3baf72099488"
           target="_blank"
           rel="noopener noreferrer"
