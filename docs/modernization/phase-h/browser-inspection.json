@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-18T15:58:30.649Z",
+  "method": "Local production preview. CSS 200% root-font is text enlargement, not actual browser zoom. WebKit Alt+Tab is a diagnostic, not a change to site keyboard requirements.",
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "width": 320,
+      "height": 800,
+      "errors": [],
+      "tabFocus": {
+        "tag": "A",
+        "text": "Skip to content"
+      },
+      "enlarged": {
+        "viewport": 320,
+        "document": 320,
+        "menuBottom": 799,
+        "viewportHeight": 800
+      },
+      "heading": {
+        "top": 292.109375,
+        "navBottom": 252.59375
+      }
+    },
+    {
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "width": 768,
+      "height": 450,
+      "errors": [],
+      "tabFocus": {
+        "tag": "A",
+        "text": "Skip to content"
+      },
+      "enlarged": {
+        "viewport": 768,
+        "document": 768,
+        "menuBottom": 449,
+        "viewportHeight": 450
+      },
+      "heading": {
+        "top": 130.515625,
+        "navBottom": 91
+      }
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "tabFocus": {
+        "tag": "VIDEO",
+        "text": "Download the Containers demonstration"
+      },
+      "altTabFocus": {
+        "tag": "VIDEO",
+        "text": "Download the Containers demonstration"
+      },
+      "skipActivation": true,
+      "hitTest": {
+        "rect": {
+          "x": 605.234375,
+          "y": 818.3125,
+          "width": 229.53125,
+          "height": 50,
+          "top": 818.3125,
+          "right": 834.765625,
+          "bottom": 868.3125,
+          "left": 605.234375
+        },
+        "hitTag": "BUTTON",
+        "hitId": "background-motion",
+        "buttonIsHit": true
+      },
+      "pointerError": "locator.click: Timeout 5000ms exceeded.",
+      "keyboardPlay": "Pause background animation"
+    }
+  ]
+}

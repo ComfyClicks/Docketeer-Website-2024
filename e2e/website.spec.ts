@@ -1,9 +1,11 @@
 import AxeBuilder from '@axe-core/playwright';
 import { test, expect } from './fixtures';
 
-test('keyboard navigation, mobile menu and direct section links work', async ({ page }, testInfo) => {
+test('keyboard navigation, mobile menu and direct section links work', async ({ page, browserName }, testInfo) => {
   await page.goto('/');
-  await page.keyboard.press('Tab');
+  // macOS WebKit uses Option-Tab to include links in keyboard navigation.
+  const tabKey = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+  await page.keyboard.press(tabKey);
   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
@@ -13,7 +15,7 @@ test('keyboard navigation, mobile menu and direct section links work', async ({ 
     await menu.focus();
     await page.keyboard.press('Enter');
     await expect(menu).toHaveAttribute('aria-expanded', 'true');
-    await page.keyboard.press('Tab');
+    await page.keyboard.press(tabKey);
     await expect(page.getByRole('navigation').getByRole('link', { name: 'Home', exact: true })).toBeFocused();
     await page.keyboard.press('Escape');
     await expect(menu).toHaveAttribute('aria-expanded', 'false');

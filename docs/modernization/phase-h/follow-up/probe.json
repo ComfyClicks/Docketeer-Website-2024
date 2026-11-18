@@ -1,0 +1,182 @@
+[
+  {
+    "variant": "original",
+    "focus": {
+      "tag": "VIDEO",
+      "text": "Download the Containers demonstration"
+    },
+    "error": "locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"background-motion\">Play background animation</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  3 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+    "geometry": {
+      "rect": {
+        "x": 605.234375,
+        "y": 818.3125,
+        "width": 229.53125,
+        "height": 50,
+        "top": 818.3125,
+        "right": 834.765625,
+        "bottom": 868.3125,
+        "left": 605.234375
+      },
+      "scrollY": 5266,
+      "innerHeight": 900,
+      "visualViewport": {
+        "offsetTop": 0,
+        "pageTop": 5266,
+        "height": 900
+      },
+      "hits": [
+        {
+          "y": 823.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 843.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 863.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        }
+      ]
+    },
+    "rawClick": "Play background animation"
+  },
+  {
+    "variant": "scroll-auto",
+    "focus": {
+      "tag": "VIDEO",
+      "text": "Download the Containers demonstration"
+    },
+    "error": "locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"background-motion\">Play background animation</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    4 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+    "geometry": {
+      "rect": {
+        "x": 605.234375,
+        "y": 818.3125,
+        "width": 229.53125,
+        "height": 50,
+        "top": 818.3125,
+        "right": 834.765625,
+        "bottom": 868.3125,
+        "left": 605.234375
+      },
+      "scrollY": 5266,
+      "innerHeight": 900,
+      "visualViewport": {
+        "offsetTop": 0,
+        "pageTop": 5266,
+        "height": 900
+      },
+      "hits": [
+        {
+          "y": 823.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 843.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 863.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        }
+      ]
+    },
+    "rawClick": "Play background animation"
+  },
+  {
+    "variant": "no-canvas",
+    "focus": {
+      "tag": "VIDEO",
+      "text": "Download the Containers demonstration"
+    },
+    "error": "locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"background-motion\">Play background animation</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  3 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+    "geometry": {
+      "rect": {
+        "x": 605.234375,
+        "y": 818.3125,
+        "width": 229.53125,
+        "height": 50,
+        "top": 818.3125,
+        "right": 834.765625,
+        "bottom": 868.3125,
+        "left": 605.234375
+      },
+      "scrollY": 5266,
+      "innerHeight": 900,
+      "visualViewport": {
+        "offsetTop": 0,
+        "pageTop": 5266,
+        "height": 900
+      },
+      "hits": [
+        {
+          "y": 823.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 843.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 863.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        }
+      ]
+    },
+    "rawClick": "Play background animation"
+  },
+  {
+    "variant": "explicit-tabindex",
+    "focus": {
+      "tag": "A",
+      "text": "Skip to content"
+    },
+    "error": "locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" id=\"background-motion\">Play background animation</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    4 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+    "geometry": {
+      "rect": {
+        "x": 605.234375,
+        "y": 818.3125,
+        "width": 229.53125,
+        "height": 50,
+        "top": 818.3125,
+        "right": 834.765625,
+        "bottom": 868.3125,
+        "left": 605.234375
+      },
+      "scrollY": 5266,
+      "innerHeight": 900,
+      "visualViewport": {
+        "offsetTop": 0,
+        "pageTop": 5266,
+        "height": 900
+      },
+      "hits": [
+        {
+          "y": 823.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 843.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        },
+        {
+          "y": 863.3125,
+          "tag": "BUTTON",
+          "id": "background-motion"
+        }
+      ]
+    },
+    "rawClick": "Play background animation"
+  }
+]

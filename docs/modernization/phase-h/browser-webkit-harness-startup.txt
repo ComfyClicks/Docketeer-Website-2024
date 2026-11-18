@@ -1,0 +1,20 @@
+[WebServer] node:internal/modules/cjs/loader:1568
+[WebServer]   throw err;
+[WebServer]   ^
+[WebServer] 
+[WebServer] Error: Cannot find module '/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/docs/modernization/phase-h/scripts/ops/preview.mjs'
+[WebServer]     at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+[WebServer]     at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+[WebServer]     at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+[WebServer]     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+[WebServer]     at Module._load (node:internal/modules/cjs/loader:1341:5)
+[WebServer]     at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+[WebServer]     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+[WebServer]     at node:internal/main/run_main_module:33:47 {
+[WebServer]   code: 'MODULE_NOT_FOUND',
+[WebServer]   requireStack: []
+[WebServer] }
+[WebServer] 
+[WebServer] Node.js v24.22.3
+Error: Process from config.webServer was not able to start. Exit code: 1
+

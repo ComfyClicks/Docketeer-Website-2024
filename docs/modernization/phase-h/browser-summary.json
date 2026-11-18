@@ -1,0 +1,435 @@
+[
+  {
+    "engine": "chromium",
+    "stats": {
+      "startTime": "2026-11-18T15:53:49.693Z",
+      "duration": 35428.303,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "background motion is opt-in, pausable and respects live reduced motion",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 2119,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a missing Canvas context leaves content and a static background available",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 396,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 811,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "mobile",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 1108,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 3763,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "mobile",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 5862,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 9069,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "mobile",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 8826,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 395,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "mobile",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 336,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "engine": "firefox",
+    "stats": {
+      "startTime": "2026-11-18T15:54:26.651Z",
+      "duration": 6984.242,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 10,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "background motion is opt-in, pausable and respects live reduced motion",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 2,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "a missing Canvas context leaves content and a static background available",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "mobile",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 4,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "mobile",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 2,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "mobile",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 2,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "mobile",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 3,
+            "errors": [
+              {
+                "message": "Error: browserType.launch: Executable doesn't exist at /Users/andywhite/Library/Caches/ms-playwright/firefox-1572/firefox/Nightly.app/Contents/MacOS/firefox\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     npx playwright install                                 \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "stats": {
+      "startTime": "2026-11-18T15:54:34.830Z",
+      "duration": 197819.372,
+      "expected": 1,
+      "skipped": 7,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "background motion is opt-in, pausable and respects live reduced motion",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "timedOut",
+            "duration": 91946,
+            "errors": [
+              {
+                "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+              },
+              {
+                "location": {
+                  "file": "/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/motion.spec.ts",
+                  "column": 16,
+                  "line": 23
+                },
+                "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nBrowser logs:\n\n<launching> /Users/andywhite/Library/Caches/ms-playwright/webkit-2388/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=25330\n[pid=25330] <gracefully close start>\n[pid=25330] <process did exit: exitCode=0, signal=null>\n[pid=25330] starting temporary directories cleanup\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" id=\"background-motion\">Play background animation</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    158 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m        - element is visible, enabled and stable\u001b[22m\n\u001b[2m        - scrolling into view if needed\u001b[22m\n\u001b[2m        - done scrolling\u001b[22m\n\u001b[2m        - performing click action\u001b[22m\n\u001b[2m        - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m      - retrying click action\u001b[22m\n\u001b[2m        - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  21 |   await expect(button).toHaveText('Play background animation');\n  22 |   await expectStopped();\n> 23 |   await button.click();\n     |                ^\n  24 |   await expect(button).toHaveText('Pause background animation');\n  25 |   await expect.poll(frames).toBeGreaterThan(0);\n  26 |   await button.click();\n    at /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/motion.spec.ts:23:16"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "a missing Canvas context leaves content and a static background available",
+        "project": "desktop",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "duration": 1449,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "desktop",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "duration": 11215,
+            "errors": [
+              {
+                "location": {
+                  "file": "/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/website.spec.ts",
+                  "column": 69,
+                  "line": 7
+                },
+                "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('link', { name: 'Skip to content' })\nExpected: focused\nReceived: inactive\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('link', { name: 'Skip to content' }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Skip to content' })\u001b[22m\n\u001b[2m    23 \u00d7 locator resolved to <a class=\"skipLink\" href=\"#main-content\">Skip to content</a>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   5 |   await page.goto('/');\n   6 |   await page.keyboard.press('Tab');\n>  7 |   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();\n     |                                                                     ^\n   8 |   await page.keyboard.press('Enter');\n   9 |   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();\n  10 |\n    at /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/website.spec.ts:7:69"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "keyboard navigation, mobile menu and direct section links work",
+        "project": "mobile",
+        "status": "skipped",
+        "results": []
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "desktop",
+        "status": "skipped",
+        "results": [
+          {
+            "status": "interrupted",
+            "duration": 86994,
+            "errors": [
+              {
+                "location": {
+                  "file": "/Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/website.spec.ts",
+                  "column": 68,
+                  "line": 51
+                },
+                "message": "Error: locator.click: Test ended.\nBrowser logs:\n\n<launching> /Users/andywhite/Library/Caches/ms-playwright/webkit-2388/pw_run.sh --inspector-pipe --headless --no-startup-window\n<launched> pid=26476\n[pid=26476] <gracefully close start>\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Containers', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-pressed=\"true\" class=\"_toggle_kvn96_18\">Containers</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - performing click action\u001b[22m\n\u001b[2m      - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m  2 \u00d7 retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"_navbarContainer_1q7ng_10\">\u2026</div> from <header>\u2026</header> subtree intercepts pointer events\u001b[22m\n\u001b[2m  38 \u00d7 retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - performing click action\u001b[22m\n\u001b[2m       - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - performing click action\u001b[22m\n\u001b[2m       - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"_navbarContainer_1q7ng_10\">\u2026</div> from <header>\u2026</header> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"_navbarContainer_1q7ng_10\">\u2026</div> from <header>\u2026</header> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - <html lang=\"en\">\u2026</html> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  49 |       if (mobile) {\n  50 |         if (index) await page.getByRole('button', { name: 'Next demo' }).click();\n> 51 |       } else await page.getByRole('button', { name, exact: true }).click();\n     |                                                                    ^\n  52 |       const figure = page.getByRole('figure', { name: `${name} demo`, exact: true });\n  53 |       await expect(figure).toBeVisible();\n  54 |       const video = figure.locator('video');\n    at /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/website.spec.ts:51:68\n    at /Users/andywhite/Documents/Codex/2026-11-17-docketeer-website-repository-discovery-quantitative-baseline/docketeer-website-modernization/e2e/website.spec.ts:47:5"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "every demo preserves media and explicit playback controls",
+        "project": "mobile",
+        "status": "skipped",
+        "results": []
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "desktop",
+        "status": "skipped",
+        "results": []
+      },
+      {
+        "title": "images load, layout reflows and automated accessibility checks pass",
+        "project": "mobile",
+        "status": "skipped",
+        "results": []
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "desktop",
+        "status": "skipped",
+        "results": []
+      },
+      {
+        "title": "security headers and disabled local telemetry preserve the public page",
+        "project": "mobile",
+        "status": "skipped",
+        "results": []
+      }
+    ]
+  }
+]

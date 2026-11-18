@@ -202,8 +202,8 @@ const people: readonly Contributor[] = [
   },
   {
     name: 'Cedar Cooper',
-    linkedin: 'https://github.com/CedarCooper',
-    github: 'https://www.linkedin.com/in/cedar-cooper/',
+    linkedin: 'https://www.linkedin.com/in/cedar-cooper/',
+    github: 'https://github.com/CedarCooper',
   },
   {
     name: 'Sarah Moosa',

@@ -1,0 +1,6 @@
+{
+  "method": "WCAG relative luminance ratio for observed computed foreground and opaque hover background. Default body background pair is nominal CSS only; does not measure every canvas/star pixel. No global WCAG conformance claim.",
+  "hoverWhiteOn27354f": 12.29212541471662,
+  "nominalDefaultWhiteOn000005": 20.954079871101392,
+  "review": "Both aria-hidden arrow spans use the same white foreground as visible Previous/Next labels. Opaque hovered background is rgb(39,53,79). Controls are 44 CSS px tall. Automated non-text-character review is not itself a confirmed violation."
+}

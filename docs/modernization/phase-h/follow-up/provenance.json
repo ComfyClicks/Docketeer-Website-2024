@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-18T16:20:06.015147+00:00",
+  "baseCommit": "5aac1d23beabb4d4d6fcd041630e4b48ff736360",
+  "workingTree": "uncommitted contributor link fix and cross-platform test correction",
+  "sha256": {
+    "src/components/Team/others.ts": "a4e2e937c07cdf0ece1498b33d2d31aba54b028cb7d305f8524399826e392a00",
+    "e2e/website.spec.ts": "facec57236a6f8ba76a49859dcd438890ee0d83886a6527e036501d6a5651b0f",
+    "docs/modernization/phase-h/acceptance.config.ts": "5c68f8df38f08e48f11bfe9e72a9a880c00df891a2e130cc9a5c26a316ac198b",
+    "package.json": "91fc092359750364021a10f39f82ef1b72967d16739132ea79224d5fe90819e4",
+    "package-lock.json": "83cb2ebce1a67d0225d455809a6adbd5db01f6f90de3dcdb56944877fd370c7d"
+  },
+  "currentWebKitRevision": 2388,
+  "supplementalWebKitRevision": 2370,
+  "bothReportBrowserVersion": "27.2",
+  "packageUpgrade": false,
+  "persistentOSPreferenceChanges": false
+}

@@ -1,0 +1,148 @@
+[
+  {
+    "args": [
+      "-AppleKeyboardUIMode=2"
+    ],
+    "kind": "minimal",
+    "focus": "<body><a href=\"#end\">Skip</a><div style=\"height:5500px\">Content</div><button id=\"end\" onclick=\"this.textContent='Clicked'\">Click</button></body>",
+    "result": "clicked",
+    "box": {
+      "x": 8,
+      "y": 874,
+      "width": 54.734375,
+      "height": 18
+    },
+    "text": "Clicked",
+    "events": [
+      {
+        "type": "pointerdown",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 28,
+        "y": 883,
+        "pageY": 5535
+      },
+      {
+        "type": "mousedown",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 28,
+        "y": 883,
+        "pageY": 5535
+      },
+      {
+        "type": "click",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 28,
+        "y": 883,
+        "pageY": 5535
+      },
+      {
+        "type": "pointerdown",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 35,
+        "y": 883,
+        "pageY": 5535
+      },
+      {
+        "type": "mousedown",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 35,
+        "y": 883,
+        "pageY": 5535
+      },
+      {
+        "type": "click",
+        "target": "BUTTON",
+        "id": "end",
+        "x": 35,
+        "y": 883,
+        "pageY": 5535
+      }
+    ],
+    "viewport": {
+      "dpr": 1,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollY": 4652,
+      "screenX": -10000,
+      "screenY": -10180
+    }
+  },
+  {
+    "args": [
+      "-AppleKeyboardUIMode=2"
+    ],
+    "kind": "site",
+    "focus": "<video class=\"_gifs_kvn96_50\" aria-label=\"Play Containers demonstration\" controls=\"\" playsinline=\"\" preload=\"none\" loading=\"lazy\" width=\"800\" height=\"504\" poster=\"/assets/Container",
+    "result": "clicked",
+    "box": {
+      "x": 598.046875,
+      "y": 818.3125,
+      "width": 243.890625,
+      "height": 50
+    },
+    "text": "Play background animation",
+    "events": [
+      {
+        "type": "pointerdown",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 720,
+        "y": 843,
+        "pageY": 6109
+      },
+      {
+        "type": "mousedown",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 720,
+        "y": 843,
+        "pageY": 6109
+      },
+      {
+        "type": "click",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 720,
+        "y": 843,
+        "pageY": 6109
+      },
+      {
+        "type": "pointerdown",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 719,
+        "y": 843,
+        "pageY": 6109
+      },
+      {
+        "type": "mousedown",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 719,
+        "y": 843,
+        "pageY": 6109
+      },
+      {
+        "type": "click",
+        "target": "BUTTON",
+        "id": "background-motion",
+        "x": 719,
+        "y": 843,
+        "pageY": 6109
+      }
+    ],
+    "viewport": {
+      "dpr": 1,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollY": 5266,
+      "screenX": -10000,
+      "screenY": -10180
+    }
+  }
+]

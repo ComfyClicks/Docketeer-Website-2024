@@ -1,0 +1,800 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: motion.spec.ts >> background motion is opt-in, pausable and respects live reduced motion
+- Location: e2e/motion.spec.ts:4:1
+
+# Error details
+
+```
+Test timeout of 90000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - link "Skip to content" [ref=e5]:
+      - /url: "#main-content"
+    - banner:
+      - navigation "Primary" [ref=e6]:
+        - generic [ref=e7]:
+          - paragraph [ref=e9]: Docketeer
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link "Home" [ref=e12]:
+                - /url: "#home"
+            - listitem [ref=e13]:
+              - link "Features" [ref=e14]:
+                - /url: "#features"
+            - listitem [ref=e15]:
+              - link "Demo" [ref=e16]:
+                - /url: "#demo"
+            - listitem [ref=e17]:
+              - link "Get Started" [ref=e18]:
+                - /url: "#getstarted"
+            - listitem [ref=e19]:
+              - link "Team" [ref=e20]:
+                - /url: "#team"
+            - listitem [ref=e21]:
+              - link "Docketeer on GitHub" [ref=e22]:
+                - /url: https://github.com/open-source-labs/Docketeer-Extension
+            - listitem [ref=e23]:
+              - link "Docketeer on LinkedIn" [ref=e24]:
+                - /url: https://www.linkedin.com/company/docketeer/
+    - main [ref=e27]:
+      - generic [ref=e31]:
+        - heading "Introducing Docketeer XX" [level=1] [ref=e32]
+        - paragraph [ref=e33]: Docketeer is a user-friendly container management application with intuitive interfaces and visualization tools for Docker containers and Kubernetes clusters.
+        - link "Start Exploring" [ref=e35]:
+          - /url: "#features"
+      - generic [ref=e39]:
+        - heading "Features" [level=2] [ref=e40]
+        - link "Read about us on Medium!" [ref=e41]:
+          - /url: https://medium.com/@ellissong/docketeer-xix-new-features-in-uncharted-seas-3baf72099488
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - heading "Container Management" [level=3] [ref=e44]
+            - paragraph [ref=e45]: Create, start, stop, and delete Docker containers all in one place
+          - listitem [ref=e46]:
+            - heading "Network Management" [level=3] [ref=e47]
+            - paragraph [ref=e48]: Network support and intuitive visualization for seamless container networking
+          - listitem [ref=e49]:
+            - heading "Image Management" [level=3] [ref=e50]
+            - paragraph [ref=e51]: Easily view, run, and remove Docker images and explore vulnerabilities for each image
+          - listitem [ref=e52]:
+            - heading "Container Metrics" [level=3] [ref=e53]
+            - paragraph [ref=e54]: Access and save metrics related to containers in a dashboard with rich visualizations
+          - listitem [ref=e55]:
+            - heading "Snapshots" [level=3] [ref=e56]
+            - paragraph [ref=e57]: View and compare previously captured container metrics
+          - listitem [ref=e58]:
+            - heading "Cluster Metrics" [level=3] [ref=e59]
+            - paragraph [ref=e60]: Access metrics related to Kubernetes clusters in a dashboard with rich visualizations
+          - listitem [ref=e61]:
+            - heading "Detailed Process Logs" [level=3] [ref=e62]
+            - paragraph [ref=e63]: View, search and download process logs related to containers
+          - listitem [ref=e64]:
+            - heading "System Prune" [level=3] [ref=e65]
+            - paragraph [ref=e66]: Clear up unused images or networks to ensure optimized performance
+          - listitem [ref=e67]:
+            - heading "Prometheus Configurations" [level=3] [ref=e68]
+            - paragraph [ref=e69]: Dynamically configure Prometheus targets to scrape data
+      - generic [ref=e72]:
+        - heading "See Docketeer in Action" [level=2] [ref=e73]
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - paragraph [ref=e76]: Click to see a demo of each feature!
+            - generic [ref=e77]:
+              - button "Containers" [pressed] [ref=e78] [cursor=pointer]
+              - button "Images" [ref=e79] [cursor=pointer]
+              - button "Data Visualization" [ref=e80] [cursor=pointer]
+              - button "Time-Series" [ref=e81] [cursor=pointer]
+              - button "Metrics" [ref=e82] [cursor=pointer]
+              - button "Cluster Metrics" [ref=e83] [cursor=pointer]
+              - button "Configurations" [ref=e84] [cursor=pointer]
+              - button "Others" [ref=e85] [cursor=pointer]
+            - paragraph [ref=e86]: Start, stop, or remove your containers at the click of a button.
+          - figure "Containers demo" [ref=e88]:
+            - generic "Play Containers demonstration" [ref=e89]
+      - generic [ref=e91]:
+        - heading "Get Started" [level=2] [ref=e92]
+        - paragraph [ref=e93]: Getting started with Docketeer is easy!Navigate to our GitHub page and follow our detailed instructions under "Installation".Or find us on the Docker Desktop Extensions Marketplace and simply click install.
+        - generic [ref=e94]:
+          - link "GitHub" [ref=e96]:
+            - /url: https://github.com/open-source-labs/Docketeer-Extension
+          - link "Dockerhub" [ref=e98]:
+            - /url: https://hub.docker.com/extensions/docketeerxiv/docketeer-extension
+      - generic [ref=e100]:
+        - heading "Meet The Docketeer Team!" [level=2] [ref=e101]
+        - list [ref=e102]:
+          - listitem [ref=e103]:
+            - paragraph [ref=e104]: Arthur Jin
+            - link "Arthur Jin on GitHub" [ref=e105]:
+              - /url: https://github.com/ArthurJZL
+            - link "Arthur Jin on LinkedIn" [ref=e106]:
+              - /url: https://www.linkedin.com/in/arthur-jin/
+          - listitem [ref=e109]:
+            - paragraph [ref=e110]: Christopher Schiro
+            - link "Christopher Schiro on GitHub" [ref=e111]:
+              - /url: https://github.com/cschiro
+            - link "Christopher Schiro on LinkedIn" [ref=e112]:
+              - /url: https://www.linkedin.com/in/chris-schiro/
+          - listitem [ref=e115]:
+            - paragraph [ref=e116]: Nika Mamaladze
+            - link "Nika Mamaladze on GitHub" [ref=e117]:
+              - /url: https://github.com/nikamamaladze92
+            - link "Nika Mamaladze on LinkedIn" [ref=e118]:
+              - /url: https://www.linkedin.com/in/nika-mamaladze-b06b53326/
+          - listitem [ref=e121]:
+            - paragraph [ref=e122]: Rachel Baek
+            - link "Rachel Baek on GitHub" [ref=e123]:
+              - /url: https://github.com/rsbaek
+            - link "Rachel Baek on LinkedIn" [ref=e124]:
+              - /url: https://www.linkedin.com/in/rachel-baek/
+          - listitem [ref=e127]:
+            - paragraph [ref=e128]: Chris Rodriguez
+            - link "Chris Rodriguez on GitHub" [ref=e129]:
+              - /url: https://github.com/chrisr0892
+            - link "Chris Rodriguez on LinkedIn" [ref=e130]:
+              - /url: https://www.linkedin.com/in/chris-kossky-rodriguez/
+          - listitem [ref=e133]:
+            - paragraph [ref=e134]: Aiden Carere
+            - link "Aiden Carere on GitHub" [ref=e135]:
+              - /url: https://github.com/AidenCarere
+            - link "Aiden Carere on LinkedIn" [ref=e136]:
+              - /url: https://www.linkedin.com/in/aiden-carere
+          - listitem [ref=e139]:
+            - paragraph [ref=e140]: Joseph Ahn
+            - link "Joseph Ahn on GitHub" [ref=e141]:
+              - /url: https://github.com/joeahn95
+            - link "Joseph Ahn on LinkedIn" [ref=e142]:
+              - /url: https://www.linkedin.com/in/dohyun-joseph-ahn/
+          - listitem [ref=e145]:
+            - paragraph [ref=e146]: Dylan Sterling
+            - link "Dylan Sterling on GitHub" [ref=e147]:
+              - /url: https://github.com/dsterling7
+            - link "Dylan Sterling on LinkedIn" [ref=e148]:
+              - /url: https://www.linkedin.com/in/dylan-sterling-2b7256180/
+          - listitem [ref=e151]:
+            - paragraph [ref=e152]: Ellis Song
+            - link "Ellis Song on GitHub" [ref=e153]:
+              - /url: https://github.com/elsong86
+            - link "Ellis Song on LinkedIn" [ref=e154]:
+              - /url: http://www.linkedin.com/in/ellissong
+          - listitem [ref=e157]:
+            - paragraph [ref=e158]: Alexander David
+            - link "Alexander David on GitHub" [ref=e159]:
+              - /url: https://github.com/alexjosephdavid
+            - link "Alexander David on LinkedIn" [ref=e160]:
+              - /url: https://www.linkedin.com/in/alexander-joseph-david/
+          - listitem [ref=e163]:
+            - paragraph [ref=e164]: Nick Kravchuk
+            - link "Nick Kravchuk on GitHub" [ref=e165]:
+              - /url: https://github.com/kravchuknick
+            - link "Nick Kravchuk on LinkedIn" [ref=e166]:
+              - /url: https://www.linkedin.com/in/nickkravchuk/
+          - listitem [ref=e169]:
+            - paragraph [ref=e170]: Quan Nguyen
+            - link "Quan Nguyen on GitHub" [ref=e171]:
+              - /url: https://github.com/ZinWR
+            - link "Quan Nguyen on LinkedIn" [ref=e172]:
+              - /url: https://www.linkedin.com/in/quan-nguyen27/
+          - listitem [ref=e175]:
+            - paragraph [ref=e176]: Andy White
+            - link "Andy White on GitHub" [ref=e177]:
+              - /url: https://github.com/ComfyClicks
+            - link "Andy White on LinkedIn" [ref=e178]:
+              - /url: https://www.linkedin.com/in/andywhite5/
+        - heading "Additional contributors" [level=3] [ref=e181]
+        - list [ref=e182]:
+          - listitem [ref=e183]:
+            - paragraph [ref=e184]:
+              - text: Chelsea Lau
+              - generic [ref=e185]:
+                - link "Chelsea Lau on GitHub" [ref=e186]:
+                  - /url: https://github.com/chelsea01688
+                - link "Chelsea Lau on LinkedIn" [ref=e187]:
+                  - /url: https://www.linkedin.com/in/chelsea-wklau
+          - listitem [ref=e190]:
+            - paragraph [ref=e191]:
+              - text: Giovanni Cortes Morales
+              - generic [ref=e192]:
+                - link "Giovanni Cortes Morales on GitHub" [ref=e193]:
+                  - /url: https://github.com/GiovanniCortes19
+                - link "Giovanni Cortes Morales on LinkedIn" [ref=e194]:
+                  - /url: https://www.linkedin.com/in/giovanni-cortes/
+          - listitem [ref=e197]:
+            - paragraph [ref=e198]:
+              - text: Jade Chan
+              - generic [ref=e199]:
+                - link "Jade Chan on GitHub" [ref=e200]:
+                  - /url: https://github.com/JadeChan03
+                - link "Jade Chan on LinkedIn" [ref=e201]:
+                  - /url: https://www.linkedin.com/in/jade-melissa-chan/
+          - listitem [ref=e204]:
+            - paragraph [ref=e205]:
+              - text: Jessica Grant
+              - generic [ref=e206]:
+                - link "Jessica Grant on GitHub" [ref=e207]:
+                  - /url: https://github.com/jessicarobyn10
+                - link "Jessica Grant on LinkedIn" [ref=e208]:
+                  - /url: https://www.linkedin.com/in/jessicargrant/
+          - listitem [ref=e211]:
+            - paragraph [ref=e212]:
+              - text: Robin Zhang
+              - generic [ref=e213]:
+                - link "Robin Zhang on GitHub" [ref=e214]:
+                  - /url: https://github.com/yuchen-z
+                - link "Robin Zhang on LinkedIn" [ref=e215]:
+                  - /url: https://www.linkedin.com/in/yuchen-robin-zhang
+          - listitem [ref=e218]:
+            - paragraph [ref=e219]:
+              - text: Gabriela Pleitez Gomez
+              - generic [ref=e220]:
+                - link "Gabriela Pleitez Gomez on GitHub" [ref=e221]:
+                  - /url: https://github.com/gabyspg
+                - link "Gabriela Pleitez Gomez on LinkedIn" [ref=e222]:
+                  - /url: https://www.linkedin.com/in/gabriela-pleitez-gomez
+          - listitem [ref=e225]:
+            - paragraph [ref=e226]:
+              - text: Alicia Zhang
+              - generic [ref=e227]:
+                - link "Alicia Zhang on GitHub" [ref=e228]:
+                  - /url: https://github.com/AliciaZ429
+                - link "Alicia Zhang on LinkedIn" [ref=e229]:
+                  - /url: https://www.linkedin.com/in/alicia-zhang-a1aaa2138/
+          - listitem [ref=e232]:
+            - paragraph [ref=e233]:
+              - text: Peter Chung
+              - generic [ref=e234]:
+                - link "Peter Chung on GitHub" [ref=e235]:
+                  - /url: https://github.com/peterchung
+                - link "Peter Chung on LinkedIn" [ref=e236]:
+                  - /url: https://www.linkedin.com/in/peterminkichung/
+          - listitem [ref=e239]:
+            - paragraph [ref=e240]:
+              - text: Wei Wang
+              - generic [ref=e241]:
+                - link "Wei Wang on GitHub" [ref=e242]:
+                  - /url: https://github.com/weiwang0305
+                - link "Wei Wang on LinkedIn" [ref=e243]:
+                  - /url: https://www.linkedin.com/in/wei-cheng-wang-2a92b4120/
+          - listitem [ref=e246]:
+            - paragraph [ref=e247]:
+              - text: Jonathan Gray
+              - generic [ref=e248]:
+                - link "Jonathan Gray on GitHub" [ref=e249]:
+                  - /url: https://github.com/thejohnny5
+                - link "Jonathan Gray on LinkedIn" [ref=e250]:
+                  - /url: https://www.linkedin.com/in/jonathan-lee-gray
+          - listitem [ref=e253]:
+            - paragraph [ref=e254]:
+              - text: Cristian Morales
+              - generic [ref=e255]:
+                - link "Cristian Morales on GitHub" [ref=e256]:
+                  - /url: https://github.com/Cris-Morales
+                - link "Cristian Morales on LinkedIn" [ref=e257]:
+                  - /url: https://www.linkedin.com/in/cris-morales
+          - listitem [ref=e260]:
+            - paragraph [ref=e261]:
+              - text: Josh Nelson
+              - generic [ref=e262]:
+                - link "Josh Nelson on GitHub" [ref=e263]:
+                  - /url: https://github.com/JoshNelson98
+                - link "Josh Nelson on LinkedIn" [ref=e264]:
+                  - /url: https://www.linkedin.com/in/josh-nelson-7aba19284/
+          - listitem [ref=e267]:
+            - paragraph [ref=e268]:
+              - text: Christian Lyon
+              - generic [ref=e269]:
+                - link "Christian Lyon on GitHub" [ref=e270]:
+                  - /url: https://github.com/christianDoesCoding
+                - link "Christian Lyon on LinkedIn" [ref=e271]:
+                  - /url: https://www.linkedin.com/in/christiandoescoding
+          - listitem [ref=e274]:
+            - paragraph [ref=e275]:
+              - text: Jacob Melendez
+              - generic [ref=e276]:
+                - link "Jacob Melendez on GitHub" [ref=e277]:
+                  - /url: https://github.com/JacobAMelendez
+                - link "Jacob Melendez on LinkedIn" [ref=e278]:
+                  - /url: https://www.linkedin.com/in/jacob-melendez/
+          - listitem [ref=e281]:
+            - paragraph [ref=e282]:
+              - text: Tristan Keester
+              - generic [ref=e283]:
+                - link "Tristan Keester on GitHub" [ref=e284]:
+                  - /url: https://github.com/Ronagens
+                - link "Tristan Keester on LinkedIn" [ref=e285]:
+                  - /url: https://www.linkedin.com/in/tristan-keester/
+          - listitem [ref=e288]:
+            - paragraph [ref=e289]:
+              - text: Tristan Krause
+              - generic [ref=e290]:
+                - link "Tristan Krause on GitHub" [ref=e291]:
+                  - /url: https://github.com/tristanyukio
+                - link "Tristan Krause on LinkedIn" [ref=e292]:
+                  - /url: https://www.linkedin.com/in/krausetristan
+          - listitem [ref=e295]:
+            - paragraph [ref=e296]:
+              - text: Grant Schussler
+              - generic [ref=e297]:
+                - link "Grant Schussler on GitHub" [ref=e298]:
+                  - /url: https://github.com/gschussler
+                - link "Grant Schussler on LinkedIn" [ref=e299]:
+                  - /url: https://www.linkedin.com/in/grant-schussler
+          - listitem [ref=e302]:
+            - paragraph [ref=e303]:
+              - text: Adrian Kormier
+              - generic [ref=e304]:
+                - link "Adrian Kormier on GitHub" [ref=e305]:
+                  - /url: https://github.com/adriankormier
+                - link "Adrian Kormier on LinkedIn" [ref=e306]:
+                  - /url: https://www.linkedin.com/in/adrian-kormier/
+          - listitem [ref=e309]:
+            - paragraph [ref=e310]:
+              - text: Garrett Allen
+              - generic [ref=e311]:
+                - link "Garrett Allen on GitHub" [ref=e312]:
+                  - /url: https://github.com/garrettallen0
+                - link "Garrett Allen on LinkedIn" [ref=e313]:
+                  - /url: https://www.linkedin.com/in/garrettallen0
+          - listitem [ref=e316]:
+            - paragraph [ref=e317]:
+              - text: Michael Liu
+              - generic [ref=e318]:
+                - link "Michael Liu on GitHub" [ref=e319]:
+                  - /url: https://github.com/KwonJiyongGD
+                - link "Michael Liu on LinkedIn" [ref=e320]:
+                  - /url: https://www.linkedin.com/in/michael-kwon-liu/
+          - listitem [ref=e323]:
+            - paragraph [ref=e324]:
+              - text: Shuai Shao
+              - generic [ref=e325]:
+                - link "Shuai Shao on GitHub" [ref=e326]:
+                  - /url: https://github.com/shao-shuai
+                - link "Shuai Shao on LinkedIn" [ref=e327]:
+                  - /url: https://www.linkedin.com/in/shuai-sh/
+          - listitem [ref=e330]:
+            - paragraph [ref=e331]:
+              - text: John Jong Oun Kim
+              - generic [ref=e332]:
+                - link "John Jong Oun Kim on GitHub" [ref=e333]:
+                  - /url: https://github.com/jayoo0621
+                - link "John Jong Oun Kim on LinkedIn" [ref=e334]:
+                  - /url: https://www.linkedin.com/in/john-jong-oun-kim-01b4a3246/
+          - listitem [ref=e337]:
+            - paragraph [ref=e338]:
+              - text: Anna Tran
+              - generic [ref=e339]:
+                - link "Anna Tran on GitHub" [ref=e340]:
+                  - /url: https://github.com/annamullike
+                - link "Anna Tran on LinkedIn" [ref=e341]:
+                  - /url: https://www.linkedin.com/in/annatran10/
+          - listitem [ref=e344]:
+            - paragraph [ref=e345]:
+              - text: Emily Johl
+              - generic [ref=e346]:
+                - link "Emily Johl on GitHub" [ref=e347]:
+                  - /url: https://github.com/emilyjohl
+                - link "Emily Johl on LinkedIn" [ref=e348]:
+                  - /url: https://www.linkedin.com/in/emily-johl-5093ab137/
+          - listitem [ref=e351]:
+            - paragraph [ref=e352]:
+              - text: Jaeni Lee
+              - generic [ref=e353]:
+                - link "Jaeni Lee on GitHub" [ref=e354]:
+                  - /url: https://github.com/jaenixlee
+                - link "Jaeni Lee on LinkedIn" [ref=e355]:
+                  - /url: https://www.linkedin.com/in/jaenilee/
+          - listitem [ref=e358]:
+            - paragraph [ref=e359]:
+              - text: Joseph Salgado
+              - generic [ref=e360]:
+                - link "Joseph Salgado on GitHub" [ref=e361]:
+                  - /url: https://github.com/Jaysalgado
+                - link "Joseph Salgado on LinkedIn" [ref=e362]:
+                  - /url: https://www.linkedin.com/in/joseph-salgado-76410620b/
+          - listitem [ref=e365]:
+            - paragraph [ref=e366]:
+              - text: Michael Angelo Garcia
+              - generic [ref=e367]:
+                - link "Michael Angelo Garcia on GitHub" [ref=e368]:
+                  - /url: https://github.com/MichaelAngelo13
+                - link "Michael Angelo Garcia on LinkedIn" [ref=e369]:
+                  - /url: https://www.linkedin.com/in/michael-angelo-garcia-053848265/
+          - listitem [ref=e372]:
+            - paragraph [ref=e373]:
+              - text: Benjamin Huang
+              - generic [ref=e374]:
+                - link "Benjamin Huang on GitHub" [ref=e375]:
+                  - /url: https://github.com/byhuang4100
+                - link "Benjamin Huang on LinkedIn" [ref=e376]:
+                  - /url: https://www.linkedin.com/in/bh4120/
+          - listitem [ref=e379]:
+            - paragraph [ref=e380]:
+              - text: Mason Royal
+              - generic [ref=e381]:
+                - link "Mason Royal on GitHub" [ref=e382]:
+                  - /url: https://github.com/masonroyal
+                - link "Mason Royal on LinkedIn" [ref=e383]:
+                  - /url: https://www.linkedin.com/in/masonroyal/
+          - listitem [ref=e386]:
+            - paragraph [ref=e387]:
+              - text: Saad Hamdani
+              - generic [ref=e388]:
+                - link "Saad Hamdani on GitHub" [ref=e389]:
+                  - /url: https://github.com/saadh123
+                - link "Saad Hamdani on LinkedIn" [ref=e390]:
+                  - /url: https://www.linkedin.com/in/saadh123/
+          - listitem [ref=e393]:
+            - paragraph [ref=e394]:
+              - text: Edward Kenny
+              - generic [ref=e395]:
+                - link "Edward Kenny on GitHub" [ref=e396]:
+                  - /url: https://github.com/EdwardKenny
+                - link "Edward Kenny on LinkedIn" [ref=e397]:
+                  - /url: https://www.linkedin.com/in/edward-kenny-8949b8136/
+          - listitem [ref=e400]:
+            - paragraph [ref=e401]:
+              - text: Alex Schmidt
+              - generic [ref=e402]:
+                - link "Alex Schmidt on GitHub" [ref=e403]:
+                  - /url: https://github.com/redafroninja
+                - link "Alex Schmidt on LinkedIn" [ref=e404]:
+                  - /url: https://www.linkedin.com/in/alex-schmidt1/
+          - listitem [ref=e407]:
+            - paragraph [ref=e408]:
+              - text: Dillon Patel
+              - generic [ref=e409]:
+                - link "Dillon Patel on GitHub" [ref=e410]:
+                  - /url: https://github.com/d-hp
+                - link "Dillon Patel on LinkedIn" [ref=e411]:
+                  - /url: https://www.linkedin.com/in/d-hp
+          - listitem [ref=e414]:
+            - paragraph [ref=e415]:
+              - text: Kennan Budnik
+              - generic [ref=e416]:
+                - link "Kennan Budnik on GitHub" [ref=e417]:
+                  - /url: https://github.com/kobudnik
+                - link "Kennan Budnik on LinkedIn" [ref=e418]:
+                  - /url: https://www.linkedin.com/in/kobudnik/
+          - listitem [ref=e421]:
+            - paragraph [ref=e422]:
+              - text: Garima Bhatia
+              - generic [ref=e423]:
+                - link "Garima Bhatia on GitHub" [ref=e424]:
+                  - /url: https://github.com/garimab06
+                - link "Garima Bhatia on LinkedIn" [ref=e425]:
+                  - /url: https://www.linkedin.com/in/GarimaB06/
+          - listitem [ref=e428]:
+            - paragraph [ref=e429]:
+              - text: Nathan Cho
+              - generic [ref=e430]:
+                - link "Nathan Cho on GitHub" [ref=e431]:
+                  - /url: https://github.com/nathanycho
+                - link "Nathan Cho on LinkedIn" [ref=e432]:
+                  - /url: https://www.linkedin.com/in/nathanycho/
+          - listitem [ref=e435]:
+            - paragraph [ref=e436]:
+              - text: Eshaan Joshi
+              - generic [ref=e437]:
+                - link "Eshaan Joshi on GitHub" [ref=e438]:
+                  - /url: https://github.com/eshaan32
+                - link "Eshaan Joshi on LinkedIn" [ref=e439]:
+                  - /url: https://www.linkedin.com/in/eshaanjoshi/
+          - listitem [ref=e442]:
+            - paragraph [ref=e443]:
+              - text: Jonathan Wong
+              - generic [ref=e444]:
+                - link "Jonathan Wong on GitHub" [ref=e445]:
+                  - /url: https://github.com/WongJonathann
+                - link "Jonathan Wong on LinkedIn" [ref=e446]:
+                  - /url: https://www.linkedin.com/in/jon-wong-00/
+          - listitem [ref=e449]:
+            - paragraph [ref=e450]:
+              - text: Drew Manley
+              - generic [ref=e451]:
+                - link "Drew Manley on GitHub" [ref=e452]:
+                  - /url: https://github.com/DrewManley
+                - link "Drew Manley on LinkedIn" [ref=e453]:
+                  - /url: https://www.linkedin.com/in/andrewmanley13/
+          - listitem [ref=e456]:
+            - paragraph [ref=e457]:
+              - text: Tiffany Chau
+              - generic [ref=e458]:
+                - link "Tiffany Chau on GitHub" [ref=e459]:
+                  - /url: https://github.com/tiffanynchau/
+                - link "Tiffany Chau on LinkedIn" [ref=e460]:
+                  - /url: https://www.linkedin.com/in/tiffanynchau/
+          - listitem [ref=e463]:
+            - paragraph [ref=e464]:
+              - text: Cedar Cooper
+              - generic [ref=e465]:
+                - link "Cedar Cooper on GitHub" [ref=e466]:
+                  - /url: https://www.linkedin.com/in/cedar-cooper/
+                - link "Cedar Cooper on LinkedIn" [ref=e467]:
+                  - /url: https://github.com/CedarCooper
+          - listitem [ref=e470]:
+            - paragraph [ref=e471]:
+              - text: Sarah Moosa
+              - generic [ref=e472]:
+                - link "Sarah Moosa on GitHub" [ref=e473]:
+                  - /url: https://github.com/Sbethm?tab=repositories
+                - link "Sarah Moosa on LinkedIn" [ref=e474]:
+                  - /url: https://www.linkedin.com/in/sarah-moosa-4b05721b6/
+          - listitem [ref=e477]:
+            - paragraph [ref=e478]:
+              - text: Jack Yuan
+              - generic [ref=e479]:
+                - link "Jack Yuan on GitHub" [ref=e480]:
+                  - /url: https://github.com/jackyuan1
+                - link "Jack Yuan on LinkedIn" [ref=e481]:
+                  - /url: https://www.linkedin.com/in/jackyuan1/
+          - listitem [ref=e484]:
+            - paragraph [ref=e485]:
+              - text: Abigail Gerig
+              - generic [ref=e486]:
+                - link "Abigail Gerig on GitHub" [ref=e487]:
+                  - /url: https://github.com/4estgirl
+                - link "Abigail Gerig on LinkedIn" [ref=e488]:
+                  - /url: https://www.linkedin.com/in/abigail-gerig/
+          - listitem [ref=e491]:
+            - paragraph [ref=e492]:
+              - text: Matt Dias
+              - generic [ref=e493]:
+                - link "Matt Dias on GitHub" [ref=e494]:
+                  - /url: https://github.com/Schmang13
+                - link "Matt Dias on LinkedIn" [ref=e495]:
+                  - /url: https://www.linkedin.com/in/matthew-j-dias/
+          - listitem [ref=e498]:
+            - paragraph [ref=e499]:
+              - text: Trine Medina
+              - generic [ref=e500]:
+                - link "Trine Medina on GitHub" [ref=e501]:
+                  - /url: https://github.com/TrineMedina
+                - link "Trine Medina on LinkedIn" [ref=e502]:
+                  - /url: https://www.linkedin.com/in/trinemedina/
+          - listitem [ref=e505]:
+            - paragraph [ref=e506]:
+              - text: Ruli Warner-Rosen
+              - generic [ref=e507]:
+                - link "Ruli Warner-Rosen on GitHub" [ref=e508]:
+                  - /url: https://github.com/Ruliwr
+                - link "Ruli Warner-Rosen on LinkedIn" [ref=e509]:
+                  - /url: https://www.linkedin.com/in/ruliwr/
+          - listitem [ref=e512]:
+            - paragraph [ref=e513]:
+              - text: Christian Looff
+              - generic [ref=e514]:
+                - link "Christian Looff on GitHub" [ref=e515]:
+                  - /url: https://github.com/cmlooff
+                - link "Christian Looff on LinkedIn" [ref=e516]:
+                  - /url: https://www.linkedin.com/in/christian-looff/
+          - listitem [ref=e519]:
+            - paragraph [ref=e520]:
+              - text: Christina Son
+              - generic [ref=e521]:
+                - link "Christina Son on GitHub" [ref=e522]:
+                  - /url: https://github.com/cson17
+                - link "Christina Son on LinkedIn" [ref=e523]:
+                  - /url: http://www.linkedin.com/in/christinason17
+          - listitem [ref=e526]:
+            - paragraph [ref=e527]:
+              - text: Austin Andrews
+              - generic [ref=e528]:
+                - link "Austin Andrews on GitHub" [ref=e529]:
+                  - /url: https://github.com/austinandrews
+                - link "Austin Andrews on LinkedIn" [ref=e530]:
+                  - /url: http://www.linkedin.com/in/austinandrews17
+          - listitem [ref=e533]:
+            - paragraph [ref=e534]:
+              - text: Fernando Luna
+              - generic [ref=e535]:
+                - link "Fernando Luna on GitHub" [ref=e536]:
+                  - /url: https://github.com/lunaf-github
+                - link "Fernando Luna on LinkedIn" [ref=e537]:
+                  - /url: http://www.linkedin.com/in/fernando-luna
+          - listitem [ref=e540]:
+            - paragraph [ref=e541]:
+              - text: Eric Lay
+              - generic [ref=e542]:
+                - link "Eric Lay on GitHub" [ref=e543]:
+                  - /url: https://github.com/ericlay14
+                - link "Eric Lay on LinkedIn" [ref=e544]:
+                  - /url: http://www.linkedin.com/in/ericlay14
+          - listitem [ref=e547]:
+            - paragraph [ref=e548]:
+              - text: Dylan Feldman
+              - generic [ref=e549]:
+                - link "Dylan Feldman on GitHub" [ref=e550]:
+                  - /url: https://github.com/dfeldman24
+                - link "Dylan Feldman on LinkedIn" [ref=e551]:
+                  - /url: http://www.linkedin.com/in/dylan-feldman
+          - listitem [ref=e554]:
+            - paragraph [ref=e555]:
+              - text: Eric Lee
+              - generic [ref=e556]:
+                - link "Eric Lee on GitHub" [ref=e557]:
+                  - /url: https://github.com/errc-lee
+                - link "Eric Lee on LinkedIn" [ref=e558]:
+                  - /url: https://www.linkedin.com/in/errc-lee/
+          - listitem [ref=e561]:
+            - paragraph [ref=e562]:
+              - text: Kenneth Hui
+              - generic [ref=e563]:
+                - link "Kenneth Hui on GitHub" [ref=e564]:
+                  - /url: https://github.com/kennethhui121
+                - link "Kenneth Hui on LinkedIn" [ref=e565]:
+                  - /url: https://www.linkedin.com/in/kenneth-hui/
+          - listitem [ref=e568]:
+            - paragraph [ref=e569]:
+              - text: Kristine Aguda
+              - generic [ref=e570]:
+                - link "Kristine Aguda on GitHub" [ref=e571]:
+                  - /url: https://github.com/kaguda
+                - link "Kristine Aguda on LinkedIn" [ref=e572]:
+                  - /url: https://www.linkedin.com/in/kristine-aguda/
+          - listitem [ref=e575]:
+            - paragraph [ref=e576]:
+              - text: Tre Hultzen
+              - generic [ref=e577]:
+                - link "Tre Hultzen on GitHub" [ref=e578]:
+                  - /url: https://github.com/THultz
+                - link "Tre Hultzen on LinkedIn" [ref=e579]:
+                  - /url: https://www.linkedin.com/in/tre-hultzen/
+          - listitem [ref=e582]:
+            - paragraph [ref=e583]:
+              - text: Emma Czech
+              - generic [ref=e584]:
+                - link "Emma Czech on GitHub" [ref=e585]:
+                  - /url: https://github.com/emczech
+                - link "Emma Czech on LinkedIn" [ref=e586]:
+                  - /url: https://www.linkedin.com/in/emczech
+          - listitem [ref=e589]:
+            - paragraph [ref=e590]:
+              - text: May Li
+              - generic [ref=e591]:
+                - link "May Li on GitHub" [ref=e592]:
+                  - /url: https://github.com/msscloudy
+                - link "May Li on LinkedIn" [ref=e593]:
+                  - /url: https://www.linkedin.com/in/maysli
+          - listitem [ref=e596]:
+            - paragraph [ref=e597]:
+              - text: Ricardo Cortez
+              - generic [ref=e598]:
+                - link "Ricardo Cortez on GitHub" [ref=e599]:
+                  - /url: https://github.com/rcortez88
+                - link "Ricardo Cortez on LinkedIn" [ref=e600]:
+                  - /url: https://www.linkedin.com/in/rcortez88/
+          - listitem [ref=e603]:
+            - paragraph [ref=e604]:
+              - text: Brent Speight
+              - generic [ref=e605]:
+                - link "Brent Speight on GitHub" [ref=e606]:
+                  - /url: https://github.com/brentspeight
+                - link "Brent Speight on LinkedIn" [ref=e607]:
+                  - /url: https://www.linkedin.com/in/brent-speight/
+          - listitem [ref=e610]:
+            - paragraph [ref=e611]:
+              - text: Lorenzo Guevara
+              - generic [ref=e612]:
+                - link "Lorenzo Guevara on GitHub" [ref=e613]:
+                  - /url: https://github.com/lo-guevara
+                - link "Lorenzo Guevara on LinkedIn" [ref=e614]:
+                  - /url: https://www.linkedin.com/in/lorenzoguevara/
+          - listitem [ref=e617]:
+            - paragraph [ref=e618]:
+              - text: Catherine Larcheveque
+              - generic [ref=e619]:
+                - link "Catherine Larcheveque on GitHub" [ref=e620]:
+                  - /url: https://github.com/clarcheveque
+                - link "Catherine Larcheveque on LinkedIn" [ref=e621]:
+                  - /url: https://www.linkedin.com/in/clarcheveque/
+          - listitem [ref=e624]:
+            - paragraph [ref=e625]:
+              - text: Charles Ryu
+              - generic [ref=e626]:
+                - link "Charles Ryu on GitHub" [ref=e627]:
+                  - /url: https://github.com/charcharryu
+                - link "Charles Ryu on LinkedIn" [ref=e628]:
+                  - /url: https://www.linkedin.com/in/charcharryu/
+          - listitem [ref=e631]:
+            - paragraph [ref=e632]:
+              - text: Griffin Silver
+              - generic [ref=e633]:
+                - link "Griffin Silver on GitHub" [ref=e634]:
+                  - /url: https://github.com/griffinrogersilver
+                - link "Griffin Silver on LinkedIn" [ref=e635]:
+                  - /url: https://www.linkedin.com/in/griffin-silver-1ab675140/
+          - listitem [ref=e638]:
+            - paragraph [ref=e639]:
+              - text: Alex Smith
+              - generic [ref=e640]:
+                - link "Alex Smith on GitHub" [ref=e641]:
+                  - /url: https://github.com/ajsmith925
+                - link "Alex Smith on LinkedIn" [ref=e642]:
+                  - /url: http://www.linkedin.com/in/ajsmith925
+          - listitem [ref=e645]:
+            - paragraph [ref=e646]:
+              - text: Anton Abdukhamidov
+              - generic [ref=e647]:
+                - link "Anton Abdukhamidov on GitHub" [ref=e648]:
+                  - /url: https://github.com/abdukhamidov-anton
+                - link "Anton Abdukhamidov on LinkedIn" [ref=e649]:
+                  - /url: https://www.linkedin.com/in/anton-abdukhamidov-1163733b/
+          - listitem [ref=e652]:
+            - paragraph [ref=e653]:
+              - text: Chai Lee
+              - generic [ref=e654]:
+                - link "Chai Lee on GitHub" [ref=e655]:
+                  - /url: https://github.com/seachai
+                - link "Chai Lee on LinkedIn" [ref=e656]:
+                  - /url: https://www.linkedin.com/in/chai-lee-5a064649/
+          - listitem [ref=e659]:
+            - paragraph [ref=e660]:
+              - text: Matt Jones
+              - generic [ref=e661]:
+                - link "Matt Jones on GitHub" [ref=e662]:
+                  - /url: https://github.com/mc-jones
+                - link "Matt Jones on LinkedIn" [ref=e663]:
+                  - /url: https://www.linkedin.com/in/mc-jones/
+          - listitem [ref=e666]:
+            - paragraph [ref=e667]:
+              - text: Richie Edwards
+              - generic [ref=e668]:
+                - link "Richie Edwards on GitHub" [ref=e669]:
+                  - /url: https://github.com/richie-edwards
+                - link "Richie Edwards on LinkedIn" [ref=e670]:
+                  - /url: https://www.linkedin.com/in/richieedwards/
+          - listitem [ref=e673]:
+            - paragraph [ref=e674]:
+              - text: Mitesh Patel
+              - generic [ref=e675]:
+                - link "Mitesh Patel on GitHub" [ref=e676]:
+                  - /url: https://github.com/mit1812
+                - link "Mitesh Patel on LinkedIn" [ref=e677]:
+                  - /url: https://www.linkedin.com/in/mitesh-patel-8702728b/
+          - listitem [ref=e680]:
+            - paragraph [ref=e681]:
+              - text: Minchan Jun
+              - generic [ref=e682]:
+                - link "Minchan Jun on GitHub" [ref=e683]:
+                  - /url: https://github.com/MinchanJun
+                - link "Minchan Jun on LinkedIn" [ref=e684]:
+                  - /url: https://www.linkedin.com/in/minchan-jun/
+          - listitem [ref=e687]:
+            - paragraph [ref=e688]:
+              - text: Kadir Gundogdu
+              - generic [ref=e689]:
+                - link "Kadir Gundogdu on GitHub" [ref=e690]:
+                  - /url: https://github.com/kadirgund
+                - link "Kadir Gundogdu on LinkedIn" [ref=e691]:
+                  - /url: https://www.linkedin.com/in/kadirgund/
+          - listitem [ref=e694]:
+            - paragraph [ref=e695]:
+              - text: Dan Lin
+              - generic [ref=e696]:
+                - link "Dan Lin on GitHub" [ref=e697]:
+                  - /url: https://github.com/DanLin91
+                - link "Dan Lin on LinkedIn" [ref=e698]:
+                  - /url: https://www.linkedin.com/in/danlin91/
+          - listitem [ref=e701]:
+            - paragraph [ref=e702]:
+              - text: Wilmer Sinchi
+              - generic [ref=e703]:
+                - link "Wilmer Sinchi on GitHub" [ref=e704]:
+                  - /url: https://github.com/sinchiw
+                - link "Wilmer Sinchi on LinkedIn" [ref=e705]:
+                  - /url: https://www.linkedin.com/in/wilmer-sinchi-143b7681/
+  - contentinfo [ref=e708]:
+    - paragraph [ref=e709]: © Docketeer 2025 | MIT License
+    - button "Play background animation" [ref=e710]
+```

@@ -1,0 +1,96 @@
+[
+  {
+    "args": [],
+    "kind": "minimal",
+    "focus": "<body><a href=\"#end\">Skip</a><div style=\"height:5500px\">Content</div><button id=\"end\" onclick=\"this.textContent='Clicked'\">Click</button></body>",
+    "result": "locator.click: Timeout 1500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button')\u001b[22m\n\u001b[2m    - locator resolved ",
+    "box": {
+      "x": 8,
+      "y": 882,
+      "width": 41.828125,
+      "height": 18
+    },
+    "text": "Click",
+    "events": [
+      {
+        "type": "pointerdown",
+        "target": "HTML",
+        "id": "",
+        "x": -53.66664457321167,
+        "y": 947.9999890327454,
+        "pageY": 5591.999989032745
+      },
+      {
+        "type": "mousedown",
+        "target": "HTML",
+        "id": "",
+        "x": -54,
+        "y": 947,
+        "pageY": 5591
+      },
+      {
+        "type": "click",
+        "target": "HTML",
+        "id": "",
+        "x": -54,
+        "y": 947,
+        "pageY": 5591
+      }
+    ],
+    "viewport": {
+      "dpr": 1,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollY": 4644,
+      "screenX": 517,
+      "screenY": 129
+    }
+  },
+  {
+    "args": [],
+    "kind": "site",
+    "focus": "<video class=\"_gifs_kvn96_50\" aria-label=\"Play Containers demonstration\" controls=\"\" playsinline=\"\" preload=\"none\" loading=\"lazy\" width=\"800\" height=\"504\" poster=\"/assets/Container",
+    "result": "locator.click: Timeout 1500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#background-motion')\u001b[22m\n\u001b[2m    - locat",
+    "box": {
+      "x": 605.234375,
+      "y": 818.3125,
+      "width": 229.53125,
+      "height": 50
+    },
+    "text": "Play background animation",
+    "events": [
+      {
+        "type": "pointerdown",
+        "target": "HTML",
+        "id": "",
+        "x": 715.2222809791565,
+        "y": 900.4444336891174,
+        "pageY": 6166.444433689117
+      },
+      {
+        "type": "mousedown",
+        "target": "HTML",
+        "id": "",
+        "x": 715,
+        "y": 900,
+        "pageY": 6166
+      },
+      {
+        "type": "click",
+        "target": "HTML",
+        "id": "",
+        "x": 715,
+        "y": 900,
+        "pageY": 6166
+      }
+    ],
+    "viewport": {
+      "dpr": 1,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollY": 5266,
+      "screenX": 517,
+      "screenY": 77
+    }
+  }
+]
