@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-18",
+  "baseCommit": "4f1529aa8fc789f4153e258b7e14381370d59c67",
+  "workingTree": "uncommitted Phase G implementation",
+  "sha256": {
+    "src/index.tsx": "2463278890a8dd2564c7401d978a1f21704b88074011a97ab3ffb0e3c90a36e1",
+    "src/monitoring/monitoring.ts": "32259432fffaa857eb50bb722d82a473c868595190af31a573e2f1bce4be13b1",
+    "vercel.json": "fbea929904c5c1c6c32152fc2d21daed04455b47d1083d5e331787e24555666e",
+    "package.json": "91fc092359750364021a10f39f82ef1b72967d16739132ea79224d5fe90819e4",
+    "package-lock.json": "83cb2ebce1a67d0225d455809a6adbd5db01f6f90de3dcdb56944877fd370c7d",
+    "playwright.config.ts": "d69b996c2773d024c979922d1c1e9a26fac32e55a512bc8e5dfa49bee97fd44e",
+    "e2e/website.spec.ts": "400affb9764d2be8aa2c9aa75d4c39dd1f3a7e41e2df54d8d76505601ba02efd",
+    "__tests__/monitoring.test.tsx": "f9b744fbaf61f6d90ccd417c227831e9d8d3e44c64f37b3599eabcf396c04d64",
+    "scripts/ops/preview.mjs": "a803a094c32f1f2f750ca56dccf7b928c5be28cc7bb5dcda2a76d233e6a0615e",
+    "scripts/ops/verify-deployment.mjs": "3eded1aa54dacfe52f2031a21e11466c70372698279b39463fc79407e0ce154e",
+    ".env.example": "d8003afcad088f4f52f346d2d2d9dd127c6f0acd6e699404db3e91c4cf239e0f",
+    ".github/workflows/run_tests.yml": "d292afac3e26d4221b88d8947d03dff2fab380f48db8a4e38a0dad1df0893d78"
+  }
+}

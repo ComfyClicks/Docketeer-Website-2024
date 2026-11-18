@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-18T15:40:40.099Z",
+  "schema": "https://openapi.vercel.sh/vercel.json",
+  "scope": "Self-contained headers subsection; full root schema draft-04 unavailable in installed Ajv",
+  "headersSchemaSha256": "41f29036c55baadb1d08077abf164fad3bd60085da9e4763cdfca8e94bebdb36",
+  "schemaValidation": "headers passed; invalid value-type fixture rejected",
+  "localPositive": "19 checks passed",
+  "localNegative": "exactly three missing-header failures; expected exit 1",
+  "limitation": "Local Vite adapter, not real Vercel edge delivery"
+}

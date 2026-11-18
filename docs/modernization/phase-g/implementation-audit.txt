@@ -1,0 +1,35 @@
+
+> docketeer-xii-website@0.0.0 audit:ci
+> node scripts/ci/audit.mjs
+
+{
+  "checkedAt": "2026-11-18T15:37:01.997Z",
+  "exceptionAdvisory": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+  "exceptionExpires": "2026-12-17T00:00:00Z",
+  "totals": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 7,
+    "critical": 0,
+    "total": 7
+  },
+  "productionTotals": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "exceptions": [
+    "@parcel/watcher",
+    "@vitejs/plugin-react",
+    "fdir",
+    "picomatch",
+    "tinyglobby",
+    "vite",
+    "vitest"
+  ],
+  "failures": []
+}

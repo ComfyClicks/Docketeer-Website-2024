@@ -35,20 +35,12 @@ npm run test:performance
 
 Automatic GitHub checks run only for relevant pull requests targeting `master`. Browser/accessibility and performance suites require manual dispatch. There are no scheduled runs, push-trigger duplicates, browser matrices or dependency bots. Successful reports stay in job logs/summary; failed manual checks retain diagnostics for three days. Local diagnostics go to ignored directories rather than replacing historical baseline evidence.
 
-## Deployment Notes for Future Teams
-Before you start, double check to see if `the domain is expiring`.
+## Production handoff and release verification
 
-We renewed the domain on Google Domain Registrar for 1 year (use your stipend).
+See the [Phase G runbook](docs/modernization/phase-g/README.md) for deployment ownership, monitoring costs, activation checks and rollback responsibilities. After building the intended release, run `node scripts/ops/verify-deployment.mjs https://docketeer.io/ release-check.json` to compare the public site with local build artifacts. A nonzero exit means the release does not match or a check could not complete; this command only reads public responses and does not deploy. Use a fresh output filename. No scheduled CI runs are added.
 
-1. Log in with `Docketeer-website` GitHub account from credentials sheet.
-2. Create your Team Feature Branch (`git checkout -b team19`)
-3. Commit your Changes. (`git commit -m '<commit message>'`)
-4. Push to that Branch. (`git push origin team18`)
-5. Open a Pull Request to master branch. --> Follow common GitFlow Practice!
-6. Check on Vercel:  
-```
-Dashboard > Docketeer-Website team > docketeer-website-2024 project
-```
-Inspect the links to see if it's updated (should be automatically if not wait a few minutes)
+## Deployment ownership
 
-If you have questions, contact `Quan & Andy or any of team 18` through our LinkedIn! (Info in credentials sheet)
+The existing Docketeer website is managed by a teammate on Vercel Hobby. Follow the [teammate activation checklist](docs/modernization/phase-g/teammate-handoff.md) to verify the connected repository, deploy a reviewed release, activate optional monitoring and record rollback ownership. Do not assume a fork or feature-branch push changes production. Hobby preview sharing does not grant project-management access; the owner can perform the dashboard steps without an account upgrade or sharing credentials.
+
+Monitoring defaults to off. Copy `.env.example` only when configuring a local environment; the owner sets the chosen `VITE_ENABLE_WEB_ANALYTICS` and `VITE_ENABLE_SPEED_INSIGHTS` switches in Vercel **Production** after verifying the corresponding service. Changes require a new build/deployment. The application never initializes monitoring on local or preview origins.

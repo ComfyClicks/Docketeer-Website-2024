@@ -1,0 +1,7 @@
+{
+  "added": [
+    "node_modules/@vercel/analytics",
+    "node_modules/@vercel/speed-insights"
+  ],
+  "existingPackageEntriesChanged": []
+}

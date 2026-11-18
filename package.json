@@ -7,7 +7,7 @@
     "dev": "vite --port 3001",
     "start": "vite --port 3000",
     "build": "tsc --noEmit && vite build",
-    "lint": "oxlint src __tests__ e2e playwright.config.ts scripts/ci --max-warnings 0",
+    "lint": "oxlint src __tests__ e2e playwright.config.ts scripts/ci scripts/ops --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
@@ -20,6 +20,8 @@
     "test:ci-policy": "node --test scripts/ci/*.test.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.1.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

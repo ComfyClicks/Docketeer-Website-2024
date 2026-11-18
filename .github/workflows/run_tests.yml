@@ -9,6 +9,8 @@ on:
       - '__tests__/**'
       - 'e2e/**'
       - 'scripts/ci/**'
+      - 'scripts/ops/**'
+      - 'vercel.json'
       - '.github/workflows/run_tests.yml'
       - '.nvmrc'
       - '.npmrc'

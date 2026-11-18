@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-18T15:39:52.013Z",
+  "target": "http://127.0.0.1:4180",
+  "method": "Compare served metadata, entry assets and crawl files with local dist. No claim of exact deployed Git SHA.",
+  "checks": [
+    {
+      "name": "Homepage HTML response",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Header X-Content-Type-Options",
+      "passed": true,
+      "detail": {
+        "expected": "nosniff",
+        "actual": "nosniff"
+      }
+    },
+    {
+      "name": "Header Referrer-Policy",
+      "passed": true,
+      "detail": {
+        "expected": "strict-origin",
+        "actual": "strict-origin"
+      }
+    },
+    {
+      "name": "Header Permissions-Policy",
+      "passed": true,
+      "detail": {
+        "expected": "camera=(), microphone=(), geolocation=()",
+        "actual": "camera=(), microphone=(), geolocation=()"
+      }
+    },
+    {
+      "name": "Page title",
+      "passed": true,
+      "detail": {
+        "expected": "Docketeer | Open-source Docker and Kubernetes Management",
+        "actual": "Docketeer | Open-source Docker and Kubernetes Management"
+      }
+    },
+    {
+      "name": "meta[name=\"description\"]",
+      "passed": true,
+      "detail": {
+        "expected": "Manage Docker containers, visualize resource usage, and monitor Docker and Kubernetes environments with Docketeer, an open-source Docker extension.",
+        "actual": "Manage Docker containers, visualize resource usage, and monitor Docker and Kubernetes environments with Docketeer, an open-source Docker extension."
+      }
+    },
+    {
+      "name": "link[rel=\"canonical\"]",
+      "passed": true,
+      "detail": {
+        "expected": "https://docketeer.io/",
+        "actual": "https://docketeer.io/"
+      }
+    },
+    {
+      "name": "meta[property=\"og:url\"]",
+      "passed": true,
+      "detail": {
+        "expected": "https://docketeer.io/",
+        "actual": "https://docketeer.io/"
+      }
+    },
+    {
+      "name": "meta[property=\"og:title\"]",
+      "passed": true,
+      "detail": {
+        "expected": "Docketeer | Open-source Docker and Kubernetes Management",
+        "actual": "Docketeer | Open-source Docker and Kubernetes Management"
+      }
+    },
+    {
+      "name": "meta[property=\"og:description\"]",
+      "passed": true,
+      "detail": {
+        "expected": "Manage Docker containers, visualize resource usage, and monitor Docker and Kubernetes environments with Docketeer, an open-source Docker extension.",
+        "actual": "Manage Docker containers, visualize resource usage, and monitor Docker and Kubernetes environments with Docketeer, an open-source Docker extension."
+      }
+    },
+    {
+      "name": "meta[property=\"og:image\"]",
+      "passed": true,
+      "detail": {
+        "expected": "https://docketeer.io/android-chrome-512x512.png",
+        "actual": "https://docketeer.io/android-chrome-512x512.png"
+      }
+    },
+    {
+      "name": "meta[name=\"twitter:card\"]",
+      "passed": true,
+      "detail": {
+        "expected": "summary",
+        "actual": "summary"
+      }
+    },
+    {
+      "name": "meta[name=\"twitter:image\"]",
+      "passed": true,
+      "detail": {
+        "expected": "https://docketeer.io/android-chrome-512x512.png",
+        "actual": "https://docketeer.io/android-chrome-512x512.png"
+      }
+    },
+    {
+      "name": "Entry asset URLs match local build",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "/assets/index-B-bQC7lz.js",
+          "/assets/index-C1R-fb_g.css"
+        ],
+        "actual": [
+          "/assets/index-B-bQC7lz.js",
+          "/assets/index-C1R-fb_g.css"
+        ]
+      }
+    },
+    {
+      "name": "/assets/index-B-bQC7lz.js",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "contentType": "text/javascript",
+        "expectedSha256": "1d40d66ae2f30c9e49e63c50d5b18f2913fc274cec2530581d7e9f143af1d8f1",
+        "actualSha256": "1d40d66ae2f30c9e49e63c50d5b18f2913fc274cec2530581d7e9f143af1d8f1",
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "/assets/index-C1R-fb_g.css",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "contentType": "text/css",
+        "expectedSha256": "e1b07b818c1e35998194efdd90c96e843bc392da6854033f87d3d4c78af6c03a",
+        "actualSha256": "e1b07b818c1e35998194efdd90c96e843bc392da6854033f87d3d4c78af6c03a",
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "/robots.txt",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "contentType": "text/plain",
+        "expectedSha256": "bbe0400f5c419ce3f882b542459bf2a670779c491ae6fdcb3ac9fdb6a7f12b4a",
+        "actualSha256": "bbe0400f5c419ce3f882b542459bf2a670779c491ae6fdcb3ac9fdb6a7f12b4a",
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "/sitemap.xml",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "contentType": "text/xml",
+        "expectedSha256": "4137ce71fbcbc102b5b9d585048e101bcb6b1641fd4ca2af162552278a8aca5d",
+        "actualSha256": "4137ce71fbcbc102b5b9d585048e101bcb6b1641fd4ca2af162552278a8aca5d",
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "/android-chrome-512x512.png",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "contentType": "image/png",
+        "expectedSha256": "b35089fbd2138beb5c85faaa5f3366ba3a56948ca19dee0f39ede23a61abbde3",
+        "actualSha256": "b35089fbd2138beb5c85faaa5f3366ba3a56948ca19dee0f39ede23a61abbde3",
+        "cacheControl": "no-cache"
+      }
+    }
+  ],
+  "failures": []
+}

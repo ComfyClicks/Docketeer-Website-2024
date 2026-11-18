@@ -24,7 +24,7 @@ export default defineConfig({
     { name: 'mobile', testIgnore: '**/motion.spec.ts', use: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } },
   ],
   webServer: {
-    command: 'npm run preview -- --host 127.0.0.1 --port 4173 --strictPort',
+    command: 'node scripts/ops/preview.mjs',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: false,
     timeout: 30_000,

@@ -1,0 +1,25 @@
+
+> docketeer-xii-website@0.0.0 test:browser
+> playwright test
+
+[WebServer] (node:16175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:16194) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › e2e/motion.spec.ts:4:1 › background motion is opt-in, pausable and respects live reduced motion (2.0s)
+  ✓   2 [desktop] › e2e/motion.spec.ts:44:1 › a missing Canvas context leaves content and a static background available (378ms)
+  ✓   3 [desktop] › e2e/website.spec.ts:4:1 › keyboard navigation, mobile menu and direct section links work (800ms)
+  ✓   4 [desktop] › e2e/website.spec.ts:34:1 › every demo preserves media and explicit playback controls (3.7s)
+  ✓   5 [desktop] › e2e/website.spec.ts:110:1 › images load, layout reflows and automated accessibility checks pass (9.0s)
+  ✓   6 [desktop] › e2e/website.spec.ts:134:1 › security headers and disabled local telemetry preserve the public page (429ms)
+(node:16354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [mobile] › e2e/website.spec.ts:4:1 › keyboard navigation, mobile menu and direct section links work (1.3s)
+  ✓   8 [mobile] › e2e/website.spec.ts:34:1 › every demo preserves media and explicit playback controls (6.2s)
+  ✓   9 [mobile] › e2e/website.spec.ts:110:1 › images load, layout reflows and automated accessibility checks pass (9.6s)
+  ✓  10 [mobile] › e2e/website.spec.ts:134:1 › security headers and disabled local telemetry preserve the public page (386ms)
+
+  10 passed (36.4s)

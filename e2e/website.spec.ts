@@ -129,3 +129,18 @@ test('images load, layout reflows and automated accessibility checks pass', asyn
   await page.addStyleTag({ content: '* { line-height:1.5 !important; letter-spacing:.12em !important; word-spacing:.16em !important; } p { margin-bottom:2em !important; }' });
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
 });
+
+
+test('security headers and disabled local telemetry preserve the public page', async ({ page }) => {
+  const monitoringRequests: string[] = [];
+  page.on('request', request => {
+    if (request.url().includes('/_vercel/')) monitoringRequests.push(request.url());
+  });
+  const response = await page.goto('/?privacy-fixture=local#home');
+  const headers = response!.headers();
+  expect(headers['x-content-type-options']).toBe('nosniff');
+  expect(headers['referrer-policy']).toBe('strict-origin');
+  expect(headers['permissions-policy']).toBe('camera=(), microphone=(), geolocation=()');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  expect(monitoringRequests).toEqual([]);
+});

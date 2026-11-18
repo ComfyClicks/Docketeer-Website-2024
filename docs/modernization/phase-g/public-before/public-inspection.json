@@ -1,0 +1,340 @@
+{
+  "date": "2026-11-18T01:50:41.808Z",
+  "sourceCommit": "4f1529aa8fc789f4153e258b7e14381370d59c67",
+  "origin": "https://docketeer.io",
+  "node": "v24.22.1",
+  "http": [
+    {
+      "url": "https://docketeer.io/",
+      "finalUrl": "https://docketeer.io/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "server": "Vercel",
+        "age": "348488",
+        "etag": "W/\"ed5042b1b09ba1cbaeb24eaee5274e25\"",
+        "last-modified": "Sat, 14 Nov 2026 01:02:33 GMT",
+        "strict-transport-security": "max-age=63072000",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "reporting-endpoints": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "x-frame-options": null,
+        "cross-origin-opener-policy": null,
+        "cross-origin-resource-policy": null,
+        "x-robots-tag": null,
+        "access-control-allow-origin": "*"
+      },
+      "decodedBytes": 3973,
+      "sha256": "249facc93f1bb83cc6ae82f6787178b931cf6bc7356be88b195358f949bcc611"
+    },
+    {
+      "url": "https://docketeer.io/assets/index-435f0cbe.js",
+      "finalUrl": "https://docketeer.io/assets/index-435f0cbe.js",
+      "status": 200,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "server": "Vercel",
+        "age": "305793",
+        "etag": "W/\"acd2b223d90160b2870487cdaad446eb\"",
+        "last-modified": "Sat, 14 Nov 2026 12:54:09 GMT",
+        "strict-transport-security": "max-age=63072000",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "reporting-endpoints": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "x-frame-options": null,
+        "cross-origin-opener-policy": null,
+        "cross-origin-resource-policy": null,
+        "x-robots-tag": null,
+        "access-control-allow-origin": "*"
+      },
+      "decodedBytes": 671306,
+      "sha256": "a635a79b7c1ef41b7b26f307428f8d1d4d77f48d7bdf54936a9e5ed58b3bfbed"
+    },
+    {
+      "url": "https://docketeer.io/assets/index-59b59a66.css",
+      "finalUrl": "https://docketeer.io/assets/index-59b59a66.css",
+      "status": 200,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "server": "Vercel",
+        "age": "27448",
+        "etag": "W/\"4d69031152f7646ad2615075b740c701\"",
+        "last-modified": "Tue, 17 Nov 2026 18:13:14 GMT",
+        "strict-transport-security": "max-age=63072000",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "reporting-endpoints": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "x-frame-options": null,
+        "cross-origin-opener-policy": null,
+        "cross-origin-resource-policy": null,
+        "x-robots-tag": null,
+        "access-control-allow-origin": "*"
+      },
+      "decodedBytes": 10778,
+      "sha256": "59b59a6686699d8e0a8485733bb27767c1b1e93b6367daf0484c819e550eba07"
+    },
+    {
+      "url": "https://docketeer.io/robots.txt",
+      "finalUrl": "https://docketeer.io/robots.txt",
+      "status": 404,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "server": "Vercel",
+        "age": null,
+        "etag": null,
+        "last-modified": null,
+        "strict-transport-security": "max-age=63072000",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "reporting-endpoints": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "x-frame-options": null,
+        "cross-origin-opener-policy": null,
+        "cross-origin-resource-policy": null,
+        "x-robots-tag": null,
+        "access-control-allow-origin": null
+      },
+      "decodedBytes": 79,
+      "sha256": "7d08dee906a55ac001d8b21d789b14fff686fccfa06652c2ff976f6579c7f48e",
+      "returnsHtml": false
+    },
+    {
+      "url": "https://docketeer.io/sitemap.xml",
+      "finalUrl": "https://docketeer.io/sitemap.xml",
+      "status": 404,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "server": "Vercel",
+        "age": null,
+        "etag": null,
+        "last-modified": null,
+        "strict-transport-security": "max-age=63072000",
+        "content-security-policy": null,
+        "content-security-policy-report-only": null,
+        "reporting-endpoints": null,
+        "x-content-type-options": null,
+        "referrer-policy": null,
+        "permissions-policy": null,
+        "x-frame-options": null,
+        "cross-origin-opener-policy": null,
+        "cross-origin-resource-policy": null,
+        "x-robots-tag": null,
+        "access-control-allow-origin": null
+      },
+      "decodedBytes": 79,
+      "sha256": "65e8200791ea13286af9c9833e40a77a771ebdc792d0e63843f9696d4d8ea308",
+      "returnsHtml": false
+    }
+  ],
+  "browser": {
+    "version": "159.0.8154.6",
+    "method": "Fresh desktop context; reduced motion; initial navigation plus 5 seconds, no interaction. URLs omit queries/fragments. A finite capture cannot prove absence of organizational monitoring.",
+    "requests": [
+      {
+        "url": "https://docketeer.io/",
+        "type": "document",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/index-435f0cbe.js",
+        "type": "script",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/index-59b59a66.css",
+        "type": "stylesheet",
+        "method": "GET"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2",
+        "type": "stylesheet",
+        "method": "GET"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2",
+        "type": "stylesheet",
+        "method": "GET"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2",
+        "type": "font",
+        "method": "GET"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/prompt/v12/-W_8XJnvUD7dzB2Ck_kIaWMuUZctdg.woff2",
+        "type": "font",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/docketeerlogo2-2a4aeb80.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/github-mark-white-60d03f0f.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/docketeerlogo-7bb47e0e.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/containers-d1c64555.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/network-b55bf10b.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/images-5b337207.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/metrics-bc8ae15e.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/snapshot-f1debd3c.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/kubernetes-16f31520.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/logs-58d40e0e.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/prune-01b6841e.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/configurations-3f850ada.svg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/ContainersFilters_v20-94349884.gif",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/04-symbol_light-blue-docker-logo-9e2466fe.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Arthur-618b8f33.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/ChrisS-19389cd1.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Nika-bf9875d8.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Rachel-f4204164.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Chris-5b7e4b5a.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Aiden-f66b172e.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Joseph-92375131.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Dylan-21e48d3c.png",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Ellis-3a9ec9b6.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Alex-e813b666.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Nick-ecdf98d0.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Quan-641fb4e4.jpg",
+        "type": "image",
+        "method": "GET"
+      },
+      {
+        "url": "https://docketeer.io/assets/Andy-9ccf3700.jpg",
+        "type": "image",
+        "method": "GET"
+      }
+    ],
+    "failures": [],
+    "exceptions": [],
+    "scriptElements": [
+      "https://docketeer.io/assets/index-435f0cbe.js"
+    ]
+  },
+  "html": {
+    "title": "Docketeer",
+    "description": null,
+    "scripts": [
+      "https://docketeer.io/assets/index-435f0cbe.js"
+    ],
+    "styles": [
+      "https://docketeer.io/assets/index-59b59a66.css"
+    ]
+  },
+  "directDependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
