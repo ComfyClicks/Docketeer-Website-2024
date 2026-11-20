@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { filterTelemetry } from '../src/monitoring/monitoring';
+import { filterTelemetry } from '../../src/monitoring/monitoring';
 
 const sdk = vi.hoisted(() => ({ analytics: vi.fn(), speed: vi.fn() }));
 vi.mock('@vercel/analytics', () => ({ inject: sdk.analytics }));
@@ -27,7 +27,7 @@ test('drops custom analytics events', () => {
   expect(filterTelemetry({ type: 'event', url: 'https://docketeer.io/' })).toBeNull();
 });
 test('initializes both selected SDKs once and passes filtering/sampling options', async () => {
-  const { startMonitoring } = await import('../src/monitoring/monitoring');
+  const { startMonitoring } = await import('../../src/monitoring/monitoring');
   await Promise.all([startMonitoring(), startMonitoring()]);
   expect(sdk.analytics).toHaveBeenCalledTimes(1);
   expect(sdk.speed).toHaveBeenCalledTimes(1);
@@ -43,13 +43,13 @@ test.each(['development', 'preview', 'disabled', 'dnt', 'gpc'])('does not initia
   }
   if (condition === 'dnt') vi.stubGlobal('navigator', { doNotTrack: '1' });
   if (condition === 'gpc') vi.stubGlobal('navigator', { globalPrivacyControl: true });
-  await (await import('../src/monitoring/monitoring')).startMonitoring();
+  await (await import('../../src/monitoring/monitoring')).startMonitoring();
   expect(sdk.analytics).not.toHaveBeenCalled();
   expect(sdk.speed).not.toHaveBeenCalled();
 });
 test('each integration can be enabled independently', async () => {
   vi.stubEnv('VITE_ENABLE_SPEED_INSIGHTS', 'false');
-  await (await import('../src/monitoring/monitoring')).startMonitoring();
+  await (await import('../../src/monitoring/monitoring')).startMonitoring();
   expect(sdk.analytics).toHaveBeenCalledTimes(1);
   expect(sdk.speed).not.toHaveBeenCalled();
 });
@@ -57,7 +57,7 @@ test('optional SDK initialization failure does not reject site startup', async (
   sdk.analytics.mockImplementationOnce(() => { throw new Error('SDK failure'); });
   const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
   try {
-    await expect((await import('../src/monitoring/monitoring')).startMonitoring()).resolves.toBeUndefined();
+    await expect((await import('../../src/monitoring/monitoring')).startMonitoring()).resolves.toBeUndefined();
     expect(sdk.speed).toHaveBeenCalledTimes(1);
     expect(warning).toHaveBeenCalledWith('[Docketeer] Optional monitoring could not initialize.');
   } finally { warning.mockRestore(); }

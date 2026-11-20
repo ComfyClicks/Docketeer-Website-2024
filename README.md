@@ -19,6 +19,8 @@ TypeScript **7.0.2** performs compiler checks; Vite builds the browser applicati
 
 Baseline evidence is preserved in [docs/modernization/00-baseline.md](docs/modernization/00-baseline.md). Phase A results are recorded separately in [docs/modernization/phase-a/README.md](docs/modernization/phase-a/README.md). Local changes do not update production until an authorized deployment.
 
+Unit and component tests live in `tests/unit/`. Playwright browser tests live in `tests/e2e/`.
+
 ## Conservative CI and browser checks
 
 `npm run check` runs lint, the production build, test type checking and Vitest. See [the CI runbook](docs/modernization/phase-e/README.md) for the complete workflow, security exception and validation record.

@@ -6,8 +6,7 @@ on:
     paths:
       - 'src/**'
       - 'public/**'
-      - '__tests__/**'
-      - 'e2e/**'
+      - 'tests/**'
       - 'scripts/ci/**'
       - 'scripts/ops/**'
       - 'vercel.json'

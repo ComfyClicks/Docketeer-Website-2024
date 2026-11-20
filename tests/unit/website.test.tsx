@@ -1,9 +1,9 @@
 import { test, expect, vi } from 'vitest';
 import { createMediaQuery } from './setup';
 import { render, fireEvent, screen, within, act } from '@testing-library/react';
-import App from '../src/App';
-import Navbar from '../src/components/Navbar/Navbar';
-import Demo from '../src/components/Demo/Demo';
+import App from '../../src/App';
+import Navbar from '../../src/components/Navbar/Navbar';
+import Demo from '../../src/components/Demo/Demo';
 
 test('legacy demos load on request, stop at their poster, and reset on selection', () => {
   render(<Demo />);
