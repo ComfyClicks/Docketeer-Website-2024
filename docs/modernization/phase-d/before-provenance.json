@@ -1,8 +1,0 @@
-{
-  "commit": "47326ca61dd588b3735dedb115488c5d66ce6099",
-  "archiveDirectory": "/var/folders/pn/405vb7q14jdg85593sjdcrpr0000gn/T/docketeer-phase-d-before-rwm5n7th",
-  "url": "http://localhost:4174/",
-  "capturedAt": "2026-11-17T21:38:14.895869+00:00",
-  "buildExitCode": 0,
-  "dependencySource": "existing checkout node_modules symlink; no install"
-}

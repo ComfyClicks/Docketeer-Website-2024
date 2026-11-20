@@ -24,4 +24,5 @@ for name,rel,widths in [('hero','docketeerlogo.png',(350,517)),('navbar','docket
             subprocess.run([cwebp,'-quiet','-lossless',str(png),'-o',str(target)],check=True)
             size=subprocess.check_output([magick,'identify','-format','%w %h',str(png)],text=True).split()
         records.append({'source':str(source.relative_to(root)),'sourceBytes':source.stat().st_size,'output':str(target.relative_to(root)),'width':int(size[0]),'height':int(size[1]),'bytes':target.stat().st_size})
-(root/'docs/modernization/phase-d/static-assets.json').write_text(json.dumps(records,indent=2)+'\n')
+(root/'reports/media').mkdir(parents=True, exist_ok=True)
+(root/'reports/media/static-assets.json').write_text(json.dumps(records,indent=2)+'\n')

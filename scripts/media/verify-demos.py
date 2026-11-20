@@ -2,11 +2,16 @@
 import json
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
-REPORT = ROOT / 'docs/modernization/phase-d/media'
+REPORT = ROOT / 'reports/media'
+magick = shutil.which('magick')
+if magick is None:
+    raise SystemExit('ImageMagick is required. Install it and make sure magick is on PATH.')
+
 records = json.loads((REPORT / 'conversion.json').read_text())['assets']
 results = []
 with tempfile.TemporaryDirectory(prefix='docketeer-media-check-') as directory:
@@ -33,6 +38,6 @@ with tempfile.TemporaryDirectory(prefix='docketeer-media-check-') as directory:
             if label == 'middle':
                 samples.append(image)
         results.append({'video': record['video'], 'decodedSamples': observations})
-    subprocess.run(['/usr/local/bin/magick', 'montage', *map(str, samples), '-set', 'label', '%f', '-label', '%f', '-font', '/System/Library/Fonts/Supplemental/Arial.ttf', '-pointsize', '12', '-geometry', '400x260+6+20', '-tile', '3x', str(REPORT / 'decoded-middle-frames.jpg')], check=True)
+    subprocess.run([magick, 'montage', *map(str, samples), '-set', 'label', '%f', '-label', '%f', '-font', '/System/Library/Fonts/Supplemental/Arial.ttf', '-pointsize', '12', '-geometry', '400x260+6+20', '-tile', '3x', str(REPORT / 'decoded-middle-frames.jpg')], check=True)
 (REPORT / 'decode-validation.json').write_text(json.dumps(results, indent=2) + '\n')
 print(f'Validated {len(results)} videos: start/middle/end decode, dimensions, durations.')

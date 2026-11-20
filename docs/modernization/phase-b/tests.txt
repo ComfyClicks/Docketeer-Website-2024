@@ -1,9 +1,0 @@
-
-> docketeer-xii-website@0.0.0 test
-> jest --verbose --runInBand
-
-Test Suites: 1 passed, 1 total
-Tests:       6 passed, 6 total
-Snapshots:   0 total
-Time:        2.792 s
-Ran all test suites.

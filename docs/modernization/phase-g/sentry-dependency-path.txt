@@ -1,5 +1,0 @@
-@sentry/node@11.14.0 dev
-node_modules/@sentry/node
-  @sentry/node@"^11.8.0" from lighthouse@13.6.0
-  node_modules/lighthouse
-    dev lighthouse@"13.6.0" from the root project

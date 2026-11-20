@@ -27,7 +27,7 @@ dist-ssr
 # Vitest reports and artifacts
 .vitest/
 
-# Reproducible CI diagnostics (historical audit evidence stays tracked)
+# Generated validation reports
 reports/
 test-results/
 playwright-report/

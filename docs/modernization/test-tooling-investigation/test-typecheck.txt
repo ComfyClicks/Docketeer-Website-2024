@@ -1,4 +1,0 @@
-__tests__/tests.test.tsx(78,167): error TS6133: 'event' is declared but its value is never read.
-node_modules/@testing-library/jest-dom/types/vitest.d.ts(5,13): error TS2428: All declarations of 'Assertion' must have identical type parameters.
-node_modules/vitest/dist/chunks/config.d.B3YV4t0O.d.ts(1755,11): error TS2428: All declarations of 'Assertion' must have identical type parameters.
-node_modules/vitest/dist/chunks/task-utils.d.D-gFPNFi.d.ts(41,12): error TS2428: All declarations of 'Assertion' must have identical type parameters.

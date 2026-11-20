@@ -1,8 +1,0 @@
-{
-  "command": "npm ci --no-audit --no-fund",
-  "isolatedTemporaryDirectory": true,
-  "exitCode": 0,
-  "seconds": 6.05,
-  "lockUnchanged": true,
-  "output": "\nadded 218 packages in 6s\nnpm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:\nnpm warn install-scripts   @parcel/watcher@2.6.0 (install: node scripts/build-from-source.js)\nnpm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))\nnpm warn install-scripts\nnpm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.\n"
-}

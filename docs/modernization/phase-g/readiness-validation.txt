@@ -1,7 +1,0 @@
-Ops script: Node syntax and Oxlint passed (0 warnings/errors).
-Public inspection script: Node syntax passed.
-All generated JSON parsed.
-Local release checker: exit 0, 16 checks passed.
-Old production release checker: expected exit 1, 13 mismatches among 15 checks.
-Original baseline: 91 checksums passed.
-No application, dependency or deployment configuration changes.

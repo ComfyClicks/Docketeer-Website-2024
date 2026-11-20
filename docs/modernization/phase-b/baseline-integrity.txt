@@ -1,1 +1,0 @@
-2026-11-17: All 91 baseline SHA-256 entries verified. No original baseline evidence changed.

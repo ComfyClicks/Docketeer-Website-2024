@@ -3,7 +3,7 @@ Run from repository root. Requires swiftc, magick and cwebp; installs nothing.
 Five GIFs become H.264; eight legacy GIFs remain unchanged. Video encoding retains
 every frame, pads odd dimensions, and uses centisecond delays with a one-centisecond
 minimum. Posters use the actual first frame; the static PNG becomes WebP.
-Rewrites optimized outputs and docs/modernization/phase-d/media/conversion.json.
+Rewrites optimized outputs and reports/media/conversion.json.
 """
 import hashlib
 import json
@@ -16,7 +16,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'src/assets/demos'
 OUTPUT = SOURCE / 'optimized'
-REPORT = ROOT / 'docs/modernization/phase-d/media/conversion.json'
+REPORT = ROOT / 'reports/media/conversion.json'
+REPORT.parent.mkdir(parents=True, exist_ok=True)
 MAGICK = shutil.which('magick') or '/usr/local/bin/magick'
 LEGACY = {'imageTab2-new', 'imageTab3-new', 'containerTab-new', 'imageTab1-new', 'metricTab-new', 'k8Tab-new', 'hamburgerTab-new', 'configuration'}
 CWEBP = shutil.which('cwebp') or '/opt/local/bin/cwebp'

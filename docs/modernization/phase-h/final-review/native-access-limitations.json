@@ -1,8 +1,0 @@
-{
-  "date": "2026-11-18",
-  "computerUseInventory": "Local browser access is unavailable for this chat",
-  "nativeFirefoxSelection": "Computer Use server error -10005: cgWindowNotFound",
-  "screenReader": "Not verified: native browser UI could not be acquired; no VoiceOver session or spoken-output verification performed",
-  "physicalDevice": "Not verified: no physical phone or tablet was accessed",
-  "scopeDecision": "User deferred complete demo text alternatives and authorized remaining local checks plus commit/push"
-}

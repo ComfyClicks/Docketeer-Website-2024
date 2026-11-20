@@ -1,9 +1,10 @@
-# Docketeer-Extension Main Website 2024
-This is a GitHub Repo to maintain and update Docketeer main website throughout the year. We team 18 has made it super easy for future team to deploy.
+# Docketeer Website
 
-In the past, the 'tradition' is to fork the previous team repo and re-deploy your team forked repo onto Vercel and it takes too much times.
+The public website for [Docketeer](https://docketeer.io/), an open-source Docker and Kubernetes management application. This repository contains the marketing website, not the application itself.
 
-## Local development and validation
+See [2026 Refactor](docs/2026-REFACTOR.md) for the modernization summary and measured results.
+
+## Local development
 
 Use Node.js **24.x** and npm **11.20.0**, as specified in `package.json`. After installing Node.js:
 
@@ -13,34 +14,79 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-Run `npm run lint`, `npm run typecheck`, `npm run typecheck:tests`, `npm test`, and `npm run build` before review. Preview the production build with `npm run preview -- --host 127.0.0.1`. Keep development and preview servers on loopback. See the [test-tooling report](docs/modernization/vitest-migration/README.md) for the current dependency audit. Do not run `npm audit fix` as part of setup.
+Open the URL printed by Vite. Preview a production build with `npm run build`, then `npm run preview -- --host 127.0.0.1`. Keep local servers on loopback.
 
-TypeScript **7.0.2** performs compiler checks; Vite builds the browser application. Vitest **5.1.0** uses the Vite pipeline for tests without a Babel transform or jest-dom adapter. Oxlint checks TypeScript syntax and React Hooks without depending on the legacy TypeScript compiler API. `npm run build` always runs the application compiler first; `npm run typecheck:tests` checks the test code and configuration separately. Use `npm run test:watch` for interactive testing.
+## Project structure
 
-Baseline evidence is preserved in [docs/modernization/00-baseline.md](docs/modernization/00-baseline.md). Phase A results are recorded separately in [docs/modernization/phase-a/README.md](docs/modernization/phase-a/README.md). Local changes do not update production until an authorized deployment.
+- `src/components/`: page sections, shared components and content data.
+- `src/assets/`: source images and media, plus optimized variants.
+- `public/`: static files, including crawl resources and social-sharing artwork.
+- `tests/unit/`: unit and component tests.
+- `tests/e2e/`: Playwright browser and accessibility checks.
+- `scripts/`: CI policies, media processing and deployment verification.
+- `docs/2026-REFACTOR.md`: refactor rationale and results.
 
-Unit and component tests live in `tests/unit/`. Playwright browser tests live in `tests/e2e/`.
+## Validation and CI
 
-## Conservative CI and browser checks
-
-`npm run check` runs lint, the production build, test type checking and Vitest. See [the CI runbook](docs/modernization/phase-e/README.md) for the complete workflow, security exception and validation record.
-
-Browser tools are development dependencies only. Install Chromium once with `npx --no-install playwright install chromium`, then run:
+Before submitting changes, run:
 
 ```sh
+npm run check
+npm run audit:ci
+```
+
+`check` runs Oxlint, the TypeScript checks and production build, Vitest, and CI-policy tests. Use `npm run test:watch` during development. Vitest uses the Vite pipeline without a separate Babel test transform.
+
+For browser/accessibility checks and performance measurements, install Chromium once, then build before testing:
+
+```sh
+npx --no-install playwright install chromium
 npm run build
 npm run test:browser
 npm run test:performance
 ```
 
-Automatic GitHub checks run only for relevant pull requests targeting `master`. Browser/accessibility and performance suites require manual dispatch. There are no scheduled runs, push-trigger duplicates, browser matrices or dependency bots. Successful reports stay in job logs/summary; failed manual checks retain diagnostics for three days. Local diagnostics go to ignored directories rather than replacing historical baseline evidence.
+Automatic GitHub Actions checks run for relevant pull requests targeting `master`. Additional browser or performance checks are available through **Actions → Website checks → Run workflow**. These heavier checks run manually; there are no scheduled runs. Generated reports remain in ignored `reports/`, `playwright-report/` and `test-results/` directories.
 
-## Production handoff and release verification
+Dependency audit rules are in `scripts/ci/audit.mjs`, with regression tests alongside it. The policy rejects production vulnerabilities and unexpected development advisories. Its narrow historical Picomatch exception expires December 17, 2026; review the advisory and dependency paths before changing or extending it. Do not run `npm audit fix` as part of setup.
 
-See the [Phase G runbook](docs/modernization/phase-g/README.md) for deployment ownership, monitoring costs, activation checks and rollback responsibilities. After building the intended release, run `node scripts/ops/verify-deployment.mjs https://docketeer.io/ release-check.json` to compare the public site with local build artifacts. A nonzero exit means the release does not match or a check could not complete; this command only reads public responses and does not deploy. Use a fresh output filename. No scheduled CI runs are added.
+## Updating media
 
-## Deployment ownership
+Update source assets and regenerate their optimized variants rather than editing generated files alone. From the repository root:
 
-The existing Docketeer website is managed by a teammate on Vercel Hobby. Follow the [teammate activation checklist](docs/modernization/phase-g/teammate-handoff.md) to verify the connected repository, deploy a reviewed release, activate optional monitoring and record rollback ownership. Do not assume a fork or feature-branch push changes production. Hobby preview sharing does not grant project-management access; the owner can perform the dashboard steps without an account upgrade or sharing credentials.
+```sh
+python3 scripts/media/optimize-static.py
+```
 
-Monitoring defaults to off. Copy `.env.example` only when configuring a local environment; the owner sets the chosen `VITE_ENABLE_WEB_ANALYTICS` and `VITE_ENABLE_SPEED_INSIGHTS` switches in Vercel **Production** after verifying the corresponding service. Changes require a new build/deployment. The application never initializes monitoring on local or preview origins.
+This regenerates portraits and logos using ImageMagick (`magick`) and `cwebp` on PATH. Inspect the resulting crops and review the asset diff.
+
+Demo conversion is a separate macOS workflow requiring Python 3, Swift command-line tools, ImageMagick and `cwebp`:
+
+```sh
+python3 scripts/media/convert-demos.py
+python3 scripts/media/verify-demos.py
+```
+
+The verification script requires ImageMagick (`magick`) on PATH. Conversion regenerates demo outputs and `reports/media/conversion.json`, which verification consumes. Review posters and playback before accepting regenerated media; some legacy GIFs are intentionally preserved for visual fidelity.
+
+## Deployment
+
+The existing Vercel Hobby project is `docketeer-2026/docketeer-website-2024`, connected to this repository with production branch `master`. Build settings are Vite, Node 24.x, repository root, `npm run build`, and output directory `dist`. A feature-branch push does not update production.
+
+1. Run validation and create a preview deployment for the intended branch or commit in the existing Vercel project.
+2. Confirm its commit and build logs. Check mobile navigation, keyboard focus, feature cards, demo playback, images and browser console errors.
+3. Record the current production deployment as a rollback target before releasing. Merge the reviewed changes into `master` through the normal review process, then verify that the resulting production deployment serves `docketeer.io`.
+4. Compare the served release with a local build of the same source and environment settings:
+
+   ```sh
+   mkdir -p reports/release
+   node scripts/ops/verify-deployment.mjs https://docketeer.io/ reports/release/check.json
+   ```
+
+The verifier reads public responses and checks metadata, entry assets, crawl files and security headers; it does not deploy. Use a fresh output filename for each run. If verification fails or important behavior regresses, restore the recorded known-good deployment through Vercel’s rollback controls and verify the public site again.
+
+### Optional monitoring
+
+Monitoring defaults to off. After verifying the corresponding free-tier services in the existing Vercel project, set the chosen `VITE_ENABLE_WEB_ANALYTICS` and `VITE_ENABLE_SPEED_INSIGHTS` switches to `true` in **Production**, then rebuild/deploy. See `.env.example` for the supported switches.
+
+Monitoring does not initialize on local or preview origins and respects supported privacy preferences. Verify actual script delivery, payloads and dashboard ingestion after activation. To disable an integration, set its switch to `false` and redeploy. Enabling source integrations alone does not prove production monitoring is working.
