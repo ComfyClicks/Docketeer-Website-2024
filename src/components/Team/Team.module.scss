@@ -18,7 +18,7 @@
   background: #0c1020;
   border-radius: 8px;
 }
-.osp4Pic { object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
+.osp4Pic { border-start-start-radius: 8px; border-start-end-radius: 8px; object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
 .othersContainer {
   max-inline-size: 76rem;
   margin: 3rem auto 0;
