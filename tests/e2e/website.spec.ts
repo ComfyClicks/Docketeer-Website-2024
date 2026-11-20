@@ -1,6 +1,30 @@
 import AxeBuilder from '@axe-core/playwright';
 import { test, expect } from './fixtures';
 
+test('navigation gains a readable surface over scrolled content', async ({ page }) => {
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Primary' });
+  const scrollSurfaceSupported = await page.evaluate(() => CSS.supports('(animation-timeline: scroll()) and (animation-range: 0% 100%)'));
+  if (scrollSurfaceSupported) {
+    await expect.poll(() => navigation.evaluate(element => getComputedStyle(element, '::before').opacity)).toBe('0');
+  }
+  await page.locator('#team').scrollIntoViewIfNeeded();
+  if (scrollSurfaceSupported) {
+    await expect.poll(() => navigation.evaluate(element => getComputedStyle(element, '::before').opacity)).toBe('1');
+    expect(await navigation.evaluate(element => getComputedStyle(element, '::before').backgroundColor)).toBe('rgb(0, 0, 5)');
+  } else await expect(navigation).toHaveCSS('background-color', 'rgb(0, 0, 5)');
+  // Root scroll padding also protects ordinary keyboard targets, not just anchors.
+  const link = page.getByRole('link', { name: 'Arthur Jin on GitHub', exact: true });
+  await link.focus();
+  const navBox = await navigation.boundingBox();
+  const linkBox = await link.boundingBox();
+  expect(linkBox!.y).toBeGreaterThanOrEqual(navBox!.y + navBox!.height);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  if (scrollSurfaceSupported) {
+    await expect.poll(() => navigation.evaluate(element => getComputedStyle(element, '::before').opacity)).toBe('0');
+  }
+});
+
 test('keyboard navigation, mobile menu and direct section links work', async ({ page, browserName }, testInfo) => {
   await page.goto('/');
   // macOS WebKit uses Option-Tab to include links in keyboard navigation.

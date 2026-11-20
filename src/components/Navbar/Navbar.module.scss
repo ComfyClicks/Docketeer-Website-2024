@@ -3,8 +3,27 @@
   inset-block-start: 0;
   inline-size: 100%;
   z-index: 10;
+  // Safe default when scroll-driven animations are unavailable.
   background: #000005;
-  border-block-end: 1px solid #202a42;
+}
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+  .navbar {
+    background: transparent;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #000005;
+      animation: navigationSurface 1ms linear both;
+      animation-timeline: scroll(block root);
+      animation-range: 0px 24px;
+    }
+  }
+}
+@keyframes navigationSurface {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 .navbarContainer {
   display: flex;

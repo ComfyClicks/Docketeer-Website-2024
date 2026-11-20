@@ -49,7 +49,10 @@ h3 {
 }
 h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); }
 
-.pageSection { scroll-margin-top: var(--navigation-height, 90px); }
+// Keep keyboard-focused controls clear of the fixed navigation as well as
+// section targets. ResizeObserver supplies the actual header height.
+html { scroll-padding-top: var(--navigation-height, 90px); }
+.pageSection { scroll-margin-top: 1.25rem; }
 a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
@@ -64,7 +67,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offs
   color: #000005;
 }
 .skipLink:focus { transform: none; }
-#main-content { scroll-margin-top: calc(var(--navigation-height, 90px) + 1.25rem); }
+#main-content { scroll-margin-top: 1.25rem; }
 footer { padding: 2rem 1rem; }
 
 #background-motion {
