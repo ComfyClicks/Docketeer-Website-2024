@@ -23,7 +23,7 @@ body {
   color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  background: #000005;
+  background: #000019 linear-gradient(to bottom, #000000, #000019) fixed;
   line-height: 1.5;
   width: 100%;
 }
@@ -66,5 +66,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offs
 .skipLink:focus { transform: none; }
 #main-content { scroll-margin-top: calc(var(--navigation-height, 90px) + 1.25rem); }
 footer { padding: 2rem 1rem; }
-#background-motion { font: inherit; color: inherit; background: #000005; border: 1px solid currentColor; border-radius: 0.3rem; padding: 0.75rem; }
-#background-motion:disabled { opacity: 0.8; }
+
+#background-motion {
+  font: inherit;
+  font-size: 0.875rem;
+  color: #d6def5;
+  background: #0c1020;
+  border: 1px solid #66718d;
+  border-radius: 999px;
+  min-block-size: 44px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+#background-motion:hover:not(:disabled) { background: #27354f; color: white; }
+#background-motion:disabled { cursor: default; }

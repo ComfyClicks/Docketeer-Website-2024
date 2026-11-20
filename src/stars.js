@@ -2,11 +2,10 @@
 // downloading a 3D engine or allocating hundreds of sphere geometries.
 const button = document.getElementById('background-motion');
 const canvas = document.createElement('canvas');
-const context = canvas.getContext('2d');
+const context = canvas.getContext('2d', { alpha: false });
 
-if (!context || !button) {
-  if (button) button.hidden = true;
-} else {
+if (context && button) {
+  button.hidden = false;
   canvas.setAttribute('aria-hidden', 'true');
   canvas.style.pointerEvents = 'none';
   document.body.appendChild(canvas);
@@ -21,29 +20,39 @@ if (!context || !button) {
   let width;
   let height;
   let background;
+  // The gradient is static between resizes. Cache a one-pixel-wide strip
+  // instead of rasterizing a full-screen gradient on every frame.
+  const backdrop = document.createElement('canvas');
+  const backdropContext = backdrop.getContext('2d', { alpha: false });
   let frame;
   let previousTime;
-  let playing = false;
+  let paused = false;
+  const frameInterval = 1000 / 30;
 
   function draw() {
-    context.fillStyle = background;
-    context.fillRect(0, 0, width, height);
+    if (backdropContext) context.drawImage(backdrop, 0, 0, width, height);
+    else {
+      context.fillStyle = background;
+      context.fillRect(0, 0, width, height);
+    }
     context.fillStyle = 'white';
+    context.beginPath();
     for (const star of stars) {
       const x = width / 2 + star.x * width / (2 * star.depth);
       const y = height / 2 + star.y * height / (2 * star.depth);
       if (x < 0 || y < 0 || x > width || y > height) continue;
-      context.beginPath();
-      context.arc(x, y, Math.min(1.6, 0.45 / star.depth), 0, Math.PI * 2);
-      context.fill();
+      const radius = Math.min(1.6, 0.45 / star.depth);
+      context.moveTo(x + radius, y);
+      context.arc(x, y, radius, 0, Math.PI * 2);
     }
+    context.fill();
   }
 
   function resize() {
     width = window.innerWidth;
     height = window.innerHeight;
     // Bound the backing-store cost on high-density mobile displays.
-    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    const scale = Math.min(window.devicePixelRatio || 1, width <= 768 ? 1 : 2);
     canvas.width = Math.round(width * scale);
     canvas.height = Math.round(height * scale);
     canvas.style.width = `${width}px`;
@@ -51,7 +60,16 @@ if (!context || !button) {
     context.setTransform(scale, 0, 0, scale, 0, 0);
     background = context.createLinearGradient(0, 0, 0, height);
     background.addColorStop(0, '#000000');
-    background.addColorStop(1, '#000005');
+    background.addColorStop(1, '#000019');
+    if (backdropContext) {
+      backdrop.width = 1;
+      backdrop.height = canvas.height;
+      const gradient = backdropContext.createLinearGradient(0, 0, 0, backdrop.height);
+      gradient.addColorStop(0, '#000000');
+      gradient.addColorStop(1, '#000019');
+      backdropContext.fillStyle = gradient;
+      backdropContext.fillRect(0, 0, 1, backdrop.height);
+    }
     draw();
   }
 
@@ -62,7 +80,10 @@ if (!context || !button) {
   }
 
   function animate(time) {
-    // Time-based movement behaves consistently on 60Hz and 120Hz displays.
+    frame = requestAnimationFrame(animate);
+    // Limit drawing, not movement speed. The small tolerance accommodates
+    // rounding of display timestamps at 60Hz and 120Hz.
+    if (previousTime !== undefined && time - previousTime < frameInterval - 0.5) return;
     const elapsed = previousTime === undefined ? 0 : Math.min((time - previousTime) / 1000, 0.05);
     previousTime = time;
     for (const star of stars) {
@@ -74,20 +95,16 @@ if (!context || !button) {
       }
     }
     draw();
-    frame = requestAnimationFrame(animate);
   }
 
   function updateMotion() {
     stop();
-    if (preference.matches) playing = false;
     button.disabled = preference.matches;
-    button.textContent = preference.matches
-      ? 'Background animation off (reduced motion)'
-      : playing ? 'Pause background animation' : 'Play background animation';
-    if (playing && !document.hidden) frame = requestAnimationFrame(animate);
+    button.textContent = preference.matches ? 'Background motion reduced' : paused ? 'Play background' : 'Pause background';
+    if (!paused && !preference.matches && !document.hidden) frame = requestAnimationFrame(animate);
   }
 
-  button.addEventListener('click', () => { playing = !playing; updateMotion(); }, options);
+  button.addEventListener('click', () => { paused = !paused; updateMotion(); }, options);
   preference.addEventListener('change', updateMotion, options);
   document.addEventListener('visibilitychange', updateMotion, options);
   window.addEventListener('resize', resize, options);
