@@ -5,11 +5,9 @@ In the past, the 'tradition' is to fork the previous team repo and re-deploy you
 
 ## Local development and validation
 
-Use Node **24.22.1** (`.nvmrc`) and npm **11.20.0** (`packageManager`). With nvm installed:
+Use Node.js **24.x** and npm **11.20.0**, as specified in `package.json`. After installing Node.js:
 
 ```sh
-nvm install
-nvm use
 npm install --global npm@11.20.0
 npm ci
 npm run dev -- --host 127.0.0.1
