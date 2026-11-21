@@ -1,51 +1,15 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import styles from "./Home.module.scss";
-import docker from "../../assets/docketeerlogo.png";
-import { Link } from "react-scroll";
+import React from 'react';
+import styles from './Home.module.scss';
+import docker from '../../assets/optimized/hero-350.webp';
+import dockerLarge from '../../assets/optimized/hero-517.webp';
 
-const Home = (): JSX.Element => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const homeRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsLoaded(true);
-          setIsIntersecting(true);
-          observer.unobserve(entry.target);
-        } else {
-          setIsIntersecting(false);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    const currentRef = homeRef.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
+const Home = (): React.JSX.Element => {
   return (
-    <div
-      className={
-        isLoaded && isIntersecting ? styles.homeLoaded : styles.homeDisplay
-      }
-      ref={homeRef}
-    >
+    <div className={styles.homeLoaded}>
       <div className={styles.left}>
         <div className={styles.description}>
-          <h1 className={styles.mainTitle}>Introducing Docketeer XX</h1>
+          <h1 id="main-content" tabIndex={-1} className={styles.mainTitle}>Introducing Docketeer XX</h1>
           <p>
             Docketeer is a user-friendly container management application with
             intuitive interfaces and visualization tools for Docker containers
@@ -53,21 +17,14 @@ const Home = (): JSX.Element => {
           </p>
           <br />
           <div className={styles.explore}>
-            <Link
-              to="features"
-              smooth={true}
-              hashSpy={true}
-              spy={true}
-              duration={600}
-            >
+            <a className="siteButton siteButtonPrimary" href="#features">
               Start Exploring
-            </Link>
-            <br />
+            </a>
           </div>
         </div>
       </div>
       <div className={styles.right}>
-        <img width="350px" height="auto" src={docker} alt="docketeer_img" />
+        <img src={docker} srcSet={`${docker} 350w, ${dockerLarge} 517w`} sizes="(max-width: 400px) calc(100vw - 48px), 350px" alt="" width={517} height={469} />
       </div>
     </div>
   );

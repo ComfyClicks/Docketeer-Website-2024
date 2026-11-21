@@ -1,130 +1,30 @@
-.featureCard:hover {
-  animation: updown 1s ease-in-out infinite;
-  animation-play-state: running;
-}
-@keyframes updown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .featuresContainer {
-  transition: opacity 0.5s ease-out;
-  max-width: 76em;
-  margin: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  height: 100vh;
-  .features {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .featureCards {
-      align-self: center;
-      max-width: 900px;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
-      margin-top: .5rem;
-      
-    }
-  }
+  max-inline-size: 76rem;
+  margin: 3rem auto;
+  padding: 3rem 1rem;
 }
-
+.features { display: flex; flex-direction: column; align-items: center; }
+.featureCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  inline-size: 100%;
+  max-inline-size: 56rem;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  list-style: none;
+}
 .featureCard {
-  width: 200px;
-  max-height: auto;
-  padding: 24px;
-  margin: 12px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-  border-radius: 5px;
-  font-size: 14px;
-
+  padding: 1.5rem;
+  min-inline-size: 0;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 36%);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: linear-gradient(155deg, #161f35, var(--surface-blue) 72%);
+  border: 1px solid #28334e;
 }
-
-h4 {
-  font-weight: 700;
-}
-
-.article {
-  cursor: pointer;
-  color: rgba(154, 180, 251);
-  font-size: 16px;
-  text-decoration: none;
-  margin: auto;
-}
-
-.article:hover {
-  color: #ff9f00;
-  transition: .3s;
-}
-.article:not(:hover) {
-  transition: 0.3s;
-}
-
-@media screen and (max-width: 850px) {
-  .features {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: auto;
-
-    h3 {
-      font-size: 1.7vh;
-    }
-  }
-  .featureCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3vh;
-    width: 150px;
-    height: 170px;
-    margin: 0;
-    img {
-      width: 60px;
-      height: 60px;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .features {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: auto;
-    h3 {
-      font-size: 1.4vh;
-    }
-  }
-  .featureCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2vh;
-    width: 110px;
-    height: 130px;
-    margin: 0;
-    margin-bottom: 15px;
-
-    img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
+.featureCard h3 { font-size: 1.125rem; padding: 0; }
+.featureCard p { text-wrap: pretty; }
+.img { max-inline-size: 100%; object-fit: contain; }
+.article { color: #9ab4fb; min-block-size: 24px; padding: .5rem; }
+.article:hover { color: #ff9f00; }

@@ -1,0 +1,24 @@
+{
+  "retrieved": "2026-11-17",
+  "cssUrl": "https://fonts.googleapis.com/css2?family=Prompt:wght@500&family=Open+Sans:wght@400&display=swap",
+  "sources": [
+    {
+      "family": "Open Sans",
+      "weight": 400,
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVIUwaEQbjA.woff2",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/opensans/OFL.txt",
+      "file": "open-sans-latin-400.woff2",
+      "bytes": 13452,
+      "sha256": "ce39fe93a4c5179c0d53a4bdc2a378bdd713cdcfd15d812b0e26694d7f6d9867"
+    },
+    {
+      "family": "Prompt",
+      "weight": 500,
+      "url": "https://fonts.gstatic.com/s/prompt/v12/-W_8XJnvUD7dzB2Ck_kIaWMuUZctdg.woff2",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/prompt/OFL.txt",
+      "file": "prompt-latin-500.woff2",
+      "bytes": 10552,
+      "sha256": "7f38cd2182894621467a8569438d2d0ccf2f2aed4c33d678ab77aefbd8dbe4a0"
+    }
+  ]
+}

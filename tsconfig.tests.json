@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
+  },
+  "include": [
+    "src/**/*",
+    "global.d.ts",
+    "tests/unit/**/*.ts",
+    "tests/unit/**/*.tsx",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "tests/e2e/**/*.ts",
+    "playwright.config.ts"
+  ]
+}
