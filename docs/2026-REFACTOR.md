@@ -201,11 +201,28 @@ PageSpeed Insights audited `docketeer.io` at 3:25 p.m. EST. The live origin stil
 
 The reports flag the eagerly loaded `containerTab-new` GIF on mobile and `ContainersFilters_v20` GIF on desktop, along with layout shifts and images without explicit dimensions. The mobile GIF alone accounted for about **10,350 KiB** in the image audit. These findings reinforce the refactor's deferred demo loading and reserved media dimensions. The hosted results do not measure the refactor or establish field improvements.
 
+### Production after deployment — November 21, 2026
+
+PageSpeed Insights audited `https://docketeer.io/` at 3:41 p.m. EST after the merged refactor was live and production smoke tests passed. Both profiles again used Lighthouse 13.6.0 and HeadlessChromium 157.0.8103.38, with emulated Moto G Power and slow 4G on mobile and custom throttling on desktop. The table compares one hosted lab run per profile before and after the release. Both after reports show **No Data** for real-user performance. [Mobile after report](https://pagespeed.web.dev/analysis/https-docketeer-io/21bvr2s97g?form_factor=mobile) · [Desktop after report](https://pagespeed.web.dev/analysis/https-docketeer-io/21bvr2s97g?form_factor=desktop)
+
+| Hosted lab metric | Mobile before | Mobile after | Desktop before | Desktop after |
+| --- | ---: | ---: | ---: | ---: |
+| Performance | 75 | **99** | 49 | **100** |
+| Accessibility / Best Practices / SEO | 52 / 96 / 73 | 100 / 100 / 100 | 55 / 96 / 73 | 100 / 100 / 100 |
+| LCP | 2.4 s | 1.8 s | 0.9 s | 0.4 s |
+| Total blocking time | 230 ms | 0 ms | 620 ms | 0 ms |
+| CLS | 0.250 | 0.070 | 1.327 | 0.001 |
+| Total network payload | 16,438 KiB | 218 KiB | 8,132 KiB | 217 KiB |
+
+The after audit flagged a web-font-related shift in the mobile hero copy, accounting for the measured **0.070 CLS**. These hosted snapshots show a lower initial payload and better lab metrics on the live site. The sample size and lack of field data limit conclusions about daily variability, real-user gains and Core Web Vitals in the field.
+
 ## Deployment status and limitations
 
 At the November 20 dashboard review, `docketeer-2026/docketeer-website-2024` still served the original baseline from `master`. Production deployment reference: `EhHGvQZQJxHmuqrzvGeG8uAuPUwn`. The project’s discontinued Node 20 build selection was changed to Node 24. Preview creation was blocked by a GitHub API rate-limit error. No later deployment was verified. This local acceptance review did not query or change hosted state and does not establish a subsequent deployment.
 
-Before promotion, verify the intended commit and Node 24 build logs, hosted navigation/media, security headers, metadata, crawl resources and rollback availability. If enabling monitoring, verify free-tier settings, real payloads and dashboard ingestion. Repeat production benchmarks afterward; real-user performance requires sufficient field data.
+[PR #4](https://github.com/ComfyClicks/Docketeer-Website-2024/pull/4) merged into `master` on November 21 as `39eaf7d92c185f60fa4941876837d02bb070dd28`. An automatic production deployment did not appear after the merge. The merged commit was built from a clean source archive with Node 26.12.1 and npm 11.20.0, staged through the existing Docketeer Vercel CLI account, and promoted after its entry assets matched the local build. Vercel then confirmed `docketeer.io` was serving production deployment `dpl_2PjYiKHFLW1XNCFTpuXjCpNTRmen`. The previous production deployment, `dpl_EhHGvQZQJxHmuqrzvGeG8uAuPUwn`, is the rollback target.
+
+All **20** production artifact checks and **19** desktop/mobile browser smoke tests passed against the live origin. These covered entry assets, metadata, security headers, crawl resources, keyboard navigation, mobile reflow, demo playback, reduced motion and automated accessibility. Release and smoke evidence is in `/Users/andywhite/Documents/Docketeer-Website-Archive/2026-11-21-production-release.GzAxtg`.
 
 Complete text alternatives for silent demos were deferred by the maintainer. Current acceptance limitations and the confirmed transparent-header defect are recorded above. No business-impact, uptime or field-performance gains have been measured.
 
