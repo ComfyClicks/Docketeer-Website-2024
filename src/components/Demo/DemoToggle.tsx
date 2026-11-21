@@ -6,7 +6,7 @@ export default function DemoToggle({ currentGif, setCurrentGif }: DemoToggleProp
   return <div className={styles.mainContainer}>
     <p className={styles.action}>Click to see a demo of each feature!</p>
     <div className={styles.toggleContainer}>
-      {demos.map((demo, index) => <button key={demo.id} type="button" className={styles.toggle}
+      {demos.map((demo, index) => <button key={demo.id} type="button" className={`siteButton ${styles.toggle}`}
         aria-pressed={currentGif === index} onClick={() => setCurrentGif(index)}>{demo.title}</button>)}
     </div>
     <p className={styles.descriptions}>{demos[currentGif].description}</p>

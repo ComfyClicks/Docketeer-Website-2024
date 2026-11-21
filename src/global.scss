@@ -70,16 +70,44 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offs
 #main-content { scroll-margin-top: 1.25rem; }
 footer { padding: 2rem 1rem; }
 
-#background-motion {
-  font: inherit;
-  font-size: 0.875rem;
-  color: #d6def5;
-  background: #0c1020;
-  border: 1px solid #66718d;
-  border-radius: 999px;
-  min-block-size: 44px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+// Shared by action links and native buttons, including the static footer control.
+:where(.siteButton:not([hidden])) {
+  display: inline-flex;
 }
-#background-motion:hover:not(:disabled) { background: #27354f; color: white; }
-#background-motion:disabled { cursor: default; }
+.siteButton {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid #819be0;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover:not(:disabled) { background: #27354f; }
+  &:active:not(:disabled) { background: #1a294c; }
+  &[aria-pressed='true'], &[aria-expanded='true'] {
+    border-color: #b2c6ff;
+    background: #25365e;
+    &:hover { background: #314675; }
+  }
+  &:disabled {
+    color: #b9c8e6;
+    cursor: default;
+  }
+}
+
+.siteButtonPrimary {
+  border-color: #9ab4fb;
+  background: #314675;
+
+  &:hover:not(:disabled) { background: #3e5690; }
+  &:active:not(:disabled) { background: #25365e; }
+}

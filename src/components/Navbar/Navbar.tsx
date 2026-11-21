@@ -58,7 +58,7 @@ const Navbar = (): React.JSX.Element => {
           <p className={styles.name}>Docketeer</p>
           <img width="45" height="43" src={docker2} srcSet={`${docker2Medium} 2x, ${docker2Large} 3x`} alt="" />
         </div>
-        <button ref={trigger} type="button" className={styles.menuButton}
+        <button ref={trigger} type="button" className={`siteButton ${styles.menuButton}`}
           aria-expanded={open} aria-controls="primary-links" onClick={() => setOpen(!open)}>Menu</button>
         <ul ref={links} id="primary-links" className={`${styles.links} ${open ? styles.open : ''}`}>
           {sections.map(([id, label]) => (

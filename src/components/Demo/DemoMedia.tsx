@@ -15,7 +15,7 @@ export default function DemoMedia({ media, title, className }: DemoMediaProps) {
       <img className={className} src={playing ? media.src : media.poster}
         alt={`${title} demonstration`} width={media.width} height={media.height}
         loading="lazy" decoding="async" />
-      <button className={styles.toggle} type="button" onClick={() => setPlaying(!playing)}>
+      <button className={`siteButton ${styles.toggle}`} type="button" onClick={() => setPlaying(!playing)}>
         {playing ? 'Stop' : 'Play'} {title} demonstration
       </button>
     </> : media.kind === 'video' ? <video

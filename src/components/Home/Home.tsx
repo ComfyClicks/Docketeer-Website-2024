@@ -17,7 +17,7 @@ const Home = (): React.JSX.Element => {
           </p>
           <br />
           <div className={styles.explore}>
-            <a href="#features">
+            <a className="siteButton siteButtonPrimary" href="#features">
               Start Exploring
             </a>
           </div>

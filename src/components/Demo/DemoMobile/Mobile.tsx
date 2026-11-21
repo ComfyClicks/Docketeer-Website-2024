@@ -15,8 +15,8 @@ export default function Mobile({ current, onChange }: MobileProps) {
     <DemoMedia key={demo.mobileMedia.src} title={title} className={styles.gifMobile} media={demo.mobileMedia} />
     <div aria-live="polite">{title}<span className={styles.position}>{current + 1} of {demos.length}</span></div>
     <div className={styles.gifMobileButtonsBox}>
-      <button type="button" className={styles.gifMobileButtons} aria-label="Previous demo" onClick={() => move(-1)}><span aria-hidden="true">&larr;</span> Previous</button>
-      <button type="button" className={styles.gifMobileButtons} aria-label="Next demo" onClick={() => move(1)}>Next <span aria-hidden="true">&rarr;</span></button>
+      <button type="button" className="siteButton" aria-label="Previous demo" onClick={() => move(-1)}><span aria-hidden="true">&larr;</span> Previous</button>
+      <button type="button" className="siteButton" aria-label="Next demo" onClick={() => move(1)}>Next <span aria-hidden="true">&rarr;</span></button>
     </div>
     <p className={styles.mobileDesc}>{demo.description}</p>
   </div>;

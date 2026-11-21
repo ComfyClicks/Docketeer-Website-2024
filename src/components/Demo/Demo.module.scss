@@ -2,25 +2,11 @@
 .demoContainer { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr); align-items: center; gap: 2rem; }
 .mainContainer, .gifContainer { min-inline-size: 0; }
 .toggleContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.toggle, .gifMobileButtons {
-  font: inherit;
-  color: white;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  cursor: pointer;
-  min-block-size: 44px;
-  padding: .5rem .75rem;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
-}
 .toggle { flex: 0 1 10rem; }
-.toggle[aria-pressed='true'] { border-color: #9ab4fb; background: #25365e; }
-.toggle:hover, .gifMobileButtons:hover { background: #27354f; }
 .gifs, .gifMobile { display: block; max-inline-size: 100%; block-size: auto; border-radius: 10px; box-shadow: 1px 1px 10px rgba(154, 180, 251, .44); }
 .gifs { inline-size: 100%; }
 .gifMobile { inline-size: min(100%, 50rem); margin: 0 auto 1rem; }
-.gifMobileButtonsBox { display: flex; justify-content: center; gap: 1rem; margin-block: .75rem; }
-.gifMobileButtons { min-inline-size: 44px; }
+.gifMobileButtonsBox { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block: .75rem; }
 .descriptions, .mobileDesc { font-size: 1rem; line-height: 1.5; }
 .mobileDesc { max-inline-size: 45ch; margin-inline: auto; }
 .position { display: block; color: #b9c8e6; font-size: .875rem; margin-block-start: .25rem; }

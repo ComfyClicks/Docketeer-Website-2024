@@ -19,22 +19,18 @@ const GetStarted = (): React.JSX.Element => {
         install.
       </p>
       <div className={styles.buttonContainer}>
-        <div className={styles.githubButton}>
-          <a
-            className={styles.githubLink}
-            href='https://github.com/open-source-labs/Docketeer-Extension'
-            target='_blank' rel='noopener noreferrer'>
-            GitHub <img className={styles.logo} src={githubLogo} alt=""></img>
-          </a>
-        </div>
-        <div className={styles.githubButton}>
-          <a
-            className={styles.githubLink}
-            href='https://hub.docker.com/extensions/docketeerxiv/docketeer-extension'
-            target='_blank' rel='noopener noreferrer'>
-            Dockerhub <img className={styles.logo} src={dockerhubLogo} srcSet={`${dockerhubLogoMedium} 2x, ${dockerhubLogoLarge} 3x`} alt="" width="14" height="10"></img>
-          </a>
-        </div>
+        <a
+          className="siteButton"
+          href='https://github.com/open-source-labs/Docketeer-Extension'
+          target='_blank' rel='noopener noreferrer'>
+          GitHub <img className={styles.logo} src={githubLogo} alt="" />
+        </a>
+        <a
+          className="siteButton siteButtonPrimary"
+          href='https://hub.docker.com/extensions/docketeerxiv/docketeer-extension'
+          target='_blank' rel='noopener noreferrer'>
+          Dockerhub <img className={styles.logo} src={dockerhubLogo} srcSet={`${dockerhubLogoMedium} 2x, ${dockerhubLogoLarge} 3x`} alt="" width="14" height="10" />
+        </a>
       </div>
     </div>
   );
