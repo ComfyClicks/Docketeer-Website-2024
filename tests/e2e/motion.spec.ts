@@ -1,25 +1,32 @@
 import { test, expect } from './fixtures';
 
+function monitorStarFieldPaints() {
+  const state = { paints: 0 };
+  Object.defineProperty(window, '__backgroundPaints', { value: state });
+  const fill = CanvasRenderingContext2D.prototype.fill;
+  Object.defineProperty(CanvasRenderingContext2D.prototype, 'fill', {
+    value(this: CanvasRenderingContext2D, ...args: unknown[]) {
+      if (this.canvas.matches('body > canvas[aria-hidden="true"]')) state.paints++;
+      return Reflect.apply(fill, this, args);
+    },
+  });
+}
+
 // Lifecycle is tested once; this test also resizes to a mobile viewport.
 test('background motion starts automatically and respects live reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
-  await page.addInitScript(() => {
-    const state = { frames: 0 };
-    Object.defineProperty(window, '__motionTest', { value: state });
-    const requestFrame = window.requestAnimationFrame.bind(window);
-    window.requestAnimationFrame = callback => requestFrame(time => { state.frames++; callback(time); });
-  });
-  const frames = () => page.evaluate(() => (window as unknown as { __motionTest: { frames: number } }).__motionTest.frames);
-  // A bounded observation window is intentional when asserting no scheduled work.
+  await page.addInitScript(monitorStarFieldPaints);
+  const paints = () => page.evaluate(() => (window as unknown as { __backgroundPaints: { paints: number } }).__backgroundPaints.paints);
+  // Observe the canvas long enough to detect continued drawing.
   const expectStopped = async () => {
-    const before = await frames();
+    const before = await paints();
     await page.waitForTimeout(200);
-    expect(await frames()).toBe(before);
+    expect(await paints()).toBe(before);
   };
   await page.goto('/');
   const button = page.locator('#background-motion');
   await expect(button).toHaveText('Pause background');
-  await expect.poll(frames).toBeGreaterThan(0);
+  await expect.poll(paints).toBeGreaterThan(1);
   await button.click();
   await expect(button).toHaveText('Play background');
   await expectStopped();
@@ -28,15 +35,18 @@ test('background motion starts automatically and respects live reduced motion', 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(button).toBeDisabled();
   await expectStopped();
-  const beforeResume = await frames();
+  const beforeResume = await paints();
   await page.emulateMedia({ reducedMotion: 'no-preference' });
-  await expect.poll(frames).toBeGreaterThan(beforeResume);
+  await expect.poll(paints).toBeGreaterThan(beforeResume);
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(button).toBeDisabled();
   await expectStopped();
+  const beforeResize = await paints();
   await page.setViewportSize({ width: 390, height: 844 });
   const canvas = page.locator('body > canvas');
   await expect(canvas).toHaveAttribute('aria-hidden', 'true');
   await expect.poll(() => canvas.evaluate(element => Math.round(element.getBoundingClientRect().width))).toBe(390);
+  await expect.poll(paints).toBeGreaterThan(beforeResize);
   await expectStopped();
 });
 
@@ -61,17 +71,7 @@ test.describe('high-density background rendering', () => {
   test('bounds animation drawing and backing resolution without stopping motion', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
-    await page.addInitScript(() => {
-      const state = { paints: 0 };
-      Object.defineProperty(window, '__backgroundPaints', { value: state });
-      const fill = CanvasRenderingContext2D.prototype.fill;
-      Object.defineProperty(CanvasRenderingContext2D.prototype, 'fill', {
-        value(this: CanvasRenderingContext2D, ...args: unknown[]) {
-          if (this.canvas.parentElement === document.body) state.paints++;
-          return Reflect.apply(fill, this, args);
-        },
-      });
-    });
+    await page.addInitScript(monitorStarFieldPaints);
     await page.goto('/');
     const canvas = page.locator('body > canvas');
     await expect(canvas).toHaveAttribute('width', '390');
