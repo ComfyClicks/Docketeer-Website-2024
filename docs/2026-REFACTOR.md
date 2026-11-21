@@ -186,6 +186,21 @@ The original lint command reported five errors and one warning; five of seven Je
 
 On November 20, 2026, `npm run audit:ci` reported **zero dependency vulnerabilities**, including production dependencies, without using an exception. A historical development advisory exception remains configured with an expiry; it was unnecessary for that registry response. Audit results are time-dependent and do not prove absence of all security risks.
 
+### Production baseline spot check — November 21, 2026
+
+PageSpeed Insights audited `docketeer.io` at 3:25 p.m. EST. The live origin still served the original deployment `dpl_EhHGvQZQJxHmuqrzvGeG8uAuPUwn` and baseline entry assets. Both reports show **No Data** in the real-user section. These are single hosted Lighthouse 13.6.0 lab navigations using HeadlessChromium 157.0.8103.38, with emulated Moto G Power and slow 4G on mobile and custom throttling on desktop. Keep them separate from the earlier production observations and the matched local medians. [Mobile report](https://pagespeed.web.dev/analysis/https-docketeer-io/i0lpiykegx?hl=en&form_factor=mobile) · [Desktop report](https://pagespeed.web.dev/analysis/https-docketeer-io/i0lpiykegx?hl=en&form_factor=desktop)
+
+| PageSpeed Insights lab results | Mobile | Desktop |
+| --- | ---: | ---: |
+| Performance | 75 | 49 |
+| Accessibility / Best Practices / SEO | 52 / 96 / 73 | 55 / 96 / 73 |
+| LCP | 2.4 s | 0.9 s |
+| Total blocking time | 230 ms | 620 ms |
+| CLS | 0.250 | 1.327 |
+| Total network payload | 16,438 KiB | 8,132 KiB |
+
+The reports flag the eagerly loaded `containerTab-new` GIF on mobile and `ContainersFilters_v20` GIF on desktop, along with layout shifts and images without explicit dimensions. The mobile GIF alone accounted for about **10,350 KiB** in the image audit. These findings reinforce the refactor's deferred demo loading and reserved media dimensions. The hosted results do not measure the refactor or establish field improvements.
+
 ## Deployment status and limitations
 
 At the November 20 dashboard review, `docketeer-2026/docketeer-website-2024` still served the original baseline from `master`. Production deployment reference: `EhHGvQZQJxHmuqrzvGeG8uAuPUwn`. The project’s discontinued Node 20 build selection was changed to Node 24. Preview creation was blocked by a GitHub API rate-limit error. No later deployment was verified. This local acceptance review did not query or change hosted state and does not establish a subsequent deployment.
