@@ -113,16 +113,20 @@ test('every demo preserves media and explicit playback controls', async ({ page 
       await expect(video).toBeVisible();
       await video.scrollIntoViewIfNeeded();
       await expect(video).toHaveAttribute('preload', 'none');
-      const fullFrame = name === 'Data Visualization';
       const av1 = video.locator('source').first();
       const fallback = video.locator('source').last();
-      const h264Only = name === 'Time-Series' || name.startsWith('Configuration');
-      await expect(video.locator('source')).toHaveCount(h264Only ? 1 : 2);
-      if (h264Only) {
-        const asset = name === 'Time-Series' ? 'time-series-540p-h264' : 'configurations-tight-540p-h264';
-        await expect(fallback).toHaveAttribute('src', new RegExp(`${asset}[^/]*\\.mp4$`));
+      const h264Assets: Record<string, string> = {
+        'Data Visualization': 'data-visualization-540p-h264',
+        'Time-Series': 'time-series-540p-h264',
+        Configuration: 'configurations-tight-540p-h264',
+        Configurations: 'configurations-tight-540p-h264',
+      };
+      const h264Asset = h264Assets[name];
+      await expect(video.locator('source')).toHaveCount(h264Asset ? 1 : 2);
+      if (h264Asset) {
+        await expect(fallback).toHaveAttribute('src', new RegExp(`${h264Asset}[^/]*\\.mp4$`));
       } else {
-        await expect(av1).toHaveAttribute('type', `video/mp4; codecs="av01.0.${fullFrame ? '09M' : '04M'}.08"`);
+        await expect(av1).toHaveAttribute('type', 'video/mp4; codecs="av01.0.04M.08"');
       }
       await expect(fallback).toHaveAttribute('type', 'video/mp4');
       expect(await video.evaluate((element: HTMLVideoElement) => !element.autoplay && element.paused)).toBe(true);
@@ -137,7 +141,7 @@ test('every demo preserves media and explicit playback controls', async ({ page 
         error: element.error,
         width: element.videoWidth,
         height: element.videoHeight,
-      }))).toEqual({ error: null, width: h264Only ? 960 : fullFrame ? 1920 : 896, height: h264Only ? 540 : fullFrame ? 1080 : 504 });
+      }))).toEqual({ error: null, width: h264Asset ? 960 : 896, height: h264Asset ? 540 : 504 });
       const expectedSource = await video.evaluate((element: HTMLVideoElement) => {
         const [preferred, fallback] = element.querySelectorAll('source');
         return !fallback || element.canPlayType(preferred.type) ? preferred.src : fallback.src;

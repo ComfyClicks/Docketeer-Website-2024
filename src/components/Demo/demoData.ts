@@ -4,8 +4,7 @@ import othersPoster from '../../assets/demos/optimized/recordings/navigation.web
 import othersVideo from '../../assets/demos/optimized/recordings/navigation-h264.mp4';
 import othersAv1 from '../../assets/demos/optimized/recordings/navigation-av1.mp4';
 import images2Poster from '../../assets/demos/optimized/recordings/data-visualization.webp';
-import images2Video from '../../assets/demos/optimized/recordings/data-visualization-h264.mp4';
-import images2Av1 from '../../assets/demos/optimized/recordings/data-visualization-av1.mp4';
+import images2Video from '../../assets/demos/optimized/recordings/data-visualization-540p-h264.mp4';
 import imagesPoster from '../../assets/demos/optimized/recordings/images.webp';
 import imagesVideo from '../../assets/demos/optimized/recordings/images-h264.mp4';
 import imagesAv1 from '../../assets/demos/optimized/recordings/images-av1.mp4';
@@ -29,18 +28,18 @@ export type DemoMediaAsset = {
   poster: string;
 } & ({ av1: string; av1Level: string } | { av1?: never; av1Level?: never });
 
-// Main profile, Main tier, 8-bit AV1. The sequence headers use level 3.0 and 4.1.
+// Main profile, Main tier, 8-bit AV1 at level 3.0.
 const compactFrame = { width: 896, height: 504, av1Level: '04M' };
-const fullFrame = { width: 1920, height: 1080, av1Level: '09M' };
+const h264Frame = { width: 960, height: 540 };
 
 const containers: DemoMediaAsset = { ...compactFrame, src: containersVideo, av1: containersAv1, poster: containersPoster };
 const images: DemoMediaAsset = { ...compactFrame, src: imagesVideo, av1: imagesAv1, poster: imagesPoster };
-const images2: DemoMediaAsset = { ...fullFrame, src: images2Video, av1: images2Av1, poster: images2Poster };
-const images3: DemoMediaAsset = { src: images3Video, poster: images3Poster, width: 960, height: 540 };
+const images2: DemoMediaAsset = { ...h264Frame, src: images2Video, poster: images2Poster };
+const images3: DemoMediaAsset = { ...h264Frame, src: images3Video, poster: images3Poster };
 const metrics: DemoMediaAsset = { ...compactFrame, src: metricsVideo, av1: metricsAv1, poster: metricsPoster };
 const k8: DemoMediaAsset = { ...compactFrame, src: k8Video, av1: k8Av1, poster: k8Poster };
 const others: DemoMediaAsset = { ...compactFrame, src: othersVideo, av1: othersAv1, poster: othersPoster };
-const configuration: DemoMediaAsset = { src: configurationVideo, poster: configurationPoster, width: 960, height: 540 };
+const configuration: DemoMediaAsset = { ...h264Frame, src: configurationVideo, poster: configurationPoster };
 
 export interface DemoEntry {
   id: string;

@@ -141,7 +141,10 @@ test('demo playback is user-controlled and media does not preload video', () => 
   expect(video?.getAttribute('poster')).toBeTruthy();
   expect(Number(video?.getAttribute('width'))).toBeGreaterThan(0);
   expect(Number(video?.getAttribute('height'))).toBeGreaterThan(0);
+  const containerSources = figure.querySelectorAll('video source');
+  expect(Array.from(containerSources, source => source.getAttribute('type'))).toEqual(['video/mp4; codecs="av01.0.04M.08"', 'video/mp4']);
   fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
   const sources = screen.getByRole('figure', { name: 'Data Visualization demo' }).querySelectorAll('video source');
-  expect(Array.from(sources, source => source.getAttribute('type'))).toEqual(['video/mp4; codecs="av01.0.09M.08"', 'video/mp4']);
+  expect(Array.from(sources, source => source.getAttribute('type'))).toEqual(['video/mp4']);
+  expect(sources[0].getAttribute('src')).toContain('data-visualization-540p-h264.mp4');
 });

@@ -12,7 +12,7 @@ Repository and deployment history established the original source baseline at `2
 - Restored mobile navigation, section links, keyboard focus, responsive layouts and usable demonstration playback controls.
 - Centralized demo data and shared components, removing redundant dependencies and obsolete patterns.
 - Replaced the Three.js background with a lightweight Canvas star field. The current local design autoplays, includes a footer pause/play control, respects reduced motion, and suspends animation in hidden tabs. Drawing is capped at 30 fps, with lower backing resolution on narrow screens, batched stars and a cached gradient.
-- Deferred demonstration downloads until the selected player comes into view or the visitor requests playback. Reduced motion keeps playback manual. The player reserves space, uses a shared Play/Stop button, and serves six AV1 demos with H.264 fallbacks plus two 540p H.264 videos. Static posters, optimized portraits and logos, and self-hosted fonts support the initial view.
+- Deferred demonstration downloads until the selected player comes into view or the visitor requests playback. Reduced motion keeps playback manual. The player reserves space, uses a shared Play/Stop button, and serves five AV1 demos with H.264 fallbacks plus three 540p H.264 videos. Static posters, optimized portraits and logos, and self-hosted fonts support the initial view.
 - Restored feature-card entry effects with native IntersectionObserver and Web Animations APIs. Each card animates once; content remains visible without animation support, and reduced motion cancels the effect.
 - Refined team-card corners, updated Andy White’s portrait, repaired Arthur Jin’s image edge, and refreshed the whale mascot. Matched the dark space gradient and transparent header at the page top; the header becomes opaque on scroll, with an opaque fallback when scroll-driven CSS is unavailable. The expanded mobile menu remains opaque.
 - Added canonical/social metadata, robots and sitemap resources, security headers and a deployment-artifact verifier.
@@ -56,7 +56,7 @@ Fresh unthrottled browser contexts used 390×844 mobile and 1440×900 desktop vi
 
 The uncompressed build fell from **94.64 MB to 24.78 MB**. The baseline fetched one GIF demo on initial navigation in each profile. The refactor fetched no animated demo in this window. After scrolling, the 6.14 MB Time-Series and 5.85 MB Configurations WebPs load when their players are selected and in view, or on manual playback. These initial-navigation figures do not measure a full session.
 
-After this benchmark, the approved 540p H.264 encodes replaced the two WebPs. Time-Series is **1.03 MB** and Configurations is **2.53 MB**. Those are file sizes. The navigation and build figures above still describe the measured commit.
+After this benchmark, the approved 540p H.264 encodes replaced the two WebPs. Time-Series is **1.03 MB** and Configurations is **2.53 MB**. Data Visualization also switched from 1080p AV1 and H.264 to a single **2.31 MB** 540p H.264 encode. Those are file sizes. The navigation and build figures above still describe the measured commit.
 
 #### Ongoing background rendering
 
