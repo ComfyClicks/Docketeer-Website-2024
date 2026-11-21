@@ -9,7 +9,7 @@ button.toggle { flex: 0 1 10rem; min-inline-size: max-content; }
 .mediaFrame { display: grid; gap: .375rem; margin: 0 0 .75rem; }
 .playbackIcon { inline-size: 12px; block-size: 12px; background: currentColor; }
 .playIcon { clip-path: polygon(15% 0, 100% 50%, 15% 100%); }
-.gifMobileButtonsBox { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block: .75rem; }
+.gifMobileButtonsBox { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-inline-size: 16rem; margin: .75rem auto; }
 .descriptions, .mobileDesc { font-size: 1rem; line-height: 1.5; }
 .mobileDesc { max-inline-size: 45ch; margin-inline: auto; }
 .position { display: block; color: #b9c8e6; font-size: .875rem; margin-block-start: .25rem; }

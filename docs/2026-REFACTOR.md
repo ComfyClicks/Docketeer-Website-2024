@@ -216,6 +216,8 @@ PageSpeed Insights audited `https://docketeer.io/` at 3:41 p.m. EST after the me
 
 The after audit flagged a web-font-related shift in the mobile hero copy, accounting for the measured **0.070 CLS**. These hosted snapshots show a lower initial payload and better lab metrics on the live site. The sample size and lack of field data limit conclusions about daily variability, real-user gains and Core Web Vitals in the field.
 
+A repeat audit at 3:53 p.m. EST reproduced the **99 mobile / 100 desktop** performance scores, **218 / 217 KiB** network payloads and **0.070** mobile CLS. Desktop CLS was **0** in the repeat. Both profiles still showed no real-user data. [Mobile repeat](https://pagespeed.web.dev/analysis/https-docketeer-io/4vt9sbw5yz?form_factor=mobile) · [Desktop repeat](https://pagespeed.web.dev/analysis/https-docketeer-io/4vt9sbw5yz?form_factor=desktop)
+
 ## Deployment status and limitations
 
 At the November 20 dashboard review, `docketeer-2026/docketeer-website-2024` still served the original baseline from `master`. Production deployment reference: `EhHGvQZQJxHmuqrzvGeG8uAuPUwn`. The project’s discontinued Node 20 build selection was changed to Node 24. Preview creation was blocked by a GitHub API rate-limit error. No later deployment was verified. This local acceptance review did not query or change hosted state and does not establish a subsequent deployment.

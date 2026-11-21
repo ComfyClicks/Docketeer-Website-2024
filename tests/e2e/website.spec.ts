@@ -69,7 +69,13 @@ test('switching demos keeps navigation and the next section in place', async ({ 
   const nextTop = await documentTop(nextSection);
   const names = ['Images', 'Data Visualization', 'Time-Series', 'Metrics', 'Cluster Metrics', mobile ? 'Configuration' : 'Configurations', 'Others', 'Containers'];
 
-  if (!mobile) {
+  if (mobile) {
+    const previous = await page.getByRole('button', { name: 'Previous demo' }).boundingBox();
+    const next = await control.boundingBox();
+    expect(previous!.width).toBe(next!.width);
+    expect(previous!.height).toBeGreaterThanOrEqual(44);
+    expect(next!.height).toBeGreaterThanOrEqual(44);
+  } else {
     const height = await control.evaluate(element => element.getBoundingClientRect().height);
     for (const name of names) {
       const button = page.getByRole('button', { name, exact: true });
