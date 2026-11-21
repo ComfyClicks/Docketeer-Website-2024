@@ -6,7 +6,7 @@ See [2026 Refactor](docs/2026-REFACTOR.md) for the modernization summary and mea
 
 ## Local development
 
-Use Node.js **24.x** and npm **11.20.0**, as specified in `package.json`. After installing Node.js:
+Use Node.js **26.x** and npm **11.20.0**, as specified in `package.json`. After installing Node.js:
 
 ```sh
 npm install --global npm@11.20.0
@@ -69,9 +69,16 @@ python3 scripts/media/verify-demos.py
 
 The verification script requires ImageMagick (`magick`) on PATH. Conversion regenerates demo outputs and `reports/media/conversion.json`, which verification consumes. Review posters and playback before accepting regenerated media; some legacy GIFs are intentionally preserved for visual fidelity.
 
+Time-Series and Configurations use lossless animated WebP generated directly from their original GIFs. To regenerate just those two clips, use `gif2webp` from libwebp:
+
+```sh
+gif2webp -mt -m 4 -metadata none src/assets/demos/imageTab3-new.gif -o src/assets/demos/optimized/recordings/time-series-lossless.webp
+gif2webp -mt -m 4 -metadata none src/assets/demos/configuration.gif -o src/assets/demos/optimized/recordings/configurations-lossless.webp
+```
+
 ## Deployment
 
-The existing Vercel Hobby project is `docketeer-2026/docketeer-website-2024`, connected to this repository with production branch `master`. Build settings are Vite, Node 24.x, repository root, `npm run build`, and output directory `dist`. A feature-branch push does not update production.
+The existing Vercel Hobby project is `docketeer-2026/docketeer-website-2024`, connected to this repository with production branch `master`. Build settings are Vite, repository root, `npm run build`, and output directory `dist`. The Node.js version for new builds comes from `engines.node` in `package.json`. A feature-branch push does not update production.
 
 1. Run validation and create a preview deployment for the intended branch or commit in the existing Vercel project.
 2. Confirm its commit and build logs. Check mobile navigation, keyboard focus, feature cards, demo playback, images and browser console errors.

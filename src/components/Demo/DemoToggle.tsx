@@ -9,6 +9,8 @@ export default function DemoToggle({ currentGif, setCurrentGif }: DemoToggleProp
       {demos.map((demo, index) => <button key={demo.id} type="button" className={`siteButton ${styles.toggle}`}
         aria-pressed={currentGif === index} onClick={() => setCurrentGif(index)}>{demo.title}</button>)}
     </div>
-    <p className={styles.descriptions}>{demos[currentGif].description}</p>
+    <p className={`${styles.descriptions} ${styles.stableText}`}>
+      {demos.map((demo, index) => <span key={demo.id} aria-hidden={currentGif !== index}>{demo.description}</span>)}
+    </p>
   </div>;
 }

@@ -5,25 +5,19 @@ import App from '../../src/App';
 import Navbar from '../../src/components/Navbar/Navbar';
 import Demo from '../../src/components/Demo/Demo';
 
-test('legacy demos load on request, stop at their poster, and reset on selection', () => {
+test('switching mobile demos recreates the player with the selected recording', () => {
+  vi.stubGlobal('innerWidth', 320);
   render(<Demo />);
-  fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
-  const figure = screen.getByRole('figure', { name: 'Data Visualization demo' });
-  const poster = figure.querySelector('img')?.getAttribute('src');
-  expect(poster).toBeTruthy();
-  const play = screen.getByRole('button', { name: 'Play Data Visualization demonstration' });
-  play.focus();
-  fireEvent.click(play);
-  expect(figure.querySelector('img')?.getAttribute('src')).not.toBe(poster);
-  const stop = screen.getByRole('button', { name: 'Stop Data Visualization demonstration' });
-  expect(document.activeElement).toBe(stop);
-  fireEvent.click(stop);
-  expect(figure.querySelector('img')?.getAttribute('src')).toBe(poster);
-  fireEvent.click(screen.getByRole('button', { name: 'Play Data Visualization demonstration' }));
-  fireEvent.click(screen.getByRole('button', { name: 'Images' }));
-  fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
-  expect(screen.getByRole('figure', { name: 'Data Visualization demo' }).querySelector('img')?.getAttribute('src')).toBe(poster);
-  expect(screen.queryByRole('button', { name: 'Stop Data Visualization demonstration' })).toBeNull();
+  const video = screen.getByRole('figure', { name: 'Containers demo' }).querySelector('video');
+  expect(video).not.toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Next demo' }));
+  const imagesVideo = screen.getByRole('figure', { name: 'Images demo' }).querySelector('video');
+  expect(imagesVideo?.poster).not.toBe(video?.poster);
+  fireEvent.click(screen.getByRole('button', { name: 'Previous demo' }));
+  const resetVideo = screen.getByRole('figure', { name: 'Containers demo' }).querySelector('video');
+  expect(resetVideo).not.toBe(video);
+  expect(resetVideo?.poster).toBe(video?.poster);
+  expect(resetVideo?.preload).toBe('none');
 });
 
 test('current content and native section destinations render', () => {
@@ -141,12 +135,13 @@ test('demo playback is user-controlled and media does not preload video', () => 
   const figure = screen.getByRole('figure', { name: 'Containers demo' });
   const video = figure.querySelector('video');
   expect(video).not.toBeNull();
-  expect(video?.controls).toBe(true);
+  expect(figure.querySelector('button')?.getAttribute('aria-label')).toBe('Play Containers demonstration');
   expect(video?.autoplay).toBe(false);
   expect(video?.preload).toBe('none');
   expect(video?.getAttribute('poster')).toBeTruthy();
   expect(Number(video?.getAttribute('width'))).toBeGreaterThan(0);
   expect(Number(video?.getAttribute('height'))).toBeGreaterThan(0);
-  fireEvent.click(screen.getByRole('button', { name: 'Configurations' }));
-  expect(screen.getByRole('figure', { name: 'Configurations demo' }).querySelector('video')).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'Data Visualization' }));
+  const sources = screen.getByRole('figure', { name: 'Data Visualization demo' }).querySelectorAll('video source');
+  expect(Array.from(sources, source => source.getAttribute('type'))).toEqual(['video/mp4; codecs="av01.0.09M.08"', 'video/mp4']);
 });

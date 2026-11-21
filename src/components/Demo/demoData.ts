@@ -1,70 +1,62 @@
-import containersPoster from '../../assets/demos/optimized/ContainersFilters_v20.webp';
-import containersVideo from '../../assets/demos/optimized/ContainersFilters_v20.mp4';
-import imagesPoster from '../../assets/demos/optimized/Images_v20.webp';
-import imagesVideo from '../../assets/demos/optimized/Images_v20.mp4';
-import images2Poster from '../../assets/demos/optimized/imageTab2-new.webp';
-import images2Animation from '../../assets/demos/imageTab2-new.gif';
-import images3Poster from '../../assets/demos/optimized/imageTab3-new.webp';
-import images3Animation from '../../assets/demos/imageTab3-new.gif';
-import metricsPoster from '../../assets/demos/optimized/ContainersMetrics_v20.webp';
-import metricsVideo from '../../assets/demos/optimized/ContainersMetrics_v20.mp4';
-import k8Poster from '../../assets/demos/optimized/KubernetesClusterHealthMetrics_v20.webp';
-import k8Video from '../../assets/demos/optimized/KubernetesClusterHealthMetrics_v20.mp4';
-import othersPoster from '../../assets/demos/optimized/Navigation_v20.webp';
-import othersVideo from '../../assets/demos/optimized/Navigation_v20.mp4';
-import configurationPoster from '../../assets/demos/optimized/Configurations_v20.webp';
-import mobile_containersPoster from '../../assets/demos/optimized/containerTab-new.webp';
-import mobile_containersAnimation from '../../assets/demos/containerTab-new.gif';
-import mobile_images1Poster from '../../assets/demos/optimized/imageTab1-new.webp';
-import mobile_images1Animation from '../../assets/demos/imageTab1-new.gif';
-import mobile_metricsPoster from '../../assets/demos/optimized/metricTab-new.webp';
-import mobile_metricsAnimation from '../../assets/demos/metricTab-new.gif';
-import mobile_k8Poster from '../../assets/demos/optimized/k8Tab-new.webp';
-import mobile_k8Animation from '../../assets/demos/k8Tab-new.gif';
-import mobile_othersPoster from '../../assets/demos/optimized/hamburgerTab-new.webp';
-import mobile_othersAnimation from '../../assets/demos/hamburgerTab-new.gif';
-import mobile_configurationPoster from '../../assets/demos/optimized/configuration.webp';
-import mobile_configurationAnimation from '../../assets/demos/configuration.gif';
+import configurationPoster from '../../assets/demos/optimized/recordings/configurations.webp';
+import configurationAnimation from '../../assets/demos/optimized/recordings/configurations-lossless.webp';
+import othersPoster from '../../assets/demos/optimized/recordings/navigation.webp';
+import othersVideo from '../../assets/demos/optimized/recordings/navigation-h264.mp4';
+import othersAv1 from '../../assets/demos/optimized/recordings/navigation-av1.mp4';
+import images2Poster from '../../assets/demos/optimized/recordings/data-visualization.webp';
+import images2Video from '../../assets/demos/optimized/recordings/data-visualization-h264.mp4';
+import images2Av1 from '../../assets/demos/optimized/recordings/data-visualization-av1.mp4';
+import imagesPoster from '../../assets/demos/optimized/recordings/images.webp';
+import imagesVideo from '../../assets/demos/optimized/recordings/images-h264.mp4';
+import imagesAv1 from '../../assets/demos/optimized/recordings/images-av1.mp4';
+import containersPoster from '../../assets/demos/optimized/recordings/containers.webp';
+import containersVideo from '../../assets/demos/optimized/recordings/containers-h264.mp4';
+import containersAv1 from '../../assets/demos/optimized/recordings/containers-av1.mp4';
+import images3Poster from '../../assets/demos/optimized/recordings/time-series.webp';
+import images3Animation from '../../assets/demos/optimized/recordings/time-series-lossless.webp';
+import metricsPoster from '../../assets/demos/optimized/recordings/metrics.webp';
+import metricsVideo from '../../assets/demos/optimized/recordings/metrics-h264.mp4';
+import metricsAv1 from '../../assets/demos/optimized/recordings/metrics-av1.mp4';
+import k8Poster from '../../assets/demos/optimized/recordings/cluster-metrics.webp';
+import k8Video from '../../assets/demos/optimized/recordings/cluster-metrics-h264.mp4';
+import k8Av1 from '../../assets/demos/optimized/recordings/cluster-metrics-av1.mp4';
 
-export type DemoMediaAsset =
-  | { kind: 'animation'; src: string; poster: string; width: number; height: number }
-  | { kind: 'video'; src: string; poster: string; width: number; height: number }
-  | { kind: 'image'; src: string; width: number; height: number };
 
-const containers: DemoMediaAsset = { kind: 'video', src: containersVideo, poster: containersPoster, width: 800, height: 504 };
-const images: DemoMediaAsset = { kind: 'video', src: imagesVideo, poster: imagesPoster, width: 800, height: 504 };
-const images2: DemoMediaAsset = { kind: 'animation', src: images2Animation, poster: images2Poster, width: 1838, height: 902 };
-const images3: DemoMediaAsset = { kind: 'animation', src: images3Animation, poster: images3Poster, width: 1424, height: 954 };
-const metrics: DemoMediaAsset = { kind: 'video', src: metricsVideo, poster: metricsPoster, width: 800, height: 504 };
-const k8: DemoMediaAsset = { kind: 'video', src: k8Video, poster: k8Poster, width: 800, height: 504 };
-const others: DemoMediaAsset = { kind: 'video', src: othersVideo, poster: othersPoster, width: 800, height: 504 };
-const configuration: DemoMediaAsset = { kind: 'image', src: configurationPoster, width: 4084, height: 2558 };
-const mobile_containers: DemoMediaAsset = { kind: 'animation', src: mobile_containersAnimation, poster: mobile_containersPoster, width: 1456, height: 888 };
-const mobile_images1: DemoMediaAsset = { kind: 'animation', src: mobile_images1Animation, poster: mobile_images1Poster, width: 1838, height: 902 };
-const mobile_images2 = images2;
-const mobile_images3 = images3;
-const mobile_metrics: DemoMediaAsset = { kind: 'animation', src: mobile_metricsAnimation, poster: mobile_metricsPoster, width: 1456, height: 888 };
-const mobile_k8: DemoMediaAsset = { kind: 'animation', src: mobile_k8Animation, poster: mobile_k8Poster, width: 1456, height: 888 };
-const mobile_others: DemoMediaAsset = { kind: 'animation', src: mobile_othersAnimation, poster: mobile_othersPoster, width: 1424, height: 954 };
-const mobile_configuration: DemoMediaAsset = { kind: 'animation', src: mobile_configurationAnimation, poster: mobile_configurationPoster, width: 1544, height: 690 };
+export type DemoMediaAsset = {
+  src: string;
+  width: number;
+  height: number;
+  poster: string;
+} & ({ av1: string; av1Level: string } | { av1?: never; av1Level?: never });
+
+// Main profile, Main tier, 8-bit AV1. The sequence headers use level 3.0 and 4.1.
+const compactFrame = { width: 896, height: 504, av1Level: '04M' };
+const fullFrame = { width: 1920, height: 1080, av1Level: '09M' };
+
+const containers: DemoMediaAsset = { ...compactFrame, src: containersVideo, av1: containersAv1, poster: containersPoster };
+const images: DemoMediaAsset = { ...compactFrame, src: imagesVideo, av1: imagesAv1, poster: imagesPoster };
+const images2: DemoMediaAsset = { ...fullFrame, src: images2Video, av1: images2Av1, poster: images2Poster };
+const images3: DemoMediaAsset = { src: images3Animation, poster: images3Poster, width: 960, height: 540 };
+const metrics: DemoMediaAsset = { ...compactFrame, src: metricsVideo, av1: metricsAv1, poster: metricsPoster };
+const k8: DemoMediaAsset = { ...compactFrame, src: k8Video, av1: k8Av1, poster: k8Poster };
+const others: DemoMediaAsset = { ...compactFrame, src: othersVideo, av1: othersAv1, poster: othersPoster };
+const configuration: DemoMediaAsset = { src: configurationAnimation, poster: configurationPoster, width: 960, height: 540 };
 
 export interface DemoEntry {
   id: string;
   title: string;
   mobileTitle?: string;
   description: string;
-  desktopMedia: DemoMediaAsset;
-  mobileMedia: DemoMediaAsset;
+  media: DemoMediaAsset;
 }
 
-// Desktop/mobile recordings retain their original workflows and frame timing.
 export const demos: readonly DemoEntry[] = [
-  { id: 'containers', title: 'Containers', description: 'Start, stop, or remove your containers at the click of a button.', desktopMedia: containers, mobileMedia: mobile_containers },
-  { id: 'images', title: 'Images', description: 'View, run, or remove images with ease.', desktopMedia: images, mobileMedia: mobile_images1 },
-  { id: 'data-visualization', title: 'Data Visualization', description: 'Visualize your package vulnerability information.', desktopMedia: images2, mobileMedia: mobile_images2 },
-  { id: 'time-series', title: 'Time-Series', description: 'Save Scan, Rescan, Compare your scans with a click of a button.', desktopMedia: images3, mobileMedia: mobile_images3 },
-  { id: 'metrics', title: 'Metrics', description: 'Monitor your container metrics.', desktopMedia: metrics, mobileMedia: mobile_metrics },
-  { id: 'cluster-metrics', title: 'Cluster Metrics', description: 'View Kubernetes cluster metrics for nodes and kubelets.', desktopMedia: k8, mobileMedia: mobile_k8 },
-  { id: 'configuration', title: 'Configurations', mobileTitle: 'Configuration', description: 'Dynamically alter Prometheus targets to customize displayed metrics', desktopMedia: configuration, mobileMedia: mobile_configuration },
-  { id: 'others', title: 'Others', description: 'Many more options to monitor your metrics.', desktopMedia: others, mobileMedia: mobile_others },
+  { id: 'containers', title: 'Containers', description: 'Start, stop, or remove your containers at the click of a button.', media: containers },
+  { id: 'images', title: 'Images', description: 'View, run, or remove images with ease.', media: images },
+  { id: 'data-visualization', title: 'Data Visualization', description: 'Visualize your package vulnerability information.', media: images2 },
+  { id: 'time-series', title: 'Time-Series', description: 'Save Scan, Rescan, Compare your scans with a click of a button.', media: images3 },
+  { id: 'metrics', title: 'Metrics', description: 'Monitor your container metrics.', media: metrics },
+  { id: 'cluster-metrics', title: 'Cluster Metrics', description: 'View Kubernetes cluster metrics for nodes and kubelets.', media: k8 },
+  { id: 'configuration', title: 'Configurations', mobileTitle: 'Configuration', description: 'Dynamically alter Prometheus targets to customize displayed metrics', media: configuration },
+  { id: 'others', title: 'Others', description: 'Many more options to monitor your metrics.', media: others },
 ];

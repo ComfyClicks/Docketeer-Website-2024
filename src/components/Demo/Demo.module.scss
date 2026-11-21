@@ -2,10 +2,13 @@
 .demoContainer { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr); align-items: center; gap: 2rem; }
 .mainContainer, .gifContainer { min-inline-size: 0; }
 .toggleContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.toggle { flex: 0 1 10rem; }
-.gifs, .gifMobile { display: block; max-inline-size: 100%; block-size: auto; border-radius: 10px; box-shadow: 1px 1px 10px rgba(154, 180, 251, .44); }
+button.toggle { flex: 0 1 10rem; min-inline-size: max-content; }
+.gifs, .gifMobile { display: block; max-inline-size: 100%; aspect-ratio: 16 / 9; block-size: auto; object-fit: contain; background: var(--surface-blue); border-radius: 10px; box-shadow: 0 0 0 1px #33415f, 0 6px 18px rgb(0 0 0 / 38%); }
 .gifs { inline-size: 100%; }
-.gifMobile { inline-size: min(100%, 50rem); margin: 0 auto 1rem; }
+.gifMobile { inline-size: min(100%, 50rem); margin-inline: auto; }
+.mediaFrame { display: grid; gap: .375rem; margin: 0 0 .75rem; }
+.playbackIcon { inline-size: 12px; block-size: 12px; background: currentColor; }
+.playIcon { clip-path: polygon(15% 0, 100% 50%, 15% 100%); }
 .gifMobileButtonsBox { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block: .75rem; }
 .descriptions, .mobileDesc { font-size: 1rem; line-height: 1.5; }
 .mobileDesc { max-inline-size: 45ch; margin-inline: auto; }
@@ -13,5 +16,12 @@
 @media (max-width: 1100px) {
   .demoContainer { grid-template-columns: minmax(0, 1fr); }
   .gifContainer { inline-size: min(100%, 50rem); margin-inline: auto; }
-  .toggle { flex-basis: 9rem; }
+  button.toggle { flex-basis: 9rem; }
+}
+
+// All text options share a grid cell so the tallest one sets the row height.
+.stableText {
+  display: grid;
+  > span { grid-area: 1 / 1; }
+  > [aria-hidden='true'] { visibility: hidden; }
 }

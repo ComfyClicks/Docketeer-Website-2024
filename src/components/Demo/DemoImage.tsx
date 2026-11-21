@@ -5,6 +5,6 @@ import styles from './Demo.module.scss';
 export default function DemoImage({ currentGif }: { currentGif: number }) {
   const demo = demos[currentGif];
   return <div className={styles.gifContainer}>
-    <DemoMedia key={demo.desktopMedia.src} title={demo.title} className={styles.gifs} media={demo.desktopMedia} />
+    <DemoMedia key={demo.media.src} title={demo.title} className={styles.gifs} media={demo.media} />
   </div>;
 }

@@ -14,11 +14,12 @@
   inline-size: 200px;
   max-inline-size: 100%;
   padding-block-end: 1rem;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
-  background: #0c1020;
-  border-radius: 8px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 36%);
+  outline: 1px solid #33415f;
+  background: linear-gradient(155deg, #161f35, #0c1020 72%);
+  border-radius: 12px;
 }
-.osp4Pic { border-start-start-radius: 8px; border-start-end-radius: 8px; object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
+.osp4Pic { border-start-start-radius: 12px; border-start-end-radius: 12px; object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
 .othersContainer {
   max-inline-size: 76rem;
   margin: 3rem auto 0;

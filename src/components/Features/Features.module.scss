@@ -17,10 +17,10 @@
 .featureCard {
   padding: 1.5rem;
   min-inline-size: 0;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, .44);
-  border-radius: 5px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 36%);
+  border-radius: 12px;
   font-size: 1rem;
-  background: #0c1020;
+  background: linear-gradient(155deg, #161f35, var(--surface-blue) 72%);
   border: 1px solid #28334e;
 }
 .featureCard h3 { font-size: 1.125rem; padding: 0; }
