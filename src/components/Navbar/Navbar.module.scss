@@ -1,126 +1,66 @@
-.name {
-  font-size: 3.5vh;
-  padding: 0 0 0 1.5vh;
-}
-
-li {
-  font-size: 18px;
-}
-
-li:hover {
-  cursor: pointer;
-  color: rgba(154, 180, 251);
-  animation: updown 1s ease-in-out infinite;
-  animation-play-state: running;
-}
-
-li:not(:hover) {
-  animation: updown-out 1s ease-out forwards;
-  animation-play-state: running;
-}
-
-@keyframes updown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes updown-out {
-  0% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  .left {
-    padding-left: 3em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  a {
-    text-decoration: none;
-  }
-
-  
-
-  .navbarContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 90px;
-    justify-content: space-between;
-    ul {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding-left: 0px;
-
-      li {
-        padding: 0.5em;
-        list-style: none;
-        text-decoration: none;
-      }
-      .icons {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-right: 3em;
-      }
-      .dropBtn {
-        display: none;
-      }
+  inset-block-start: 0;
+  inline-size: 100%;
+  z-index: 10;
+  // Safe default when scroll-driven animations are unavailable.
+  background: #000005;
+}
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+  .navbar {
+    background: transparent;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #000005;
+      animation: navigationSurface 1ms linear both;
+      animation-timeline: scroll(block root);
+      animation-range: 0px 24px;
     }
   }
 }
-
-@media screen and (max-width: 840px) and (orientation: portrait) {
-  .navbarContainer > .left {
-    padding: 0;
-    align-self: flex-start;
+@keyframes navigationSurface {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-block-size: 90px;
+  padding-inline: 3rem;
+  gap: 1rem;
+}
+.left { display: flex; align-items: center; gap: 8px; }
+.name { font-family: Prompt, sans-serif; font-size: 1.75rem; font-weight: 700; margin: 0; padding: 0; }
+.links {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  a { display: flex; align-items: center; padding: 0.5rem; color: inherit; text-decoration: none; min-block-size: 28px; }
+  a:hover { color: #9ab4fb; }
+}
+.menuButton { display: none; }
+@media (max-width: 1000px) {
+  .navbarContainer { padding-inline: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+  .left { min-inline-size: 0; max-inline-size: 100%; }
+  .name { font-size: 1.6rem; overflow-wrap: anywhere; }
+  .menuButton { display: inline-flex; }
+  .links {
+    display: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    max-block-size: calc(100dvh - var(--navigation-height, 90px));
+    overflow-y: auto;
+    background: #000005;
+    padding: 0.5rem 0.75rem;
+    a { min-block-size: 28px; }
   }
-  .navbarContainer {
-    a svg {
-      width: 16px;
-      height: 16px;
-    }
-    .githubLogo {
-      width: 16px;
-      height: 16px;
-    }
-    li {
-      font-size: 14px;
-      visibility: hidden;
-    }
-    ul {
-      width: 6vh;
-      flex-direction: column !important;
-      padding-left: 0;
-      .icons {
-        display: flex !important;
-        flex-direction: column !important;
-        padding-right: 0 !important;
-      }
-    }
-  }
-  h1 {
-    margin-top: 3vh;
-  }
+  .open { display: flex; flex-direction: column; align-items: stretch; }
 }

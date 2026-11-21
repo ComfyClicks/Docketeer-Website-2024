@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(./assets/fonts/open-sans-latin-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./assets/fonts/prompt-latin-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root { --surface-blue: #0c1020; }
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background: #000019 linear-gradient(to bottom, #000000, #000019) fixed;
+  line-height: 1.5;
+  width: 100%;
+}
+
+// Reserve the initial page shell so the static footer does not flash above
+// the content while React mounts. The page is always taller than a viewport.
+#root { min-block-size: 100svh; }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Prompt', sans-serif;
+  padding: 0;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); }
+
+// Keep keyboard-focused controls clear of the fixed navigation as well as
+// section targets. ResizeObserver supplies the actual header height.
+html { scroll-padding-top: var(--navigation-height, 90px); }
+.pageSection { scroll-margin-top: 1.25rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid #9ab4fb; outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.skipLink {
+  position: fixed;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  transform: translateY(-200%);
+  z-index: 20;
+  padding: 0.75rem;
+  background: white;
+  color: #000005;
+}
+.skipLink:focus { transform: none; }
+#main-content { scroll-margin-top: 1.25rem; }
+footer { padding: 2rem 1rem; }
+
+// Shared by action links and native buttons, including the static footer control.
+:where(.siteButton:not([hidden])) {
+  display: inline-flex;
+}
+.siteButton {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid #819be0;
+  border-radius: 10px;
+  background: var(--surface-blue);
+  color: #fff;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover:not(:disabled) { background: #27354f; }
+  &:active:not(:disabled) { background: #1a294c; }
+  &[aria-pressed='true'], &[aria-expanded='true'] {
+    border-color: #b2c6ff;
+    background: #25365e;
+    &:hover { background: #314675; }
+  }
+  &:disabled {
+    color: #b9c8e6;
+    cursor: default;
+  }
+}
+
+.siteButtonPrimary {
+  border-color: #9ab4fb;
+  background: #314675;
+
+  &:hover:not(:disabled) { background: #3e5690; }
+  &:active:not(:disabled) { background: #25365e; }
+}

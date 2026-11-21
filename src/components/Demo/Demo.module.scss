@@ -1,148 +1,27 @@
-.demoDisplayLoaded {
-  height: 70vh;
-  padding-top: 30vh;
-  max-width: 84em;
-  margin: 25px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  transform: scale(0);
-  animation: zoom-in 1s forwards;
+.demoDisplayLoaded { max-inline-size: 84rem; margin: 3rem auto; padding: 3rem 1rem; }
+.demoContainer { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr); align-items: center; gap: 2rem; }
+.mainContainer, .gifContainer { min-inline-size: 0; }
+.toggleContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+button.toggle { flex: 0 1 10rem; min-inline-size: max-content; }
+.gifs, .gifMobile { display: block; max-inline-size: 100%; aspect-ratio: 16 / 9; block-size: auto; object-fit: contain; background: var(--surface-blue); border-radius: 10px; box-shadow: 0 0 0 1px #33415f, 0 6px 18px rgb(0 0 0 / 38%); }
+.gifs { inline-size: 100%; }
+.gifMobile { inline-size: min(100%, 50rem); margin-inline: auto; }
+.mediaFrame { display: grid; gap: .375rem; margin: 0 0 .75rem; }
+.playbackIcon { inline-size: 12px; block-size: 12px; background: currentColor; }
+.playIcon { clip-path: polygon(15% 0, 100% 50%, 15% 100%); }
+.gifMobileButtonsBox { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-block: .75rem; }
+.descriptions, .mobileDesc { font-size: 1rem; line-height: 1.5; }
+.mobileDesc { max-inline-size: 45ch; margin-inline: auto; }
+.position { display: block; color: #b9c8e6; font-size: .875rem; margin-block-start: .25rem; }
+@media (max-width: 1100px) {
+  .demoContainer { grid-template-columns: minmax(0, 1fr); }
+  .gifContainer { inline-size: min(100%, 50rem); margin-inline: auto; }
+  button.toggle { flex-basis: 9rem; }
 }
 
-.demoDisplay {
-  opacity: 0;
-  width: 20%;
-  padding-top: 10rem;
-  transition: opacity 0.5s ease-out;
-}
-
-.demoContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.descriptions {
-  width: 85%;
-}
-
-.mainContainer {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.toggleContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.action {
-  font-size: 18px;
-}
-
-.toggle {
-  cursor: pointer;
-  width: 160px;
-  height: 40px;
-  margin: 0 7px 20px 7px;
-  background: transparent;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-  color: white;
-  font-size: 15px;
-  display: block;
-  border-radius: 5px;
-  line-height: 40px;
-}
-
-.toggle:hover {
-  background: rgba(154, 180, 251);
-  transition: 0.3s;
-}
-.toggle:not(:hover) {
-  transition: 0.3s;
-}
-
-.gifContainer {
-  width: 50%;
-}
-
-.gifs {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-@media screen and (min-width: 1275px) {
-  .gifContainer {
-    width: 640px;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .demoDisplayLoaded {
-    max-width: 84em;
-    margin: 25px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 13em;
-    transform: scale(0);
-    animation: zoom-in 2s forwards;
-    height: auto;
-  }
-  .gifContainer {
-    width: 640px;
-    height: auto;
-  }
-}
-
-@keyframes zoom-in {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-// Mobile
-.gifMobile {
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-.gifMobileButtonsBox {
-  display: flex;
-  flex-direction: row;
-  // align-items: center;
-  justify-content: center;
-}
-.gifMobileButtons {
-  border-radius: 5px;
-  align-content: center;
-  padding: 6px 16px;
-  margin: 8px;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-}
-
-.gifMobileButtons:active {
-  background: rgba(154, 180, 251);
-  transition: 0.1s;
-}
-
-.mobileDesc {
-  font-size: 0.75em;
+// All text options share a grid cell so the tallest one sets the row height.
+.stableText {
+  display: grid;
+  > span { grid-area: 1 / 1; }
+  > [aria-hidden='true'] { visibility: hidden; }
 }

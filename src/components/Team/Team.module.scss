@@ -1,149 +1,36 @@
-.teamContainer {
-  padding-bottom: 80px;
-  padding-top: 10vh;
-
-  h2 {
-    padding-bottom: 5vh;
-  }
-
-  h3 {
-    padding-top: 5vh;
-  }
-
-  .othersContainer {
-    height: 60vh;
-    margin-top: 5vh;
-    padding: 0 20px 0 20px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    text-align: center;
-  }
-
-  .homeContainer {
-    max-width: 76em;
-    margin: auto;
-    padding-top: 30vh;
-
-    .home {
-      display: flex;
-
-      .left {
-        margin: auto;
-
-        .description {
-          max-width: 500px;
-        }
-      }
-
-      .right {
-        padding: 2em;
-        max-width: 500px;
-        margin: auto;
-      }
-
-      h3 {
-        margin-top: 0;
-      }
-    }
-  }
-
-  .osp4Container {
-    margin: auto;
-    max-width: 86em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 5vh;
-    text-align: center;
-    .github {
-      width: 19px;
-      height: 19px;
-      margin-left: 5px;
-    }
-  }
-
-  .docketeerXVIIContainer {
-    margin: auto;
-    max-width: 70em;
-    gap: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5vh;
-    text-align: center;
-  }
-
-  .github {
-    width: 19px;
-    height: 19px;
-    margin-left: 5px;
-    padding-right: 5px;
-  }
-
-  .osp4box {
-    // margin: 10px;
-    padding-bottom: 2vh;
-    margin-bottom: 5vh;
-    box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.44);
-  }
-
-  .person {
-    font-size: 14px;
-    margin: 5px;
-  }
-
-  .osp4Pic {
-    object-fit: cover;
-    height: 200px;
-    width: 200px;
-  }
-
-  .github:hover {
-    cursor: pointer;
-  }
-
-  svg:hover {
-    cursor: pointer;
-  }
+.teamContainer { padding: 3rem 1rem 5rem; }
+.teamContainer h2 { margin-block-end: 3rem; }
+.docketeerXVIIContainer {
+  padding: 0;
+  margin: 0 auto 3rem;
+  max-inline-size: 70rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
 }
-
-@media screen and (max-width: 1100px) {
-  .person {
-    display: flex;
-    flex-direction: column;
-    a {
-      justify-self: baseline;
-    }
-  }
-  .othersContainer {
-    margin-bottom: 10rem;
-  }
+.osp4box {
+  inline-size: 200px;
+  max-inline-size: 100%;
+  padding-block-end: 1rem;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 36%);
+  outline: 1px solid #33415f;
+  background: linear-gradient(155deg, #161f35, #0c1020 72%);
+  border-radius: 12px;
 }
-
-@media screen and (max-width: 650px) {
-  h2 {
-    font-size: 26px;
-  }
-
-  .othersContainer {
-    height: fit-content !important;
-    grid-template-columns: repeat(2, 200px) !important;
-    font-size: 13px;
-  }
-
-  .osp4box {
-    padding: 0;
-    margin: 0 1vh;
-  }
-
-  .othersContainer {
-    padding: 0 10px !important;
-    display: flex;
-    justify-content: center;
-    margin: 4rem;
-  }
+.osp4Pic { border-start-start-radius: 12px; border-start-end-radius: 12px; object-fit: cover; inline-size: 100%; block-size: auto; aspect-ratio: 1; }
+.othersContainer {
+  max-inline-size: 76rem;
+  margin: 3rem auto 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 1rem;
+  list-style: none;
 }
+.person { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.links { display: flex; justify-content: center; }
+.teamContainer a { display: inline-flex; justify-content: center; align-items: center; min-inline-size: 32px; min-block-size: 32px; }
+.github { inline-size: 19px; block-size: 19px; }
+@media (pointer: coarse) { .teamContainer a { min-inline-size: 44px; min-block-size: 44px; } }

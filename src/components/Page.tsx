@@ -5,30 +5,32 @@ import Features from './Features/Features';
 import Demo from './Demo/Demo';
 import GetStarted from './GetStarted/GetStarted';
 import Team from './Team/Team';
-// import Footer from './Footer/Footer';
-import { Element } from 'react-scroll';
 
-const Page = (): JSX.Element => {
+
+const Page = (): React.JSX.Element => {
   return (
     <div className="pageContainer">
-      <Navbar />
-      <Element name="home">
+      <a className="skipLink" href="#main-content">Skip to content</a>
+      <header><Navbar /></header>
+      <main>
+      <div id="home" tabIndex={-1} className="pageSection">
         <Home />
-      </Element>
-      <Element name="features">
+      </div>
+      <div id="features" tabIndex={-1} className="pageSection">
         <Features />
-      </Element>
-      <Element name="demo">
+      </div>
+      <div id="demo" tabIndex={-1} className="pageSection">
         <div>
           <Demo />
         </div>
-      </Element>
-      <Element name="getstarted">
+      </div>
+      <div id="getstarted" tabIndex={-1} className="pageSection">
         <GetStarted />
-      </Element>
-      <Element name="team">
+      </div>
+      <div id="team" tabIndex={-1} className="pageSection">
         <Team />
-      </Element>
+      </div>
+      </main>
     </div>
   );
 };

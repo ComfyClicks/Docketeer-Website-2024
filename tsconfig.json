@@ -1,20 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "jsx": "react",
+    "target": "ES2022",
+    "module": "ESNext",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
-    "lib": ["dom", "es2021"],
+    "lib": [
+      "dom",
+      "es2021"
+    ],
     "allowJs": true,
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "removeComments": true,
-    "noEmit": false,
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
-  "include": ["src/**/*", "server/**/*", "global.d.ts"]
+  "include": [
+    "src/**/*",
+    "global.d.ts",
+    "vite.config.ts"
+  ]
 }

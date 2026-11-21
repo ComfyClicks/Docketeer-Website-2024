@@ -1,99 +1,23 @@
 .homeLoaded {
-  height: 95vh;
-  max-width: 76em;
-  margin: auto;
+  min-block-size: 95dvh;
+  box-sizing: border-box;
+  max-inline-size: 76rem;
+  padding: max(7rem, calc(var(--navigation-height, 90px) + 1.5rem)) 1.5rem 3rem;
+  margin-inline: auto;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-around;
-  transform: scale(0);
-  animation: zoom-in 1s forwards;
-  .left {
-    margin: auto;
-
-    .description {
-      max-width: 550px;
-    }
-  }
-
-  .right {
-    padding: 2em;
-    max-width: 500px;
-    margin: auto;
-  }
+  gap: 2rem;
 }
-
-.homeDisplay {
-  opacity: 0;
-  width: 50%;
-  transition: opacity 0.5s ease-out;
-}
-
-.mainTitle {
-  font-size: 4.2vh;
-  width: 32rem;
-}
-
-@keyframes zoom-in {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.explore {
-  cursor: pointer;
-  margin: auto;
-  width: 150px;
-  background: transparent;
-  box-shadow: 1px 1px 10px rgba(154, 180, 251, 0.782);
-  color: white;
-  font-size: 15px;
-  display: block;
-  border-radius: 20px;
-  line-height: 40px;
-}
-.explore:hover {
-  background: rgba(154, 180, 251);
-  transition: 0.3s;
-}
-.explore:not(:hover) {
-  transition: 0.3s;
-}
-
-.right {
-  animation: updown 3s ease-in-out infinite;
-  animation-play-state: running;
-}
-@keyframes updown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .homeLoaded {
-    margin-top: 10vh;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 650px) {
-  .description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80vw;
-    .mainTitle {
-      width: 90%;
-    }
-  }
+.left { min-inline-size: 0; max-inline-size: 35rem; }
+.description { inline-size: 100%; }
+.description p { text-wrap: pretty; }
+.mainTitle { font-size: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem); padding: 0; }
+.right { min-inline-size: 0; max-inline-size: 25rem; }
+.right img {
+  inline-size: 350px; display: block; max-inline-size: 100%; block-size: auto; }
+.explore { margin-inline: auto; inline-size: fit-content; }
+@media (max-width: 1000px) {
+  .homeLoaded { flex-direction: column; justify-content: center; }
+  .right { max-inline-size: min(20rem, 100%); }
 }
