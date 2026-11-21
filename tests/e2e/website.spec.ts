@@ -109,35 +109,6 @@ test('every demo preserves media and explicit playback controls', async ({ page 
       } else await page.getByRole('button', { name, exact: true }).click();
       const figure = page.getByRole('figure', { name: `${name} demo`, exact: true });
       await expect(figure).toBeVisible();
-      if (name === 'Time-Series' || name.startsWith('Configuration')) {
-        const image = figure.getByRole('img');
-        const poster = await image.getAttribute('src');
-        const size = () => image.evaluate(element => [element.clientWidth, element.clientHeight]);
-        const initialSize = await size();
-        expect(poster).not.toContain('-lossless');
-        expect(mediaRequests.length).toBe(initialMediaCount);
-
-        const play = figure.getByRole('button', { name: `Play ${name} demonstration` });
-        const response = page.waitForResponse(result => result.url().includes('-lossless'));
-        await play.focus();
-        await page.keyboard.press('Enter');
-        expect((await response).ok()).toBe(true);
-        await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBe(name === 'Time-Series' ? 1424 : 1544);
-        await expect(image).toHaveAttribute('src', /-lossless.*\.webp$/);
-        expect(await size()).toEqual(initialSize);
-        const stop = figure.getByRole('button', { name: `Stop ${name} demonstration` });
-        await expect(stop).toBeFocused();
-        await page.keyboard.press('Enter');
-        await expect(image).toHaveAttribute('src', poster!);
-        await expect(play).toBeFocused();
-
-        await page.emulateMedia({ reducedMotion: 'no-preference' });
-        await play.click();
-        await expect(stop).toBeVisible();
-        await page.emulateMedia({ reducedMotion: 'reduce' });
-        await expect(image).toHaveAttribute('src', poster!);
-        return;
-      }
       const video = figure.locator('video');
       await expect(video).toBeVisible();
       await video.scrollIntoViewIfNeeded();
@@ -145,25 +116,37 @@ test('every demo preserves media and explicit playback controls', async ({ page 
       const fullFrame = name === 'Data Visualization';
       const av1 = video.locator('source').first();
       const fallback = video.locator('source').last();
-      await expect(av1).toHaveAttribute('type', `video/mp4; codecs="av01.0.${fullFrame ? '09M' : '04M'}.08"`);
+      const h264Only = name === 'Time-Series' || name.startsWith('Configuration');
+      await expect(video.locator('source')).toHaveCount(h264Only ? 1 : 2);
+      if (h264Only) {
+        const asset = name === 'Time-Series' ? 'time-series-540p-h264' : 'configurations-tight-540p-h264';
+        await expect(fallback).toHaveAttribute('src', new RegExp(`${asset}[^/]*\\.mp4$`));
+      } else {
+        await expect(av1).toHaveAttribute('type', `video/mp4; codecs="av01.0.${fullFrame ? '09M' : '04M'}.08"`);
+      }
       await expect(fallback).toHaveAttribute('type', 'video/mp4');
       expect(await video.evaluate((element: HTMLVideoElement) => !element.autoplay && element.paused)).toBe(true);
       const poster = await page.request.get(await video.evaluate((element: HTMLVideoElement) => element.poster));
       expect(poster.ok()).toBe(true);
       expect(mediaRequests.length, 'Selection must not start video playback').toBe(initialMediaCount);
-      await figure.getByRole('button', { name: `Play ${name} demonstration` }).click();
+      const play = figure.getByRole('button', { name: `Play ${name} demonstration` });
+      await play.focus();
+      await page.keyboard.press('Enter');
       await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.currentTime)).toBeGreaterThan(0);
       expect(await video.evaluate((element: HTMLVideoElement) => ({
         error: element.error,
         width: element.videoWidth,
         height: element.videoHeight,
-      }))).toEqual({ error: null, width: fullFrame ? 1920 : 896, height: fullFrame ? 1080 : 504 });
+      }))).toEqual({ error: null, width: h264Only ? 960 : fullFrame ? 1920 : 896, height: h264Only ? 540 : fullFrame ? 1080 : 504 });
       const expectedSource = await video.evaluate((element: HTMLVideoElement) => {
         const [preferred, fallback] = element.querySelectorAll('source');
-        return element.canPlayType(preferred.type) ? preferred.src : fallback.src;
+        return !fallback || element.canPlayType(preferred.type) ? preferred.src : fallback.src;
       });
       await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.currentSrc)).toBe(expectedSource);
-      await figure.getByRole('button', { name: `Stop ${name} demonstration` }).click();
+      const stop = figure.getByRole('button', { name: `Stop ${name} demonstration` });
+      await expect(stop).toBeFocused();
+      await page.keyboard.press('Enter');
+      await expect(play).toBeFocused();
       expect(await video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
     });
   }
@@ -241,15 +224,12 @@ test('all demos autoplay in view and stop on request or reduced motion', async (
     const stop = figure.getByRole('button', { name: `Stop ${name} demonstration` });
     await expect(stop).toHaveText('Stop');
     const video = figure.locator('video');
-    if (await video.count()) {
-      await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.currentTime)).toBeGreaterThan(0);
-    } else {
-      const image = figure.getByRole('img');
-      await expect(image).toHaveAttribute('src', /-lossless.*\.webp$/);
-      await image.evaluate((element: HTMLImageElement) => element.decode());
-    }
-    if (index === names.length - 1) await page.emulateMedia({ reducedMotion: 'reduce' });
-    else await stop.click();
+    await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.currentTime)).toBeGreaterThan(0);
+    if (name.startsWith('Configuration')) {
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
+    } else await stop.click();
     await expect(figure.getByRole('button', { name: `Play ${name} demonstration` })).toHaveText('Play');
   }
 });

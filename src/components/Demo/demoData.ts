@@ -1,5 +1,5 @@
 import configurationPoster from '../../assets/demos/optimized/recordings/configurations.webp';
-import configurationAnimation from '../../assets/demos/optimized/recordings/configurations-lossless.webp';
+import configurationVideo from '../../assets/demos/optimized/recordings/configurations-tight-540p-h264.mp4';
 import othersPoster from '../../assets/demos/optimized/recordings/navigation.webp';
 import othersVideo from '../../assets/demos/optimized/recordings/navigation-h264.mp4';
 import othersAv1 from '../../assets/demos/optimized/recordings/navigation-av1.mp4';
@@ -13,7 +13,7 @@ import containersPoster from '../../assets/demos/optimized/recordings/containers
 import containersVideo from '../../assets/demos/optimized/recordings/containers-h264.mp4';
 import containersAv1 from '../../assets/demos/optimized/recordings/containers-av1.mp4';
 import images3Poster from '../../assets/demos/optimized/recordings/time-series.webp';
-import images3Animation from '../../assets/demos/optimized/recordings/time-series-lossless.webp';
+import images3Video from '../../assets/demos/optimized/recordings/time-series-540p-h264.mp4';
 import metricsPoster from '../../assets/demos/optimized/recordings/metrics.webp';
 import metricsVideo from '../../assets/demos/optimized/recordings/metrics-h264.mp4';
 import metricsAv1 from '../../assets/demos/optimized/recordings/metrics-av1.mp4';
@@ -36,11 +36,11 @@ const fullFrame = { width: 1920, height: 1080, av1Level: '09M' };
 const containers: DemoMediaAsset = { ...compactFrame, src: containersVideo, av1: containersAv1, poster: containersPoster };
 const images: DemoMediaAsset = { ...compactFrame, src: imagesVideo, av1: imagesAv1, poster: imagesPoster };
 const images2: DemoMediaAsset = { ...fullFrame, src: images2Video, av1: images2Av1, poster: images2Poster };
-const images3: DemoMediaAsset = { src: images3Animation, poster: images3Poster, width: 960, height: 540 };
+const images3: DemoMediaAsset = { src: images3Video, poster: images3Poster, width: 960, height: 540 };
 const metrics: DemoMediaAsset = { ...compactFrame, src: metricsVideo, av1: metricsAv1, poster: metricsPoster };
 const k8: DemoMediaAsset = { ...compactFrame, src: k8Video, av1: k8Av1, poster: k8Poster };
 const others: DemoMediaAsset = { ...compactFrame, src: othersVideo, av1: othersAv1, poster: othersPoster };
-const configuration: DemoMediaAsset = { src: configurationAnimation, poster: configurationPoster, width: 960, height: 540 };
+const configuration: DemoMediaAsset = { src: configurationVideo, poster: configurationPoster, width: 960, height: 540 };
 
 export interface DemoEntry {
   id: string;

@@ -19,7 +19,6 @@ export default function DemoMedia({ media, title, className }: DemoMediaProps) {
     playbackRequested.current = true;
     const player = video.current;
     if (player) void player.play().catch(() => setPlaying(false));
-    else setPlaying(true);
   }, []);
 
   const stopPlayback = useCallback(() => {
@@ -56,7 +55,7 @@ export default function DemoMedia({ media, title, className }: DemoMediaProps) {
   }, [startPlayback, stopPlayback]);
 
   return <figure ref={frame} aria-label={`${title} demo`} className={styles.mediaFrame}>
-    {media.av1 !== undefined ? <video
+    <video
       ref={video}
       className={className}
       aria-label={`${title} demonstration`}
@@ -73,17 +72,10 @@ export default function DemoMedia({ media, title, className }: DemoMediaProps) {
       height={media.height}
       poster={media.poster}
     >
-      <source src={media.av1} type={`video/mp4; codecs="av01.0.${media.av1Level}.08"`} />
+      {media.av1 && <source src={media.av1} type={`video/mp4; codecs="av01.0.${media.av1Level}.08"`} />}
       <source src={media.src} type="video/mp4" />
       <a href={media.src}>Download the {title} demonstration</a>
-    </video> : <img
-      className={className}
-      src={playing ? media.src : media.poster}
-      alt={`${title} demonstration`}
-      width={media.width}
-      height={media.height}
-      onError={() => setPlaying(false)}
-    />}
+    </video>
     <button
       type="button"
       className="siteButton"

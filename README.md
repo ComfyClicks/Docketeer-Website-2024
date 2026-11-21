@@ -69,11 +69,18 @@ python3 scripts/media/verify-demos.py
 
 The verification script requires ImageMagick (`magick`) on PATH. Conversion regenerates demo outputs and `reports/media/conversion.json`, which verification consumes. Review posters and playback before accepting regenerated media; some legacy GIFs are intentionally preserved for visual fidelity.
 
-Time-Series and Configurations use lossless animated WebP generated directly from their original GIFs. To regenerate just those two clips, use `gif2webp` from libwebp:
+Time-Series and Configurations use 960 × 540 H.264 encodes of their original GIFs. To regenerate the two clips, use FFmpeg with libx264:
 
 ```sh
-gif2webp -mt -m 4 -metadata none src/assets/demos/imageTab3-new.gif -o src/assets/demos/optimized/recordings/time-series-lossless.webp
-gif2webp -mt -m 4 -metadata none src/assets/demos/configuration.gif -o src/assets/demos/optimized/recordings/configurations-lossless.webp
+ffmpeg -min_delay 1 -ignore_loop 1 -i src/assets/demos/imageTab3-new.gif -an \
+  -vf 'pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0x0c1020,scale=960:540:flags=lanczos:out_color_matrix=bt709,format=yuv420p,fps=30' \
+  -filter_threads 2 -c:v libx264 -preset slow -crf 23 -g 60 -threads 2 \
+  -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv \
+  -movflags +faststart src/assets/demos/optimized/recordings/time-series-540p-h264.mp4
+
+ffmpeg -nostdin -v error -min_delay 1 -ignore_loop 1 -i src/assets/demos/configuration.gif -an \
+  -vf 'scale=960:540:force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos:out_color_matrix=bt709,format=yuv420p,pad=960:540:(ow-iw)/2:(oh-ih)/2:color=0x0c1020,fps=30' \
+  -filter_threads 2 -c:v libx264 -preset slow -crf 23 -g 60 -threads 2 -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -movflags +faststart src/assets/demos/optimized/recordings/configurations-tight-540p-h264.mp4
 ```
 
 ## Deployment
