@@ -23,46 +23,46 @@ Repository and deployment history established the original source baseline at `2
 
 ### Current local comparison — November 21, 2026
 
-Compared production builds of original source `22d612c66d2ad3d7107b7ed1dff5cb52a4e1865a` and refactor commit `c46160f` from isolated source archives. Uncommitted media experiments were excluded. Both builds used Node 26.12.1 and npm 11.20.0, with the baseline's locked dependencies installed separately and monitoring disabled in the refactor. Tests used Chromium 159.0.8154.6, Lighthouse 13.6.0 and Playwright 1.65.1 on macOS 26.7.1 with an Intel i7-1068NG7. Both builds used the same Vite preview implementation on loopback ports 4213 and 4214. Background load and thermal conditions were not isolated.
+Compared production builds of original source `22d612c66d2ad3d7107b7ed1dff5cb52a4e1865a` and refactor commit `c1dab47` from isolated source archives. Both builds used Node 26.12.1 and npm 11.20.0 with the baseline's separate locked dependency tree. Both monitoring flags were false for the refactor build. Tests ran in Chromium 159.0.8154.6, Lighthouse 13.6.0 and Playwright 1.65.1 on macOS 26.7.1 with an Intel i7-1068NG7. Both builds used the same Vite preview implementation on loopback ports 4213 and 4214. Uncommitted media experiments were excluded. Background workloads and thermal conditions were not isolated.
 
 #### Lighthouse medians
 
-Three cold navigations per build and profile ran serially with interleaved build order and simulated throttling. Mobile used 412×823 at DPR 1.75, 150 ms RTT, 1,638.4 Kbps and 4× CPU slowdown. Desktop used 1350×940 at DPR 1, 40 ms RTT, 10,240 Kbps and 1× CPU. Each median is computed independently.
+Three cold navigations per build and profile ran serially in interleaved build order. Mobile used 412×823 at DPR 1.75, 150 ms RTT, 1,638.4 Kbps and 4× CPU slowdown. Desktop used 1350×940 at DPR 1, 40 ms RTT, 10,240 Kbps and 1× CPU. Both profiles used simulated throttling. Each metric uses an independent median.
 
 | Median | Baseline mobile | Refactor mobile | Baseline desktop | Refactor desktop |
 | --- | ---: | ---: | ---: | ---: |
-| Performance | 34 | 97 | 73 | 100 |
+| Performance | 41 | 98 | 60 | 100 |
 | Accessibility / Best Practices / SEO | 52 / 92 / 67 | 100 / 100 / 100 | 55 / 92 / 67 | 100 / 100 / 100 |
-| FCP | 2,213 ms | 759 ms | 773 ms | 218 ms |
-| LCP | 5,108 ms | 1,999 ms | 906 ms | 433 ms |
-| Total blocking time | 1,833 ms | 185 ms | 22 ms | 0 ms |
-| CLS | 0.482 | 0.00086 | 1.411 | 0.00038 |
-| Speed Index | 3,176 ms | 978 ms | 1,020 ms | 338 ms |
+| FCP | 1,613 ms | 757 ms | 543 ms | 210 ms |
+| LCP | 5,449 ms | 2,003 ms | 1,017 ms | 458 ms |
+| Total blocking time | 1,290 ms | 140 ms | 322 ms | 1 ms |
+| CLS | 0.308061 | 0.00086 | 1.409745 | 0.00038 |
+| Speed Index | 2,821 ms | 940 ms | 817 ms | 327 ms |
 
-Individual performance scores were **25, 42, 34 → 97, 94, 98** on mobile and **73, 74, 46 → 100, 100, 100** on desktop. This comparison measures the combined refactor in the local lab. Earlier local runs and original production observations are separate datasets. Automated accessibility scores do not establish WCAG compliance.
+Individual mobile performance scores were **31, 44, 41 → 95, 98, 99**. Desktop scores were **58, 73, 60 → 100, 100, 100**. These are local lab results. Automated accessibility scores do not establish WCAG compliance.
 
 #### Initial resources and build size
 
-Fresh unthrottled browser contexts used 390×844 mobile and 1440×900 desktop viewports at DPR 1. Cache was disabled. Captures ended 2.5 seconds after network idle, without scrolling. Request counts and totals cover HTTP traffic including the document. Category cells give HTTP-encoded / decoded response body sizes in decimal kB. Total transfer uses Chromium's CDP byte count, which includes response overhead. Build size sums uncompressed files in `dist`, including media fallbacks.
+Fresh unthrottled contexts used 390×844 mobile and 1440×900 desktop viewports at DPR 1, with cache disabled. Captures ended 2.5 seconds after network idle without scrolling. Category cells give HTTP-encoded / decoded response body sizes in decimal kB. Chromium CDP transfer includes response overhead. HTTP counts include the document.
 
 | Resource | Baseline mobile | Refactor mobile | Baseline desktop | Refactor desktop |
 | --- | ---: | ---: | ---: | ---: |
-| JavaScript | 186.8 / 671.3 kB | 98.2 / 285.7 kB | 186.8 / 671.3 kB | 98.2 / 285.7 kB |
+| JavaScript | 186.8 / 671.3 kB | 98.1 / 285.4 kB | 186.8 / 671.3 kB | 98.1 / 285.4 kB |
 | CSS | 2.5 / 10.8 kB | 2.7 / 8.8 kB | 2.5 / 10.8 kB | 2.7 / 8.8 kB |
 | Images | 16,489.5 / 16,493.5 kB | 47.7 / 47.7 kB | 8,055.7 / 8,059.7 kB | 87.6 / 87.6 kB |
 | Fonts | 0 kB | 24.0 / 24.0 kB | 0 kB | 24.0 / 24.0 kB |
 | Total transferred | 16.690 MB | 0.176 MB | 8.256 MB | 0.217 MB |
 | HTTP requests | 30 | 7 | 30 | 11 |
 
-The uncompressed build fell from **94.64 MB to 24.78 MB**. The baseline fetched one GIF demo on initial navigation in each profile. The refactor fetched no animated demo in this window. After scrolling, the 6.14 MB Time-Series and 5.85 MB Configurations WebPs load when their players are selected and in view, or on manual playback. These initial-navigation figures do not measure a full session.
+The uncompressed production build fell from **94.64 MB to 8.74 MB**. The baseline fetched one animated GIF demo in each initial capture. The refactor fetched none. Initial-navigation transfer excludes watching the demos.
 
-After this benchmark, the approved 540p H.264 encodes replaced the two WebPs. Time-Series is **1.03 MB** and Configurations is **2.53 MB**. Data Visualization also switched from 1080p AV1 and H.264 to a single **2.31 MB** 540p H.264 encode. Those are file sizes. The navigation and build figures above still describe the measured commit.
+#### Demo startup and ongoing background rendering
 
-#### Ongoing background rendering
+The three largest approved H.264 clips are **2.31 MB** for Data Visualization, **1.03 MB** for Time-Series and **2.53 MB** for Configurations. In separate 390×844 Chromium tests at DPR 3, 150 ms latency, 1.64 Mbps download and 4× CPU slowdown, the medians from pressing Play to the first video frame callback were **513 ms**, **516 ms** and **670 ms**, respectively. Each clip used three fresh browser contexts, reduced motion and manual Play. These local results describe cold playback with the tested network and device emulation.
 
-In separate unthrottled Chromium samples at 1440×900 and DPR 1, the browser remained at the top of the page. Each state used three fresh contexts with a one-second settling period after network idle, followed by a 10-second capture. Median CDP renderer `TaskDuration` was **9.872 s** for the original Three.js background, **0.753 s** for the running Canvas background, and **0.0019 s** with Canvas paused. The builds use different renderers, and headless graphics behavior can affect the comparison. These renderer-thread timings do not measure system CPU, GPU or battery use.
+Separate desktop headless Chromium samples used 1440×900 at DPR 1 and no throttling. Each state used three fresh contexts, with one second of settling after network idle and 10 seconds stationary at page top. Median renderer `TaskDuration` was **9.932 s** for the original Three.js background, **0.706 s** for Canvas running and **0.0018 s** for Canvas paused. Different renderers and headless graphics behavior affect the comparison. These renderer-thread timings do not measure system CPU, GPU or battery use.
 
-Raw evidence is in `/Users/andywhite/Documents/Docketeer-Website-Archive/2026-11-21-before-after`, including 12 Lighthouse JSON and HTML reports, traces, network captures, build manifests and scripts. An initial Lighthouse attempt was stopped because the benchmark launcher blocked its local server. All reported Lighthouse runs came from the corrected serial launcher.
+Raw evidence is in `/Users/andywhite/Documents/Docketeer-Website-Archive/2026-11-21-final-demo-performance.9yE8Yf`, including 12 Lighthouse JSON and HTML reports, traces, network captures, build manifests and measurement scripts. The earlier November 21 matched run of `c46160f` had mobile/desktop performance medians of **97/100** and a **24.78 MB** refactor build. Its results and reports remain in `/Users/andywhite/Documents/Docketeer-Website-Archive/2026-11-21-before-after`.
 
 ### Historical local results — November 20, 2026 (optimized animation)
 
